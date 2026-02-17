@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>취업 대시보드 v1.0</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2306080e'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%234a90e8' font-family='sans-serif' font-weight='900'>C</text></svg>">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@400;600;700;800&display=swap');
 :root{
-  --bg:#06080e;--bg2:#0c0f1a;--bg3:#111628;
-  --card:#131831;--card2:#1a2040;--card3:#212850;
-  --bdr:#1c2548;--bdr2:#283260;
-  --tx:#e8ecf4;--tx2:#8899b8;--tx3:#506080;
-  --blue:#4a90e8;--steel:#6080a0;--gold:#e8a020;--green:#20c860;
-  --red:#e03050;--orange:#e08020;--teal:#18b8a0;
+  --bg:#06080e;--bg2:#0a0c14;--bg3:#12141c;
+  --card:#0e1018;--card2:#14161e;--card3:#1a1c24;
+  --bdr:#1a1c22;--bdr2:#252830;
+  --tx:#ffffff;--tx2:#a0a8b0;--tx3:#505860;
+  --blue:#4a90e8;--steel:#707880;--gold:#e8a020;--green:#20c860;
+  --red:#e03050;--orange:#e08020;--teal:#707880;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;font-size:13.5px;-webkit-font-smoothing:antialiased}
@@ -28,23 +29,23 @@ header .inner{display:flex;justify-content:space-between;align-items:center}
 
 /* TABS */
 .tabs{display:flex;gap:2px;padding:12px 0;border-bottom:1px solid var(--bdr);position:sticky;top:46px;z-index:200;background:var(--bg)}
-.tab{background:none;border:none;color:var(--tx3);padding:8px 18px;font-size:.72rem;cursor:pointer;border-radius:8px 8px 0 0;font-family:inherit;transition:.2s;font-weight:500}
+.tab{background:none;border:none;color:var(--tx3);padding:8px 18px;font-size:.72rem;cursor:pointer;border-radius:4px 4px 0 0;font-family:inherit;transition:.2s;font-weight:500}
 .tab:hover{color:var(--tx2);background:rgba(255,255,255,.03)}
 .tab.on{color:var(--blue);background:var(--card);border-bottom:2px solid var(--blue);font-weight:700}
 .panel{display:none;padding:32px 0}.panel.on{display:block}
 
 /* CARDS */
-.card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:22px;margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:22px;margin-bottom:18px}
 .card h3{font-size:.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 
 /* STAT GRID */
 .sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin-bottom:22px}
-.sc{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:14px;position:relative;overflow:hidden}
+.sc{background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:14px;position:relative;overflow:hidden}
 .sc .n{font-family:'Sora';font-weight:800;font-size:1.5rem;letter-spacing:-1px}
 .sc .l{font-size:.62rem;color:var(--tx2);margin-top:2px}
 
 /* 5-TIER + MINUS GRADE SYSTEM */
-.gd{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;border-radius:5px;font-weight:800;font-size:.6rem;font-family:'Sora';padding:0 6px}
+.gd{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;border-radius:3px;font-weight:800;font-size:.6rem;font-family:'Sora';padding:0 6px}
 .g1{background:#e03050;color:#fff}
 .g2{background:#e08020;color:#fff}
 .g3{background:#c0a030;color:#000}
@@ -53,11 +54,11 @@ header .inner{display:flex;justify-content:space-between;align-items:center}
 .gM{background:#1a1a24;color:#555;border:1px solid #333}
 
 /* TABLE */
-.tc{background:var(--card);border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
+.tc{background:var(--card);border:1px solid var(--bdr);border-radius:4px;overflow:hidden}
 .tctrl{padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--bdr)}
-.sinp{background:var(--bg);border:1px solid var(--bdr);color:var(--tx);padding:7px 14px;border-radius:8px;font-size:.72rem;width:220px;font-family:inherit}
-.sinp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(74,144,232,.15)}
-.fb{background:var(--bg);border:1px solid var(--bdr);color:var(--tx3);padding:5px 12px;border-radius:6px;font-size:.6rem;cursor:pointer;font-family:inherit;transition:.15s;font-weight:500}
+.sinp{background:var(--bg);border:1px solid var(--bdr);color:var(--tx);padding:7px 14px;border-radius:4px;font-size:.72rem;width:220px;font-family:inherit}
+.sinp:focus{outline:none;border-color:var(--blue)}
+.fb{background:var(--bg);border:1px solid var(--bdr);color:var(--tx3);padding:5px 12px;border-radius:3px;font-size:.6rem;cursor:pointer;font-family:inherit;transition:.15s;font-weight:500}
 .fb:hover{border-color:var(--tx3);color:var(--tx2)}.fb.on{background:var(--blue);border-color:var(--blue);color:#fff}
 .tsc{overflow-x:auto;max-height:75vh;overflow-y:auto}
 table{width:100%;border-collapse:collapse;font-size:.68rem;min-width:1200px}
@@ -65,7 +66,7 @@ thead{position:sticky;top:0;z-index:10}
 th{background:var(--card2);color:var(--tx2);padding:9px 6px;text-align:center;font-size:.6rem;font-weight:600;border-bottom:2px solid var(--bdr2);cursor:pointer;white-space:nowrap;user-select:none}
 th:hover{color:var(--tx);background:var(--card3)}
 td{padding:8px 6px;border-bottom:1px solid var(--bdr);vertical-align:middle}
-tr:hover{background:rgba(74,144,232,.04)}
+tr:hover{background:rgba(255,255,255,.02)}
 tr.expanded{background:var(--card2)}
 .nm{font-weight:600;white-space:nowrap;min-width:170px;cursor:pointer}
 .nm:hover{color:var(--blue)}
@@ -74,47 +75,40 @@ tr.expanded{background:var(--card2)}
 .detail-row.show{display:table-row}
 .detail-cell{padding:0;border-bottom:2px solid var(--bdr2)}
 .rcnt{font-size:.62rem;color:var(--tx3);padding:8px 18px}
-.cc{font-size:.48rem;background:rgba(20,184,160,.15);color:var(--teal);padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:600}
+.cc{font-size:.48rem;background:rgba(255,255,255,.04);color:var(--tx2);padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:600;border:1px solid var(--bdr)}
 
-/* CATEGORY TAGS */
-.ct{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.56rem;font-weight:600}
-.ct-pf{background:rgba(74,144,232,.12);color:#6ab0ff}
-.ct-pub{background:rgba(32,200,96,.1);color:#50e890}
-.ct-fin{background:rgba(232,160,32,.1);color:#f0c060}
-.ct-sec{background:rgba(232,160,32,.1);color:#f0c060}
-.ct-mil{background:rgba(100,110,130,.1);color:#8898a8}
-.ct-reg{background:rgba(24,184,160,.1);color:#50e8d0}
-.ct-oth{background:rgba(80,96,128,.1);color:#8090a8}
-.ct-drm{background:rgba(96,128,160,.1);color:#8098b0}
+/* CATEGORY TAGS - monochrome */
+.ct{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.56rem;font-weight:600}
+.ct-pf,.ct-pub,.ct-fin,.ct-sec,.ct-mil,.ct-reg,.ct-oth,.ct-drm{background:rgba(255,255,255,.04);color:var(--tx2);border:1px solid var(--bdr)}
 
 /* DNA CARDS */
 .dna-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
-.dna-c{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:18px;position:relative;overflow:hidden}
+.dna-c{background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:18px;position:relative;overflow:hidden}
 .dna-c .bar{position:absolute;top:0;left:0;right:0;height:3px}
 .dna-c h4{font-size:.82rem;font-weight:700;margin-bottom:6px}
 .dna-c p{font-size:.68rem;color:var(--tx2);line-height:1.6}
 .dna-c .ev{font-size:.6rem;color:var(--steel);margin-top:10px;padding-top:10px;border-top:1px solid var(--bdr)}
 
 /* FORMULA */
-.formula{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:16px 20px;margin:14px 0}
+.formula{background:var(--bg2);border:1px solid var(--bdr);border-radius:4px;padding:16px 20px;margin:14px 0}
 .formula .eq{font-family:'JetBrains Mono';font-weight:700;color:var(--blue);margin:8px 0;font-size:.82rem}
 
 /* ROADMAP */
-.roadmap-section{margin-bottom:24px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:20px}
+.roadmap-section{margin-bottom:24px;background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:20px}
 .roadmap-section h4{font-family:'Sora';font-weight:700;font-size:.88rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.roadmap-section .priority-label{font-family:'JetBrains Mono';font-size:.58rem;padding:2px 8px;border-radius:4px;background:var(--bg);border:1px solid var(--bdr)}
+.roadmap-section .priority-label{font-family:'JetBrains Mono';font-size:.58rem;padding:2px 8px;border-radius:3px;background:var(--bg);border:1px solid var(--bdr)}
 .checklist{list-style:none;font-size:.72rem;line-height:2.2}
-.checklist li{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid rgba(28,37,72,.5)}
+.checklist li{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid rgba(26,28,34,.8)}
 .checklist li label{cursor:pointer;display:flex;align-items:center;gap:8px;flex:1;color:var(--tx2)}
 .checklist li label:hover{color:var(--tx)}
 .checklist input[type="checkbox"]{width:16px;height:16px;accent-color:var(--blue);cursor:pointer}
 .checklist li.checked label{text-decoration:line-through;color:var(--tx3)}
-.reality-note{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:16px 20px;margin-top:18px;font-size:.72rem;color:var(--tx2);line-height:1.8}
+.reality-note{background:var(--bg2);border:1px solid var(--bdr);border-radius:4px;padding:16px 20px;margin-top:18px;font-size:.72rem;color:var(--tx2);line-height:1.8}
 .reality-note strong{color:var(--orange)}
 
 /* STRATEGY CARDS */
 .strat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.si{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:18px}
+.si{background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:18px}
 .si h4{font-size:.82rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .si .detail{font-size:.68rem;color:var(--tx2);line-height:1.8}
 
@@ -127,29 +121,25 @@ tr.expanded{background:var(--card2)}
 /* BAR ITEM */
 .bar-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:.7rem}
 
-/* ADV BADGES */
-.adv-fin{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.5rem;font-weight:700;background:rgba(232,160,32,.15);color:var(--gold);margin-left:4px;letter-spacing:.3px}
-.adv-start{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.5rem;font-weight:700;background:rgba(32,200,96,.15);color:var(--green);margin-left:4px;letter-spacing:.3px}
+/* ADV BADGES - monochrome */
+.adv-fin{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.5rem;font-weight:700;background:rgba(255,255,255,.04);color:var(--tx2);border:1px solid var(--bdr);margin-left:4px;letter-spacing:.3px}
+.adv-start{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.5rem;font-weight:700;background:rgba(255,255,255,.04);color:var(--tx2);border:1px solid var(--bdr);margin-left:4px;letter-spacing:.3px}
 
 /* SECTION NUMBERS */
 .sec-num{font-family:'Bebas Neue','Sora',sans-serif;font-weight:800;font-size:3.5rem;letter-spacing:-2px;line-height:1;opacity:.15;position:absolute;top:-8px;right:20px;color:var(--blue)}
 .card-cufa{position:relative;overflow:hidden}
 .card-cufa::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue)}
 
-/* TERMINAL */
-.terminal-block{background:#0a0a14;border:1px solid #1a1a2e;border-radius:8px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--green);line-height:1.8;position:relative;overflow:hidden}
+/* TERMINAL - white text */
+.terminal-block{background:#0a0a14;border:1px solid #1a1c22;border-radius:4px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--tx);line-height:1.8;position:relative;overflow:hidden}
 .terminal-block::before{content:'$ ';color:var(--tx3);font-weight:700}
 .terminal-block .prompt{color:var(--tx3)}
-.terminal-block .cmd{color:var(--green)}
+.terminal-block .cmd{color:var(--tx)}
 .terminal-block .output{color:var(--tx2)}
 
-/* GLOW EFFECTS */
-.glow-blue{box-shadow:0 0 20px rgba(74,144,232,.08),0 4px 20px rgba(0,0,0,.3)}
-.glow-gold{box-shadow:0 0 20px rgba(232,160,32,.08),0 4px 20px rgba(0,0,0,.3)}
-
-/* ADV CARD (flat) */
-.adv-card{background:var(--card);border:1px solid rgba(232,160,32,.2);border-left:3px solid var(--gold);border-radius:10px;padding:14px}
-.adv-card.startup{border-color:rgba(32,200,96,.2);border-left:3px solid var(--green)}
+/* ADV CARD (flat, monochrome border) */
+.adv-card{background:var(--card);border:1px solid var(--bdr);border-left:3px solid var(--bdr2);border-radius:4px;padding:14px}
+.adv-card.startup{border-color:var(--bdr);border-left:3px solid var(--bdr2)}
 
 /* DETAIL PANEL */
 .det-panel{padding:20px 24px;font-size:.72rem;color:var(--tx2);line-height:1.8}
@@ -157,19 +147,19 @@ tr.expanded{background:var(--card2)}
 .det-header h4{font-size:1rem;font-weight:700;color:var(--tx)}
 .det-meta{font-size:.62rem;color:var(--tx3)}
 .det-scores{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.det-score-item{background:var(--bg);border:1px solid var(--bdr);border-radius:8px;padding:10px}
+.det-score-item{background:var(--bg);border:1px solid var(--bdr);border-radius:4px;padding:10px}
 .det-score-item .label{font-size:.58rem;color:var(--tx3);margin-bottom:4px}
-.det-score-item .value{font-family:'JetBrains Mono';font-weight:700;font-size:.9rem}
+.det-score-item .value{font-family:'JetBrains Mono';font-weight:700;font-size:.9rem;color:var(--tx2)}
 .det-score-item .bar-bg{height:4px;background:var(--bdr);border-radius:2px;margin-top:6px;overflow:hidden}
-.det-score-item .bar-fill{height:100%;border-radius:2px}
+.det-score-item .bar-fill{height:100%;border-radius:2px;background:var(--tx3)}
 .det-section{margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr)}
 .det-section h5{font-size:.72rem;font-weight:700;color:var(--tx);margin-bottom:6px}
 .det-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.det-grid-item{background:var(--bg);border:1px solid var(--bdr);border-radius:8px;padding:10px}
+.det-grid-item{background:var(--bg);border:1px solid var(--bdr);border-radius:4px;padding:10px}
 .det-grid-item .label{font-size:.56rem;color:var(--tx3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
 
 /* MOBILE CARD VIEW */
-.mobile-card{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:14px;margin-bottom:10px;cursor:pointer}
+.mobile-card{background:var(--card);border:1px solid var(--bdr);border-radius:4px;padding:14px;margin-bottom:10px;cursor:pointer}
 .mobile-card:active{background:var(--card2)}
 .mobile-card .mc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
 .mobile-card .mc-name{font-weight:700;font-size:.78rem}
@@ -216,10 +206,10 @@ tr.expanded{background:var(--card2)}
 
 <div class="wrap">
 <div class="tabs">
-  <button class="tab on" onclick="sw('dash',this)">대시보드</button>
-  <button class="tab" onclick="sw('criteria',this)">평가 기준</button>
-  <button class="tab" onclick="sw('db',this)">전체 DB</button>
-  <button class="tab" onclick="sw('road',this)">로드맵</button>
+  <button class="tab on" onclick="sw('dash',this)">📊 대시보드</button>
+  <button class="tab" onclick="sw('criteria',this)">🎯 평가 기준</button>
+  <button class="tab" onclick="sw('db',this)">🗄️ 전체 DB</button>
+  <button class="tab" onclick="sw('road',this)">🗺️ 로드맵</button>
 </div>
 </div>
 
@@ -228,16 +218,16 @@ tr.expanded{background:var(--card2)}
   <div style="padding:44px 0 24px;position:relative">
     <div style="position:absolute;top:10px;left:0;font-family:'Bebas Neue',sans-serif;font-size:6rem;letter-spacing:-3px;opacity:.04;color:var(--blue);line-height:1;pointer-events:none">CAREER<br>DASHBOARD</div>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--tx3);background:var(--card);padding:3px 10px;border-radius:4px;border:1px solid var(--bdr)">v1.0</span>
-      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--gold);background:rgba(232,160,32,.08);padding:3px 10px;border-radius:4px;border:1px solid rgba(232,160,32,.15)">FINANCE SYNERGY</span>
-      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--green);background:rgba(32,200,96,.08);padding:3px 10px;border-radius:4px;border:1px solid rgba(32,200,96,.15)">BUILDER SYNERGY</span>
+      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--tx3);background:var(--card);padding:3px 10px;border-radius:3px;border:1px solid var(--bdr)">v1.0</span>
+      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--tx2);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:3px;border:1px solid var(--bdr)">FINANCE SYNERGY</span>
+      <span style="font-family:'JetBrains Mono';font-size:.56rem;color:var(--tx2);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:3px;border:1px solid var(--bdr)">BUILDER SYNERGY</span>
     </div>
     <h1 class="sora" style="font-weight:800;font-size:2.2rem;letter-spacing:-1.5px;color:var(--tx)">이찬희 취업 인텔리전스</h1>
     <p style="color:var(--tx3);font-size:.78rem;margin-top:6px"><span class="mono" id="total-cnt"></span>개 기관 -- 5등급+M -- 4차원 스코어링</p>
     <div class="terminal-block" style="margin-top:16px;max-width:700px">
       <span class="cmd">scoring_v1</span> <span class="output">DNA(30) + 금융시너지(25) + 빌더시너지(20) + 진입적합도(25) = 100</span><br>
-      <span class="prompt">$ </span><span class="cmd">금융시너지</span> <span class="output">CUFA DCF 역량 직접 활용도 + 금융 산업 이해 + 커리어 성장</span><br>
-      <span class="prompt">$ </span><span class="cmd">빌더시너지</span> <span class="output">0-&gt;1 빌더코드 발현 + 스타트업 생태계 접근 + 창업 학습 가치</span>
+      <span class="prompt">$ </span><span class="cmd">금융시너지</span> <span class="output">분석적/혁신적 인재 환영도 + 금융 산업 이해 + 커리어 성장</span><br>
+      <span class="prompt">$ </span><span class="cmd">빌더시너지</span> <span class="output">0->1 빌더코드 발현 + 스타트업 생태계 접근 + 창업 학습 가치</span>
     </div>
   </div>
 
@@ -250,24 +240,24 @@ tr.expanded{background:var(--card2)}
       <div style="font-size:.68rem;color:var(--tx3);margin-bottom:4px">V1 평가 공식 (100점 만점)</div>
       <div class="eq">총점 = DNA적합도(30) + 금융시너지(25) + 창업/빌더시너지(20) + 진입적합도(25)</div>
       <div style="font-size:.64rem;color:var(--tx2);margin-top:8px;line-height:1.7">
-        <strong style="color:var(--tx)">DNA(30):</strong> 현장 행동력(9) + 분석 역량/DCF(8) + 빌더 역량(6) + 소통/교육(4) + 탐색/발견(3)<br>
-        <strong style="color:var(--gold)">금융시너지(25):</strong> CUFA DCF 활용도(10) + 금융 산업 이해(8) + 금융 커리어 성장(7)<br>
-        <strong style="color:var(--green)">창업/빌더(20):</strong> 0-&gt;1 빌더코드(8) + 스타트업 생태계 접근(7) + 장기 창업 학습(5)<br>
-        <strong style="color:var(--blue)">진입적합도(25):</strong> NCS/블라인드(10) + 지역인재 가점(10) + 비학벌 공정채용(5)
+        <strong style="color:var(--tx)">DNA(30):</strong> 현장 행동력(9) + 분석적 사고 + AI 활용(8) + 빌더 역량(6) + 소통/교육(4) + 탐색/발견(3)<br>
+        <strong style="color:var(--tx2)">금융시너지(25):</strong> 분석적/혁신적 인재 환영도(10) + 금융 산업 이해(8) + 금융 커리어 성장(7)<br>
+        <strong style="color:var(--tx2)">창업/빌더(20):</strong> 0->1 빌더코드(8) + 스타트업 생태계 접근(7) + 장기 창업 학습(5)<br>
+        <strong style="color:var(--tx2)">진입적합도(25):</strong> NCS/블라인드(10) + 지역인재 가점(10) + 비학벌 공정채용(5)
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h3 style="color:var(--red)">1등급 -- 최우선</h3>
+    <h3 style="color:var(--red)">🔴 1등급 -- 최우선</h3>
     <div id="slist"></div>
   </div>
   <div class="card">
-    <h3 style="color:var(--orange)">2등급 -- 핵심공략</h3>
+    <h3 style="color:var(--orange)">🟠 2등급 -- 핵심공략</h3>
     <div id="alist"></div>
   </div>
   <div class="card">
-    <h3 style="color:#c0a030">3등급 -- 전략도전</h3>
+    <h3 style="color:#c0a030">🟡 3등급 -- 전략도전</h3>
     <div id="blist"></div>
   </div>
 </div></div>
@@ -275,33 +265,33 @@ tr.expanded{background:var(--card2)}
 <!-- 2. 평가 기준 -->
 <div id="p-criteria" class="panel"><div class="wrap">
   <h2 class="sora" style="font-weight:800;font-size:1.3rem;margin-bottom:6px"><span style="color:var(--blue);margin-right:6px">01</span>성향 DNA 5코드</h2>
-  <p style="color:var(--tx3);font-size:.74rem;margin-bottom:22px">DNA적합도는 총점의 30%. 현장 행동력과 DCF 분석 역량이 핵심.</p>
+  <p style="color:var(--tx3);font-size:.74rem;margin-bottom:22px">DNA적합도는 총점의 30%. 현장 행동력과 분석적 사고력이 핵심. 중요한건 아웃풋이 아니라 인풋 -- 문제를 구조화하고 데이터로 판단하는 사고방식.</p>
 
   <div class="dna-g">
-    <div class="dna-c"><div class="bar" style="background:var(--gold)"></div>
-      <h4>01 -- 0-&gt;1 빌더 (6pt)</h4>
+    <div class="dna-c"><div class="bar" style="background:var(--steel)"></div>
+      <h4>🔨 01 -- 0->1 빌더 (6pt)</h4>
       <p>남이 만든 구조에 들어가는 게 아니라, 구조 자체를 설계하는 쪽에서 에너지가 남. CBDC 직접 창설, CUFA 구조 전환, 3F 연합 기획이 증거.</p>
       <div class="ev">직접 조직을 만들고 운영하는 데서 에너지를 얻는 유형</div>
     </div>
-    <div class="dna-c"><div class="bar" style="background:var(--green)"></div>
-      <h4>02 -- 현장 중독 (9pt)</h4>
+    <div class="dna-c"><div class="bar" style="background:var(--steel)"></div>
+      <h4>🏃 02 -- 현장 중독 (9pt)</h4>
       <p>삼성바이오 앞에 "그냥 가본 것"이 2년간 전국 산업단지 답사로 이어짐. 데스크 분석보다 현장 관찰에서 인사이트를 얻는 유형.</p>
       <div class="ev">2년간 32회 현장답사 / 20개 기업 / 전국 산업단지</div>
     </div>
-    <div class="dna-c"><div class="bar" style="background:var(--blue)"></div>
-      <h4>03 -- 분석 역량/DCF (8pt)</h4>
-      <p>CUFA에서 DCF 분석 교안을 직접 제작하고 교육. 재무제표 분석, 기업가치 평가 역량이 핵심 무기.</p>
-      <div class="ev">CUFA DCF 분석 보고서 + 기업가치 평가 역량</div>
+    <div class="dna-c"><div class="bar" style="background:var(--steel)"></div>
+      <h4>🧠 03 -- 분석적 사고 + AI (8pt)</h4>
+      <p>문제를 구조화하고 데이터로 판단하는 사고방식이 핵심. CUFA에서 DCF 분석 교안을 직접 제작하고 교육한 것은 이 분석적 사고의 한 가지 아웃풋. AI 도구를 활용해 분석을 자동화하고 새로운 인사이트를 발견하는 역량.</p>
+      <div class="ev">CUFA 분석 보고서 + 기업가치 평가 역량 + AI 활용 프로젝트</div>
     </div>
-    <div class="dna-c"><div class="bar" style="background:var(--teal)"></div>
-      <h4>04 -- 교육자 본능 (4pt)</h4>
-      <p>아는 걸 체계화해서 전달하는 데 쾌감. 동화초 금융교육 봉사, CUFA DCF 교안 제작.</p>
+    <div class="dna-c"><div class="bar" style="background:var(--steel)"></div>
+      <h4>🎓 04 -- 교육자 본능 (4pt)</h4>
+      <p>아는 걸 체계화해서 전달하는 데 쾌감. 동화초 금융교육 봉사, CUFA 분석 교안 제작.</p>
       <div class="ev">지식을 혼자 갖고 있지 못하는 성향</div>
     </div>
     <div class="dna-c"><div class="bar" style="background:var(--steel)"></div>
-      <h4>05 -- 탐색/발견 (3pt)</h4>
-      <p>프랑스어-&gt;문화인류학-&gt;경영학-&gt;주식-&gt;코인-&gt;부동산. 한 분야에 정착하지 않고 관심 영역을 계속 확장. 다학제적 시각.</p>
-      <div class="ev">한양대ERICA-&gt;군대 사상전환-&gt;충북대 / 6개+ 분야 탐색</div>
+      <h4>🔍 05 -- 탐색/발견 (3pt)</h4>
+      <p>프랑스어->문화인류학->경영학->주식->코인->부동산. 한 분야에 정착하지 않고 관심 영역을 계속 확장. 다학제적 시각.</p>
+      <div class="ev">한양대ERICA->군대 사상전환->충북대 / 6개+ 분야 탐색</div>
     </div>
   </div>
 
@@ -310,27 +300,27 @@ tr.expanded{background:var(--card2)}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
       <div>
         <div style="font-size:.72rem;color:var(--steel);font-weight:700;margin-bottom:10px">DNA적합도 (30pt)</div>
-        <div class="bar-item"><span>현장 행동력 -- 이 직무에서 현장 방문을 하는가?</span><span class="mono" style="color:var(--steel)">9pt</span></div>
-        <div class="bar-item"><span>분석 역량(DCF) -- 재무분석을 쓰는가?</span><span class="mono" style="color:var(--steel)">8pt</span></div>
-        <div class="bar-item"><span>빌더 역량 -- 구조를 만드는 일인가?</span><span class="mono" style="color:var(--steel)">6pt</span></div>
-        <div class="bar-item"><span>소통/교육 -- 교육/컨설팅 요소가 있는가?</span><span class="mono" style="color:var(--steel)">4pt</span></div>
-        <div class="bar-item"><span>탐색/발견 -- 새로운 것을 발견하는 일인가?</span><span class="mono" style="color:var(--steel)">3pt</span></div>
+        <div class="bar-item"><span>🏃 현장 행동력 -- 이 직무에서 현장 방문을 하는가?</span><span class="mono" style="color:var(--steel)">9pt</span></div>
+        <div class="bar-item"><span>🧠 분석적 사고/AI -- 문제를 구조화하고 데이터로 판단하는가?</span><span class="mono" style="color:var(--steel)">8pt</span></div>
+        <div class="bar-item"><span>🔨 빌더 역량 -- 구조를 만드는 일인가?</span><span class="mono" style="color:var(--steel)">6pt</span></div>
+        <div class="bar-item"><span>🎓 소통/교육 -- 교육/컨설팅 요소가 있는가?</span><span class="mono" style="color:var(--steel)">4pt</span></div>
+        <div class="bar-item"><span>🔍 탐색/발견 -- 새로운 것을 발견하는 일인가?</span><span class="mono" style="color:var(--steel)">3pt</span></div>
       </div>
       <div>
-        <div style="font-size:.72rem;color:var(--gold);font-weight:700;margin-bottom:10px">금융시너지 (25pt)</div>
-        <div class="bar-item"><span>CUFA DCF 역량 직접 활용도</span><span class="mono" style="color:var(--gold)">10pt</span></div>
-        <div class="bar-item"><span>금융 산업 이해 / 금융권 기관 여부</span><span class="mono" style="color:var(--gold)">8pt</span></div>
-        <div class="bar-item"><span>금융 커리어 성장 가치</span><span class="mono" style="color:var(--gold)">7pt</span></div>
-        <div style="font-size:.72rem;color:var(--green);font-weight:700;margin:14px 0 10px">창업/빌더시너지 (20pt)</div>
-        <div class="bar-item"><span>0-&gt;1 빌더코드 발현도</span><span class="mono" style="color:var(--green)">8pt</span></div>
-        <div class="bar-item"><span>스타트업/벤처 생태계 접근성</span><span class="mono" style="color:var(--green)">7pt</span></div>
-        <div class="bar-item"><span>장기 창업 학습 가치</span><span class="mono" style="color:var(--green)">5pt</span></div>
+        <div style="font-size:.72rem;color:var(--tx2);font-weight:700;margin-bottom:10px">금융시너지 (25pt)</div>
+        <div class="bar-item"><span>분석적/혁신적 인재 환영도</span><span class="mono" style="color:var(--tx2)">10pt</span></div>
+        <div class="bar-item"><span>금융 산업 이해 / 금융권 기관 여부</span><span class="mono" style="color:var(--tx2)">8pt</span></div>
+        <div class="bar-item"><span>금융 커리어 성장 가치</span><span class="mono" style="color:var(--tx2)">7pt</span></div>
+        <div style="font-size:.72rem;color:var(--tx2);font-weight:700;margin:14px 0 10px">창업/빌더시너지 (20pt)</div>
+        <div class="bar-item"><span>0->1 빌더코드 발현도</span><span class="mono" style="color:var(--tx2)">8pt</span></div>
+        <div class="bar-item"><span>스타트업/벤처 생태계 접근성</span><span class="mono" style="color:var(--tx2)">7pt</span></div>
+        <div class="bar-item"><span>장기 창업 학습 가치</span><span class="mono" style="color:var(--tx2)">5pt</span></div>
       </div>
       <div>
-        <div style="font-size:.72rem;color:var(--blue);font-weight:700;margin-bottom:10px">진입적합도 (25pt)</div>
-        <div class="bar-item"><span>NCS/블라인드 채용</span><span class="mono" style="color:var(--blue)">10pt</span></div>
-        <div class="bar-item"><span>지역인재 가점 (충북/충청/비수도권)</span><span class="mono" style="color:var(--blue)">10pt</span></div>
-        <div class="bar-item"><span>비학벌 공정채용 여부</span><span class="mono" style="color:var(--blue)">5pt</span></div>
+        <div style="font-size:.72rem;color:var(--tx2);font-weight:700;margin-bottom:10px">진입적합도 (25pt)</div>
+        <div class="bar-item"><span>NCS/블라인드 채용</span><span class="mono" style="color:var(--tx2)">10pt</span></div>
+        <div class="bar-item"><span>지역인재 가점 (충북/충청/비수도권)</span><span class="mono" style="color:var(--tx2)">10pt</span></div>
+        <div class="bar-item"><span>비학벌 공정채용 여부</span><span class="mono" style="color:var(--tx2)">5pt</span></div>
       </div>
     </div>
   </div>
@@ -352,13 +342,13 @@ tr.expanded{background:var(--card2)}
       <button class="fb" onclick="sf(5,this)">5등급</button>
       <button class="fb" onclick="sf('M',this)">M</button>
       <span style="color:var(--bdr2)">|</span>
-      <button class="fb" onclick="sf('충청',this)">충청</button>
+      <button class="fb" onclick="sf('충청',this)">📍 충청</button>
       <button class="fb" onclick="sf('정책금융',this)">정책금융</button>
       <button class="fb" onclick="sf('공기업',this)">공기업</button>
       <button class="fb" onclick="sf('NCS',this)">NCS</button>
       <span style="color:var(--bdr2)">|</span>
-      <button class="fb" style="color:var(--gold);border-color:rgba(232,160,32,.3)" onclick="sf('금융ADV',this)">금융ADV</button>
-      <button class="fb" style="color:var(--green);border-color:rgba(32,200,96,.3)" onclick="sf('창업ADV',this)">창업ADV</button>
+      <button class="fb" onclick="sf('금융ADV',this)">💰 금융ADV</button>
+      <button class="fb" onclick="sf('창업ADV',this)">🚀 창업ADV</button>
     </div>
     <div class="tsc">
       <table>
@@ -369,10 +359,10 @@ tr.expanded{background:var(--card2)}
           <th onclick="st(3)">소재지</th>
           <th onclick="st(4)">등급</th>
           <th onclick="st(5)">총점</th>
-          <th onclick="st(6)" style="color:var(--steel)">DNA/30</th>
-          <th onclick="st(7)" style="color:var(--gold)">금융/25</th>
-          <th onclick="st(8)" style="color:var(--green)">빌더/20</th>
-          <th onclick="st(9)" style="color:var(--blue)">진입/25</th>
+          <th onclick="st(6)" style="color:var(--tx2)">DNA/30</th>
+          <th onclick="st(7)" style="color:var(--tx2)">금융/25</th>
+          <th onclick="st(8)" style="color:var(--tx2)">빌더/20</th>
+          <th onclick="st(9)" style="color:var(--tx2)">진입/25</th>
         </tr></thead>
         <tbody id="tb"></tbody>
       </table>
@@ -384,26 +374,26 @@ tr.expanded{background:var(--card2)}
 
 <!-- 4. ROADMAP -->
 <div id="p-road" class="panel"><div class="wrap">
-  <h2 class="sora" style="font-weight:800;font-size:1.3rem;margin-bottom:6px"><span style="color:var(--green);margin-right:6px">MAP</span>이찬희의 취업 로드맵</h2>
+  <h2 class="sora" style="font-weight:800;font-size:1.3rem;margin-bottom:6px"><span style="color:var(--tx2);margin-right:6px">MAP</span>🗺️ 이찬희의 취업 로드맵</h2>
   <p style="color:var(--tx3);font-size:.74rem;margin-bottom:24px">우선순위 체크리스트. 진행 상황은 자동 저장됩니다.</p>
 
   <div class="roadmap-section" style="border-left:3px solid var(--red)">
-    <h4><span class="priority-label" style="color:var(--red)">P0</span> 지금 당장</h4>
+    <h4><span class="priority-label" style="color:var(--red)">🚨 P0</span> 지금 당장</h4>
     <ul class="checklist" id="p0-list"></ul>
   </div>
 
   <div class="roadmap-section" style="border-left:3px solid var(--orange)">
-    <h4><span class="priority-label" style="color:var(--orange)">P1</span> 이번 학기 내</h4>
+    <h4><span class="priority-label" style="color:var(--orange)">📌 P1</span> 이번 학기 내</h4>
     <ul class="checklist" id="p1-list"></ul>
   </div>
 
-  <div class="roadmap-section" style="border-left:3px solid var(--gold)">
-    <h4><span class="priority-label" style="color:var(--gold)">P2</span> 여름방학까지</h4>
+  <div class="roadmap-section" style="border-left:3px solid var(--steel)">
+    <h4><span class="priority-label" style="color:var(--steel)">☀️ P2</span> 여름방학까지</h4>
     <ul class="checklist" id="p2-list"></ul>
   </div>
 
-  <div class="roadmap-section" style="border-left:3px solid var(--blue)">
-    <h4><span class="priority-label" style="color:var(--blue)">P3</span> 하반기 총공세</h4>
+  <div class="roadmap-section" style="border-left:3px solid var(--tx3)">
+    <h4><span class="priority-label" style="color:var(--tx3)">⚔️ P3</span> 하반기 총공세</h4>
     <ul class="checklist" id="p3-list"></ul>
   </div>
 
@@ -412,7 +402,8 @@ tr.expanded{background:var(--card2)}
     -- 서울권 분석/리서치 직무(증권 리서치, 자산운용 운용역 등)는 학벌 필터로 인해 현실적으로 어려움<br>
     -- 충청권 + NCS 블라인드 기관에 집중하는 것이 ROI 최대화 전략<br>
     -- 금융시너지와 창업/빌더시너지가 동시에 높은 기관(중진공, 창업진흥원, KVIC 등) 우선 공략<br>
-    -- NCS 80점이면 대부분 필기 통과. 핵심은 정확도.
+    -- NCS 80점이면 대부분 필기 통과. 핵심은 정확도.<br>
+    -- 중요한건 아웃풋이 아니라 인풋 -- 창의적, 문제해결적, 분석적, 실용적, 합리적 사고 + AI 활용
   </div>
 </div></div>
 
@@ -424,203 +415,200 @@ tr.expanded{background:var(--card2)}
 <script>
 // ═══ DATA - 188 institutions (V1 rescored) ═══
 const D=[
-// Grade 1 (1)
-{n:"중소벤처기업진흥공단",c:"정책금융",l:"진천(충북)",s:0,dna:28,fin:18,build:18,entry:24,g:0,minus:false,desc:"중소벤처기업부 산하 정책금융 기관. 중소기업에 직접 방문하여 경영진단, 재무제표 분석, 정책자금 연결을 수행하는 것이 핵심 업무. 기업 현장에서 경영 상태를 점검하고 개선안을 제시하는 컨설팅형 업무 구조로, CUFA DCF 분석 경험이 기업 가치평가/진단 역량으로 직결됨. 창업/벤처 기업 직접 지원 업무가 핵심이라 빌더코드 발현도 최대치.",hire:"NCS 블라인드 채용. 토익 가산점만 반영. 연 40명+ 대규모 채용. 서류(자소서)-필기(NCS)-면접 3단계.",hq:"충청북도 진천군 본사. 전국 지역본부/센터 운영.",season:"하반기(9~11월) 대규모 채용이 메인. 상반기 소규모 추가 채용도 있음.",talent:"중소기업 현장을 이해하고 소통할 수 있는 인재. 경영분석 역량, 현장 지향성, 정책 이해도.",chungbuk:"충북대 경영학과 최적 기관. 진천 본사=지역인재 30% 의무. NCS 80점이면 필기 통과 가능. 현장답사 경험+CUFA DCF 역량이 면접에서 극강 차별화 포인트.",comment:"DNA 5코드 ALL 매치 + 충북 진천 + 대규모 NCS. 금융시너지는 정책금융이라 중간이나, 빌더시너지+진입적합도가 압도적.",tags:["NCS","충북","기업진단","지역인재","창업ADV"]},
-// Grade 2 (6)
-{n:"소상공인시장진흥공단",c:"정책금융",l:"대전",s:0,dna:24,fin:15,build:16,entry:23,g:0,minus:false,desc:"소상공인/전통시장 경영개선 컨설팅이 핵심 업무. 소규모 사업체에 직접 방문하여 경영 진단과 개선안을 제시. 소상공인 창업 지원 업무도 수행하여 빌더코드 시너지가 높음. 중소벤처기업부 산하 기관으로 중진공과 업무 구조 유사.",hire:"NCS 블라인드 채용. 연 50명+ 대규모. 서류-NCS필기-면접.",hq:"대전광역시 본사. 전국 지역센터 운영.",season:"하반기 대규모 채용 중심. 상반기 수시채용 가능.",talent:"소상공인 현장 이해, 경영컨설팅 역량, 커뮤니케이션 능력.",chungbuk:"대전 본사=충청권 지역인재 가점 적용. NCS 블라인드이라 충북대 경영학과에서 충분히 도전 가능. 중진공의 최적 차선책.",comment:"중진공 다음으로 DNA+빌더시너지가 높은 기관. 대전=충청 가점. 소상공인 창업 지원=빌더코드.",tags:["NCS","충청","소상공인","현장","창업ADV"]},
-{n:"신용보증기금",c:"정책금융",l:"대구",s:0,dna:25,fin:22,build:5,entry:20,g:0,minus:false,desc:"기업 신용평가와 보증 심사가 핵심 업무. 중소기업의 재무제표를 분석하여 보증 여부와 한도를 결정하는 금융 심사 업무로, CUFA DCF 역량이 기업 신용평가에 직결됨. 정책금융 3대 기관(산은/신보/기보) 중 하나로 금융 커리어 가치 극대치.",hire:"NCS 블라인드 채용. 토익 700 필수. 연 100명+ 대규모. 서류-NCS-면접.",hq:"대구광역시 본사. 전국 영업점 운영.",season:"하반기(9~11월) 대규모 채용. 상반기 소규모.",talent:"기업 재무분석 역량, 금융 이해도, 커뮤니케이션. 토익 700+.",chungbuk:"대구 본사라 충청 가점은 없으나 NCS 블라인드+대규모 채용으로 충북대에서도 도전 가능. 토익 700 확보 필수. 금융 커리어 최고봉 중 하나.",comment:"금융시너지 최상위. DCF/재무분석 역량 직접 활용. 토익 700 필수이나 금융권 핵심 커리어.",tags:["NCS","기업심사","토익필수","고연봉","금융ADV"]},
-{n:"기술보증기금",c:"정책금융",l:"부산",s:0,dna:24,fin:20,build:6,entry:20,g:0,minus:false,desc:"기술기업 전문 보증기관. 기술성+사업성 동시 평가를 수행하며, 기술벤처 기업의 재무 분석과 기술 가치 평가가 핵심. 신보와 유사하나 기술기업 특화로 벤처 생태계 이해도 향상.",hire:"NCS 블라인드 채용. 토익 700 필수. 연 80명+ 대규모.",hq:"부산광역시 본사.",season:"하반기 대규모 채용.",talent:"기술기업 분석 역량, 금융 심사 능력, 벤처 이해.",chungbuk:"부산 본사라 지역 가점 없으나 대규모 NCS로 충북대 도전 가능. 기술벤처 금융 지원 커리어.",comment:"신보와 유사 구조. 기술벤처 전문 = 금융+빌더 일부 시너지.",tags:["NCS","기술심사","토익필수","금융ADV"]},
-{n:"창업진흥원(KISED)",c:"정책금융",l:"대전",s:0,dna:25,fin:15,build:18,entry:23,g:0,minus:false,desc:"스타트업 TIPS 프로그램 심사, 창업기업 멘토링, 창업 생태계 조성이 핵심 업무. 초기 기업의 비즈니스 모델을 평가하고 지원 결정을 내리는 업무로, 0→1 빌더코드와 직접 연결. CUFA 경험이 스타트업 평가 역량 자소서에 직결.",hire:"NCS 블라인드 채용. 연 20명+. 서류-NCS-면접.",hq:"대전광역시 본사.",season:"하반기 채용 중심.",talent:"창업 생태계 이해, 비즈니스 모델 분석, 스타트업 마인드.",chungbuk:"대전=충청 가점. NCS 블라인드. 창업+금융 이중 시너지 기관으로 충북대 CUFA 경험이 극강 차별화.",comment:"창업+금융 이중 시너지. 빌더코드 최대 발현 기관. 대전=충청 가점.",tags:["NCS","충청","스타트업","빌더","창업ADV","금융ADV"]},
-{n:"한국자산관리공사(캠코)",c:"정책금융",l:"부산",s:0,dna:22,fin:21,build:4,entry:20,g:0,minus:false,desc:"부실채권 매입/관리, 국유재산 관리가 핵심 업무. 부실기업 진단과 채권 가치평가 과정에서 금융 DNA가 직접 활용됨. 정책금융 핵심 기관으로 금융 커리어 가치 극대치.",hire:"NCS 블라인드. 토익 700 필수. 연 100명+ 대규모.",hq:"부산광역시 본사.",season:"하반기 대규모.",talent:"부실채권/자산관리 이해, 재무분석, 금융 역량.",chungbuk:"부산이라 지역 가점 없으나 대규모 NCS로 도전 가능. 금융 커리어 핵심.",comment:"금융시너지 최상위급. 부실채권 가치평가=금융 역량 직접 활용.",tags:["NCS","부실채권","토익필수","고연봉","금융ADV"]},
-{n:"IBK기업은행(지역인재)",c:"정책금융",l:"서울/전국",s:0,dna:18,fin:23,build:3,entry:22,g:0,minus:false,desc:"중소기업 대출 심사가 핵심 업무. 기업 재무분석을 통한 대출 여부 판단으로 금융 DNA 직접 활용. 금융공기업 최고 보상 기관(평균 8,000만). 지역인재 전형 별도 운영.",hire:"NCS 비중 높음. 지역인재 전형 별도. 연 200명+ 최대급.",hq:"서울 본사. 전국 영업점.",season:"상/하반기 모두 대규모.",talent:"기업 재무분석, 은행 영업, 고객 관리.",chungbuk:"지역인재 전형으로 충북대 지원 가능. 금융공기업 최고 보상. 은행 영업 DNA 매치는 낮으나 금융시너지 극대치.",comment:"금융시너지 최상위. 보상 극대치. 지역인재 전형 활용 필수.",tags:["NCS","지역인재","초봉1위","은행영업","금융ADV"]},
-// Grade 3 (3)
-{n:"충북신용보증재단",c:"정책금융",l:"청주",s:64,dna:23,fin:18,build:4,entry:19,g:3,minus:false,desc:"충북 지역 중소기업/소상공인 보증 심사. 신보의 축소판이지만 더 현장 밀착적. 금융 심사 역량을 직접 활용하며, 청주 소재로 충북대 극유리.",hire:"지역인재 중심. 소규모(연 5명 이하).",hq:"청주시.",season:"수시/불규칙.",talent:"보증심사 역량, 지역경제 이해.",chungbuk:"청주 소재=충북대 극유리. 소규모이지만 금융+지역인재 이중 메리트. 가장 가까운 금융 기관.",comment:"충북 지역인재+금융심사 역량 활용. 소규모가 약점.",tags:["충북","지역인재","보증심사","소규모","금융ADV"]},
-{n:"대전신용보증재단",c:"정책금융",l:"대전",s:60,dna:23,fin:16,build:4,entry:17,g:3,minus:false,desc:"대전 지역 중소기업 보증 심사. 충북보증재단과 동일 구조. 대전 소재=충청 가점.",hire:"소규모 채용.",hq:"대전광역시.",season:"수시.",talent:"보증심사 역량, 지역경제 이해.",chungbuk:"대전=충청 가점. 소규모이지만 금융 심사 커리어 진입 가능.",comment:"충청 보증재단. 금융심사+충청 가점.",tags:["충청","보증심사","소규모","금융ADV"]},
-{n:"충남신용보증재단",c:"정책금융",l:"홍성",s:59,dna:23,fin:16,build:4,entry:16,g:3,minus:false,desc:"충남 홍성 소재 보증재단. 충청권 지역인재 가점 적용.",hire:"소규모 채용.",hq:"충남 홍성.",season:"수시.",talent:"보증심사 역량.",chungbuk:"홍성=충청 가점. 소규모.",comment:"충청 보증재단 3호.",tags:["충청","보증심사","소규모","금융ADV"]},
-// Grade 4 (12)
-{n:"서울보증보험",c:"정책금융",l:"서울",s:48,dna:22,fin:19,build:2,entry:5,g:4,minus:false,desc:"보증 심사가 핵심. IPO 추진 중으로 금융 커리어 가치 상승. NCS 기반이나 서울 소재.",hire:"NCS 기반. 경쟁률 높음.",hq:"서울.",season:"하반기 중심.",talent:"보증심사, 금융 이해.",chungbuk:"서울 소재라 지역 가점 없음. NCS 블라인드이나 경쟁률 높은 편.",comment:"금융시너지 높으나 서울이라 진입 점수 낮음.",tags:["NCS","보증심사","서울","금융ADV"]},
-{n:"서민금융진흥원",c:"정책금융",l:"서울",s:44,dna:20,fin:15,build:2,entry:7,g:4,minus:false,desc:"서민금융 지원 업무. 금융 정책 집행 경험 가능.",hire:"NCS. 서울.",hq:"서울.",season:"하반기.",talent:"서민금융 이해, 정책 집행.",chungbuk:"서울이라 지역 가점 없으나 NCS 블라인드.",comment:"금융 정책 집행 경험. DNA 매치 중간.",tags:["NCS","서민금융","서울","금융ADV"]},
-{n:"한국주택금융공사",c:"정책금융",l:"부산",s:46,dna:17,fin:18,build:2,entry:9,g:4,minus:false,desc:"MBS(주택저당증권), 보금자리론 등 금융상품 설계/구조화. 금융 DNA 시너지 높음.",hire:"NCS. 경쟁률 높음.",hq:"부산.",season:"하반기.",talent:"금융상품 이해, 구조화 금융.",chungbuk:"부산이라 지역 가점 없으나 금융 커리어 가치 높음.",comment:"금융상품 설계=금융시너지. 경쟁률 높음.",tags:["NCS","주택금융","고연봉","금융ADV"]},
-{n:"한국해양진흥공사",c:"정책금융",l:"부산",s:48,dna:19,fin:17,build:3,entry:9,g:4,minus:false,desc:"선박금융/해양펀드/프로젝트파이낸싱. 신생 공사라 경쟁률 상대적으로 낮음.",hire:"NCS. 부산.",hq:"부산.",season:"하반기.",talent:"해양금융 이해, PF.",chungbuk:"신생공사라 상대적으로 진입 용이. 부산이라 지역 가점은 없음.",comment:"해양PF=금융시너지. 신생공사 메리트.",tags:["NCS","해양금융","신생","금융ADV"]},
-{n:"중소기업기술정보진흥원",c:"공기업",l:"대전",s:52,dna:18,fin:6,build:12,entry:16,g:3,minus:false,desc:"중소기업 R&D 지원, 벤처/창업기업 기술사업화 지원이 핵심 업무. 대전 소재=충청 가점.",hire:"NCS. 연 15명+.",hq:"대전.",season:"하반기.",talent:"R&D 지원 이해, 기업 분석.",chungbuk:"대전=충청 가점. 창업 생태계 연결고리. NCS 블라인드.",comment:"충청권 창업/빌더 시너지 기관.",tags:["NCS","충청","R&D지원","창업ADV"]},
-{n:"한국산업단지공단",c:"공기업",l:"대구",s:49,dna:22,fin:5,build:7,entry:15,g:4,minus:false,desc:"산단 관리+입주기업 지원. 기업 현장 방문이 일상 업무. 경영학 전공은 기업지원팀에서 경영컨설팅.",hire:"NCS. 연 20명+.",hq:"대구.",season:"하반기.",talent:"기업지원, 현장 경영.",chungbuk:"대구라 충청 가점 없음. 현장 DNA 높으나 진입 경쟁 있음.",comment:"현장 DNA 높은 공기업. 대구 본사.",tags:["NCS","산단","기업지원","현장"]},
-{n:"한국가스안전공사",c:"공기업",l:"음성(충북)",s:0,dna:14,fin:2,build:2,entry:24,g:0,minus:false,desc:"가스 안전검사/진단이 핵심이나 이는 기술직 업무. 경영관리직은 본사 기획/행정. DNA 매치 낮으나 음성(충북) 본사=지역인재 극유리.",hire:"NCS 대규모. 지역인재 30%.",hq:"충북 음성.",season:"하반기.",talent:"행정/기획 역량.",chungbuk:"충북대 경영학과에서 가장 합격 확률 높은 고연봉 안정직 중 하나. DNA 안 맞지만 지역인재+NCS로 진입 극유리.",comment:"DNA 낮으나 충북 지역인재+고연봉. 안정직 전형.",tags:["NCS","충북","지역인재","안전공사","행정직"]},
-{n:"한국보건산업진흥원",c:"공기업",l:"청주오송(충북)",s:47,dna:16,fin:2,build:4,entry:20,g:4,minus:false,desc:"바이오헬스 기업 R&D 지원. 경영직은 사업관리/기획=행정 비중 높음.",hire:"NCS. 지역인재.",hq:"충북 청주 오송.",season:"하반기.",talent:"바이오산업 이해, 사업관리.",chungbuk:"청주 오송=충북대 극유리. 지역인재 가점 압도적.",comment:"충북 지역인재 공기업. 바이오 산업 관심시 유리.",tags:["NCS","충북","지역인재","바이오"]},
-{n:"한국식품안전관리인증원",c:"공기업",l:"청주(충북)",s:46,dna:17,fin:1,build:3,entry:20,g:4,minus:false,desc:"HACCP 현장 심사=기업 방문. 식품안전 전문지식 필요.",hire:"NCS. 소규모이지만 지역인재.",hq:"충북 청주.",season:"수시.",talent:"식품안전, HACCP 이해.",chungbuk:"청주=충북대 극유리. 소규모이지만 지역인재 메리트.",comment:"충북 지역인재+현장 심사 요소.",tags:["NCS","충북","지역인재","식품안전"]},
-{n:"충북경제진흥원",c:"지역기관",l:"청주",s:47,dna:18,fin:2,build:6,entry:18,g:4,minus:false,desc:"충북 지역 기업 지원. 현장 요소 있으나 지역경제 정책 집행이 중심.",hire:"소규모. 지역인재.",hq:"청주.",season:"수시.",talent:"지역경제, 기업지원.",chungbuk:"청주=충북대 극유리. 소규모이지만 지역 밀착.",comment:"충북 지역 밀착 기업지원 기관.",tags:["충북","지역인재","기업지원"]},
-{n:"한국산업은행",c:"Dream",l:"서울",s:36,dna:23,fin:23,build:3,entry:0,g:4,minus:false,desc:"정책금융의 정점. 대규모 PF, M&A 자문, 기업구조조정.",hire:"자체 시험. 학벌 필터 극심.",hq:"서울.",season:"하반기.",talent:"금융전문가, IB 역량.",chungbuk:"학벌 필터 극심. 충북대에서는 비현실적이나 금융 Dream 최상위.",comment:"금융 Dream. DNA+금융시너지 극대치이나 학벌 필터.",tags:["Dream","학벌필터","고연봉","금융ADV"]},
-{n:"한국수출입은행",c:"Dream",l:"서울",s:35,dna:23,fin:22,build:2,entry:0,g:4,minus:false,desc:"수출입 금융, 해외 프로젝트 금융.",hire:"자체 시험. 학벌 필터.",hq:"서울.",season:"하반기.",talent:"해외금융, 어학.",chungbuk:"학벌 필터. 비현실적.",comment:"금융 Dream. 해외금융 특화.",tags:["Dream","학벌필터","해외금융","금융ADV"]},
-// Grade 5 (22)
-{n:"농업정책보험금융원",c:"정책금융",l:"서울",s:34,dna:18,fin:7,build:1,entry:8,g:5,minus:false,desc:"농업 보험/금융 업무. 기업 분석 DNA와 거리.",hire:"NCS. 서울.",hq:"서울.",season:"하반기.",talent:"농업금융.",chungbuk:"서울이라 지역 가점 없음. DNA 매치 낮음.",comment:"농업 특화. DNA 매치 낮음.",tags:["NCS","농업금융","서울"]},
-{n:"서울신용보증재단",c:"정책금융",l:"서울",s:30,dna:22,fin:14,build:2,entry:2,g:5,minus:false,desc:"서울 소재 신보재단. 보증심사 DNA 매치하나 서울=지역 가점 0.",hire:"소규모.",hq:"서울.",season:"수시.",talent:"보증심사.",chungbuk:"서울이라 지역 가점 없음. 소규모. 경쟁률 높음.",comment:"보증심사 DNA는 있으나 서울+소규모.",tags:["보증심사","서울","소규모"]},
-{n:"한국생산성본부(KPC)",c:"유관기관",l:"서울",s:33,dna:25,fin:4,build:5,entry:2,g:5,minus:false,desc:"기업 현장 경영 컨설팅이 핵심. DNA 최고 매치이나 서울+극소규모.",hire:"극소규모. 연 1~2회.",hq:"서울.",season:"불규칙.",talent:"경영컨설팅.",chungbuk:"DNA 만점급이나 서울+극소규모로 합격 확률 극저.",comment:"DNA 최고이나 진입 불가능에 가까움.",tags:["경영컨설팅","서울","극소규모","DNA최고"]},
-{n:"한국에너지공단",c:"공기업",l:"울산",s:32,dna:13,fin:1,build:1,entry:17,g:5,minus:false,desc:"에너지 효율 진단은 기술직. 경영학은 행정/기획. DNA 매치 낮음.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산이라 충청 가점 없음. 안정적 공기업이나 DNA 안 맞음.",comment:"안정적이나 DNA 매치 없음.",tags:["NCS","에너지","행정직","울산"]},
-{n:"한국발명진흥회",c:"공기업",l:"대전",s:37,dna:17,fin:3,build:4,entry:13,g:4,minus:false,desc:"IP 컨설팅. 기업 방문 요소 있음. 대전=충청 가점.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"IP/특허 이해.",chungbuk:"대전=충청 가점. NCS.",comment:"IP 컨설팅+충청.",tags:["NCS","충청","IP컨설팅"]},
-{n:"충남경제진흥원",c:"지역기관",l:"홍성",s:39,dna:17,fin:2,build:5,entry:15,g:4,minus:false,desc:"충남 지역 기업 지원. 홍성=충청 가점.",hire:"소규모.",hq:"홍성.",season:"수시.",talent:"기업지원.",chungbuk:"홍성=충청 가점.",comment:"충청 지역기관.",tags:["충청","기업지원"]},
-{n:"충북테크노파크",c:"공기업",l:"청주",s:41,dna:14,fin:2,build:5,entry:20,g:4,minus:false,desc:"기술기업 지원. 이공계 친화적이나 경영지원 직무 존재. 청주=충북대 극유리.",hire:"NCS. 지역인재.",hq:"청주.",season:"하반기.",talent:"기술지원, 경영지원.",chungbuk:"청주=충북대 극유리. 이공계 중심이나 경영직도 가능.",comment:"충북 지역인재. 기술기업 지원.",tags:["NCS","충북","지역인재","기술지원"]},
-{n:"국민건강보험공단",c:"공기업",l:"원주",s:33,dna:10,fin:1,build:1,entry:21,g:5,minus:false,desc:"DNA 매치 최하위급이나 진입가능성+보상 극대치. 행정/보험급여 업무. 연 500명+ 초대규모.",hire:"NCS 초대규모.",hq:"원주.",season:"하반기.",talent:"행정.",chungbuk:"원주라 충청 가점 없으나 초대규모 NCS. 최대 안전망.",comment:"DNA 안 맞으나 최대 안전망.",tags:["NCS","초대규모","안전망","행정"]},
-{n:"한국수자원공사",c:"공기업",l:"대전",s:34,dna:10,fin:1,build:1,entry:17,g:5,minus:false,desc:"수자원 관리. 이공계 위주. DNA 매치 낮음. 대전=충청 가점.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점. 고연봉 안전망.",comment:"충청권 고연봉 안전망.",tags:["NCS","충청","고연봉","안전망"]},
-{n:"한국토지주택공사(LH)",c:"공기업",l:"진천(충북)",s:0,dna:11,fin:1,build:1,entry:24,g:0,minus:false,desc:"토지/주택 개발. DNA 매치 낮으나 진천(충북)=지역인재 극유리. 대규모 NCS.",hire:"NCS 대규모. 지역인재.",hq:"충북 진천.",season:"하반기.",talent:"행정.",chungbuk:"충북 진천=지역인재 극유리. 고연봉 안전망.",comment:"충북 지역인재 고연봉 안전망.",tags:["NCS","충북","지역인재","고연봉","안전망"]},
-{n:"국민연금공단",c:"공기업",l:"전주",s:31,dna:11,fin:2,build:1,entry:17,g:5,minus:false,desc:"연금 관리/운용. 기금운용 부서는 투자 DNA 가능하나 신입은 지사 배치.",hire:"NCS 대규모.",hq:"전주.",season:"하반기.",talent:"행정.",chungbuk:"전주라 충청 가점 없음.",comment:"대규모 NCS 안전망.",tags:["NCS","대규모","연금"]},
-{n:"한국무역보험공사",c:"정책금융",l:"서울",s:34,dna:18,fin:16,build:1,entry:4,g:5,minus:false,desc:"국가리스크 평가, 수출보험. 금융 리스크 분석=DNA 시너지.",hire:"서울. 어학 중요.",hq:"서울.",season:"하반기.",talent:"리스크 분석, 어학.",chungbuk:"서울이라 지역 가점 없음.",comment:"금융시너지 있으나 서울+어학 필수.",tags:["무역보험","서울","어학중요","금융ADV"]},
-{n:"예금보험공사",c:"정책금융",l:"서울",s:28,dna:17,fin:18,build:1,entry:2,g:5,minus:false,desc:"예금자 보호, 부실금융기관 정리. 금융 시스템 최후의 보루.",hire:"서울. 고경쟁.",hq:"서울.",season:"하반기.",talent:"금융 시스템 이해.",chungbuk:"서울+고경쟁. 진입 극난.",comment:"금융 커리어 최고봉이나 진입 극난.",tags:["서울","고경쟁","고연봉","금융ADV"]},
-{n:"주택도시보증공사(HUG)",c:"정책금융",l:"부산",s:31,dna:16,fin:8,build:1,entry:9,g:5,minus:false,desc:"주택보증 심사. 부동산 관련. 경쟁률 150:1+.",hire:"NCS. 부산.",hq:"부산.",season:"하반기.",talent:"부동산, 보증심사.",chungbuk:"경쟁률 극심. DNA 매치 약함.",comment:"DNA 낮고 경쟁률 극심.",tags:["NCS","주택보증","고경쟁"]},
-{n:"신영증권",c:"증권",l:"서울",s:33,dna:26,fin:20,build:2,entry:0,g:5,minus:false,desc:"가치투자 명가. CUFA DCF와 DNA 최고 매치. 금융ADV 극대치.",hire:"소규모. 가치투자 철학.",hq:"서울.",season:"불규칙.",talent:"가치투자, DCF.",chungbuk:"서울+소규모. 학벌 영향. Dream에 가까움.",comment:"금융DNA 최고 매치이나 진입 극난.",tags:["가치투자","서울","소규모","금융ADV"]},
-{n:"BNK투자증권",c:"증권",l:"부산",s:34,dna:23,fin:16,build:2,entry:5,g:5,minus:false,desc:"부산 소재 중소증권. 블라인드 채용. 인턴→정규직 90%+.",hire:"블라인드. 인턴전환.",hq:"부산.",season:"수시.",talent:"투자 분석.",chungbuk:"블라인드 채용이라 충북대 도전 가능한 증권사.",comment:"실질적으로 지원 가능한 증권사. 블라인드.",tags:["블라인드","인턴전환","부산","금융ADV"]},
-{n:"한국벤처투자(KVIC)",c:"VC",l:"서울",s:34,dna:23,fin:14,build:14,entry:1,g:5,minus:false,desc:"모태펀드 운용. 금융+창업 이중 ADV. 벤처투자 생태계 핵심.",hire:"학벌 영향. 소규모.",hq:"서울.",season:"불규칙.",talent:"벤처투자, 펀드 운용.",chungbuk:"학벌 영향 있으나 도전 가치 높음.",comment:"금융+창업 이중 ADV 극대치. 학벌 영향.",tags:["모태펀드","학벌영향","금융ADV","창업ADV"]},
-{n:"한국부동산원",c:"공기업",l:"대구",s:30,dna:16,fin:4,build:1,entry:9,g:5,minus:false,desc:"부동산 조사/감정. 부동산 관심과 일부 매치.",hire:"NCS. 대구.",hq:"대구.",season:"하반기.",talent:"부동산 분석.",chungbuk:"대구라 지역 가점 없음.",comment:"부동산 관심 시 고려.",tags:["NCS","부동산"]},
-// Grade 6 equivalent → now tier 4 or 5 (17 institutions)
-{n:"한국사회가치연대기금",c:"정책금융",l:"서울",s:27,dna:20,fin:8,build:5,entry:2,g:5,minus:false,desc:"임팩트 투자/사회적경제 지원. 소규모. 서울.",hire:"소규모.",hq:"서울.",season:"불규칙.",talent:"사회적 가치, 임팩트투자.",chungbuk:"서울+소규모.",comment:"사회적 가치 중심. DNA 일부 매치.",tags:["임팩트투자","서울","소규모"]},
-{n:"한국산업기술시험원(KTL)",c:"공기업",l:"진주",s:30,dna:13,fin:1,build:1,entry:15,g:5,minus:false,desc:"제품 시험인증. 기술직 중심. 경영학은 행정직.",hire:"NCS. 연 50명+.",hq:"진주.",season:"하반기.",talent:"행정.",chungbuk:"진주라 충청 가점 없음.",comment:"이공계 위주. DNA 매치 낮음.",tags:["NCS","시험인증","행정직"]},
-{n:"한국전기안전공사",c:"공기업",l:"완주(전북)",s:30,dna:13,fin:1,build:1,entry:15,g:5,minus:false,desc:"전기안전 검사. 기술직 업무. 경영관리직은 행정.",hire:"NCS 대규모.",hq:"완주(전북).",season:"하반기.",talent:"행정.",chungbuk:"전북이라 충청 가점 없음.",comment:"이공계 위주 안전공사.",tags:["NCS","안전공사","행정직"]},
-{n:"한국표준협회(KSA)",c:"유관기관",l:"서울",s:27,dna:20,fin:3,build:3,entry:3,g:5,minus:false,desc:"KS/ISO 인증 현장 심사, 품질경영 컨설팅.",hire:"서울. 소규모.",hq:"서울.",season:"불규칙.",talent:"품질인증.",chungbuk:"서울+소규모.",comment:"KPC와 유사 DNA이나 서울+소규모.",tags:["품질인증","서울","소규모"]},
-{n:"한국성장금융",c:"정책금융",l:"서울",s:24,dna:20,fin:10,build:4,entry:1,g:5,minus:false,desc:"성장지원펀드 운용. 투자 DNA 매치. 극소규모.",hire:"극소규모. 불규칙.",hq:"서울.",season:"불규칙.",talent:"펀드 운용.",chungbuk:"서울+극소규모. 진입 극난.",comment:"투자 DNA 매치이나 극소규모.",tags:["펀드","서울","극소규모"]},
-{n:"근로복지공단",c:"공기업",l:"울산",s:28,dna:10,fin:1,build:1,entry:16,g:5,minus:false,desc:"산재보험/근로복지. DNA 매치 낮음. 울산.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산이라 충청 가점 없음.",comment:"대규모 NCS 안전망. DNA 낮음.",tags:["NCS","대규모","안전망"]},
-{n:"한국철도공사(코레일)",c:"공기업",l:"대전",s:30,dna:8,fin:1,build:1,entry:17,g:5,minus:false,desc:"철도 운영. DNA 매치 없음. 대전=충청 가점. 초대규모 NCS.",hire:"NCS 초대규모.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점. 초대규모 안전망.",comment:"충청 안전망. DNA 없으나 규모+지역.",tags:["NCS","충청","초대규모","안전망"]},
-{n:"한국가스공사",c:"공기업",l:"대구",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,desc:"가스 공급. 이공계 위주. DNA 매치 없음.",hire:"NCS.",hq:"대구.",season:"하반기.",talent:"행정.",chungbuk:"대구. 이공계 위주.",comment:"이공계 위주. DNA 없음.",tags:["NCS","이공계","고연봉"]},
-{n:"한국전력공사",c:"공기업",l:"나주",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,desc:"전력 공급. DNA 매치 없음. 초대규모 NCS.",hire:"NCS 초대규모.",hq:"나주.",season:"하반기.",talent:"행정.",chungbuk:"나주. 충청 가점 없음.",comment:"DNA 없으나 초대규모.",tags:["NCS","초대규모"]},
-{n:"한국도로공사",c:"공기업",l:"김천",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,desc:"도로 관리. DNA 매치 없음.",hire:"NCS.",hq:"김천.",season:"하반기.",talent:"행정.",chungbuk:"김천. 비수도권 소폭 가점.",comment:"NCS 안전망.",tags:["NCS","안전망"]},
-{n:"한국관광공사",c:"공기업",l:"원주",s:25,dna:13,fin:1,build:2,entry:9,g:5,minus:false,desc:"관광 산업 진흥. 현장 요소 있으나 기업 분석 DNA 무관.",hire:"NCS.",hq:"원주.",season:"하반기.",talent:"관광.",chungbuk:"원주. 경쟁률 있음.",comment:"관광 특화. DNA 약함.",tags:["NCS","관광"]},
-{n:"한국산업인력공단",c:"공기업",l:"울산",s:25,dna:11,fin:1,build:1,entry:12,g:5,minus:false,desc:"자격증/기능올림픽/외국인력. DNA 매치 낮음. 울산.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산. 대규모.",comment:"대규모 NCS. DNA 낮음.",tags:["NCS","대규모"]},
-{n:"한국조폐공사",c:"공기업",l:"대전",s:28,dna:10,fin:1,build:1,entry:15,g:5,minus:false,desc:"화폐 제조. DNA 매치 없음. 대전=충청 가점.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점.",comment:"충청 NCS 안전망.",tags:["NCS","충청","안전망"]},
-{n:"대전테크노파크",c:"지역기관",l:"대전",s:35,dna:14,fin:2,build:5,entry:14,g:4,minus:false,desc:"대전 지역 중기 기술지원. 충청권.",hire:"소규모.",hq:"대전.",season:"수시.",talent:"기술지원.",chungbuk:"대전=충청 가점.",comment:"충청 지역기관.",tags:["충청","기술지원"]},
-{n:"한국농수산식품유통공사(aT)",c:"공기업",l:"나주",s:24,dna:11,fin:1,build:1,entry:11,g:5,minus:false,desc:"농식품 유통/수출. DNA 거리.",hire:"NCS 대규모.",hq:"나주.",season:"하반기.",talent:"농식품 유통.",chungbuk:"나주. 충청 가점 없음.",comment:"대규모 NCS. DNA 매치 약함.",tags:["NCS","대규모","농식품"]},
-{n:"타임폴리오자산운용",c:"자산운용",l:"서울",s:25,dna:25,fin:18,build:3,entry:0,g:5,minus:false,desc:"투자대회 수상→매니저 경로. 학벌 무관. DNA+금융ADV 극대치. 극소수+비정형.",hire:"투자대회 경로. 극소수.",hq:"서울.",season:"불규칙.",talent:"투자 역량.",chungbuk:"학벌 무관이나 투자대회 수상 필요. 비정형.",comment:"순수 투자 역량으로 진입 가능한 유일한 곳.",tags:["가치투자","투자대회","금융ADV"]},
-{n:"브이아이자산운용",c:"자산운용",l:"서울",s:23,dna:25,fin:18,build:2,entry:0,g:5,minus:false,desc:"가치투자 전문. DNA+금융ADV 극대치. 극소수 채용.",hire:"극소규모.",hq:"서울.",season:"불규칙.",talent:"가치투자.",chungbuk:"극소규모. 비현실적.",comment:"가치투자 DNA 최고. 진입 극난.",tags:["가치투자","극소규모","금융ADV"]},
-{n:"DGB캐피탈",c:"캐피탈",l:"대구",s:30,dna:16,fin:8,build:1,entry:9,g:5,minus:false,desc:"대구 블라인드. 진입 용이. 여신 심사.",hire:"블라인드.",hq:"대구.",season:"수시.",talent:"여신 심사.",chungbuk:"블라인드이나 대구.",comment:"블라인드 진입 가능.",tags:["블라인드","대구"]},
-{n:"다올인베스트먼트",c:"VC",l:"서울",s:23,dna:23,fin:12,build:12,entry:0,g:5,minus:false,desc:"중소형 VC. 금융+창업 이중 ADV. 스타트업 투자심사=DNA 직결.",hire:"소규모. 서울.",hq:"서울.",season:"불규칙.",talent:"VC 투자심사.",chungbuk:"서울+소규모.",comment:"금융+창업 이중 ADV. 진입 극난.",tags:["VC","소규모","금융ADV","창업ADV"]},
-{n:"LB인베스트먼트",c:"VC",l:"서울",s:23,dna:23,fin:12,build:12,entry:0,g:5,minus:false,desc:"중소형 VC. 스타트업 투자 심사.",hire:"극소수(연 1~2명).",hq:"서울.",season:"불규칙.",talent:"VC.",chungbuk:"서울+극소규모.",comment:"창업 학습 가치 극대치. 진입 극난.",tags:["VC","소규모","금융ADV","창업ADV"]},
-{n:"한국교직원공제회",c:"공제회",l:"서울",s:25,dna:19,fin:8,build:1,entry:3,g:5,minus:false,desc:"자산운용 수십조. 자산운용 부서 배치 시 투자 DNA 활용 가능.",hire:"NCS. 서울. 소규모.",hq:"서울.",season:"하반기.",talent:"자산운용.",chungbuk:"서울+소규모.",comment:"자산운용 DNA 일부. 서울.",tags:["자산운용","NCS","서울"]},
-{n:"NH농협은행",c:"시중은행",l:"서울",s:24,dna:12,fin:6,build:1,entry:9,g:5,minus:false,desc:"완전 블라인드. NCS. 대규모. 은행 영업직=DNA 매치 낮음.",hire:"NCS 블라인드 대규모.",hq:"서울.",season:"상/하반기.",talent:"은행 영업.",chungbuk:"블라인드이나 서울.",comment:"블라인드 대규모. DNA 낮음.",tags:["NCS","블라인드","은행영업"]},
-// Grade 7 equivalent → mostly tier 4-5 (22 institutions)
-{n:"한국수력원자력",c:"공기업",l:"경주",s:22,dna:7,fin:1,build:1,entry:13,g:5,minus:false,desc:"원자력 발전. 이공계 절대 위주.",tags:["NCS","이공계"],comment:"이공계 위주. DNA 매치 없음."},
-{n:"한국콘텐츠진흥원",c:"공기업",l:"나주",s:22,dna:12,fin:1,build:2,entry:7,g:5,minus:false,desc:"콘텐츠 산업 진흥. IT/콘텐츠 중심.",tags:["NCS","콘텐츠"],comment:"콘텐츠 특화. 경영학 매치 약함."},
-{n:"KOTRA",c:"공기업",l:"서울/해외",s:23,dna:14,fin:2,build:2,entry:5,g:5,minus:false,desc:"해외무역 진흥. 어학 극도로 중요.",tags:["어학중요","해외무역"],comment:"어학 필수. 학벌 영향."},
-{n:"인천국제공항공사",c:"공기업",l:"인천",s:20,dna:8,fin:1,build:1,entry:7,g:5,minus:false,desc:"공항 운영. DNA 매치 없음. 경쟁률 200:1+.",tags:["고경쟁","고연봉"],comment:"고연봉이나 합격 극난."},
-{n:"강원랜드",c:"공기업",l:"정선",s:22,dna:7,fin:1,build:1,entry:13,g:5,minus:false,desc:"카지노/리조트. DNA 매치 없음.",tags:["NCS","고연봉"],comment:"NCS. 고연봉이나 DNA 없음."},
-{n:"한국서부발전",c:"공기업",l:"태안(충남)",s:24,dna:7,fin:1,build:1,entry:14,g:5,minus:false,desc:"태안=충청 가점. 이공계 위주.",tags:["충청","이공계"],comment:"충청 가점이나 이공계 위주."},
-{n:"한국중부발전",c:"공기업",l:"보령(충남)",s:24,dna:7,fin:1,build:1,entry:14,g:5,minus:false,desc:"보령=충청 가점. 이공계 위주.",tags:["충청","이공계"],comment:"충청 가점이나 이공계 위주."},
-{n:"한국환경산업기술원",c:"공기업",l:"서울",s:21,dna:12,fin:1,build:2,entry:3,g:5,minus:false,desc:"환경기술 인증. ESG 트렌드. 서울. 소규모.",tags:["ESG","서울","소규모"],comment:"ESG 트렌드. 소규모."},
-{n:"한국지역난방공사",c:"공기업",l:"성남",s:21,dna:8,fin:1,build:1,entry:8,g:5,minus:false,desc:"지역난방. 이공계 위주. 고연봉.",tags:["이공계","고연봉"],comment:"DNA 없으나 고연봉."},
-{n:"메리츠증권",c:"증권",l:"서울",s:22,dna:24,fin:16,build:1,entry:0,g:5,minus:false,desc:"성과주의. 높은 보상. 서울+학벌 영향+인턴 필수.",tags:["성과주의","서울"],comment:"DNA 높으나 진입 극난."},
-{n:"신영자산운용",c:"자산운용",l:"서울",s:20,dna:25,fin:18,build:1,entry:0,g:5,minus:false,desc:"가치투자 DNA 최고. Dream에 가까움.",tags:["가치투자","Dream","극소규모"],comment:"Dream급."},
-{n:"현대캐피탈",c:"캐피탈",l:"서울",s:22,dna:16,fin:6,build:1,entry:3,g:5,minus:false,desc:"블라인드. 경쟁 30~50:1.",tags:["블라인드"],comment:"블라인드. 서울."},
-{n:"KB캐피탈",c:"캐피탈",l:"서울",s:21,dna:14,fin:6,build:1,entry:3,g:5,minus:false,desc:"KB금융 계열. 블라인드. 여신 심사.",tags:["블라인드"],comment:"블라인드. 서울."},
-{n:"JB우리캐피탈",c:"캐피탈",l:"전주",s:24,dna:14,fin:5,build:1,entry:5,g:5,minus:false,desc:"JB금융 계열. 전주 소재. 지역밀착 여신.",tags:[],comment:"전주. 충청 아님."},
-{n:"새마을금고중앙회",c:"공제회",l:"서울",s:22,dna:13,fin:4,build:1,entry:5,g:5,minus:false,desc:"대형 공제기관. NCS.",tags:["NCS","안전망"],comment:"NCS. DNA 낮으나 안정적."},
-{n:"군인공제회",c:"공제회",l:"서울",s:21,dna:17,fin:6,build:1,entry:2,g:5,minus:false,desc:"군인 복지. 자산운용 부서 존재.",tags:["자산운용"],comment:"자산운용 요소. 소규모."},
-{n:"OK저축은행",c:"저축은행",l:"서울",s:22,dna:11,fin:4,build:1,entry:8,g:5,minus:false,desc:"진입 용이. 비은행 1위.",tags:["진입용이"],comment:"진입 용이. 실전 경험용."},
-{n:"웰컴저축은행",c:"저축은행",l:"서울",s:22,dna:11,fin:4,build:1,entry:8,g:5,minus:false,desc:"진입 용이. 실전 면접 경험 축적용.",tags:["진입용이"],comment:"진입 용이."},
-{n:"SBI저축은행",c:"저축은행",l:"서울",s:21,dna:11,fin:3,build:1,entry:7,g:5,minus:false,desc:"일본 SBI계열. 필기 없음. 진입 최용이.",tags:["진입용이"],comment:"진입 최용이."},
-{n:"중소기업은행(일반)",c:"시중은행",l:"서울",s:21,dna:12,fin:5,build:1,entry:5,g:5,minus:false,desc:"일반 전형. 은행 영업. DNA 매치 낮음.",tags:["은행영업"],comment:"일반 전형. DNA 낮음."},
-{n:"iM뱅크(DGB)",c:"지방은행",l:"대구",s:24,dna:13,fin:5,build:1,entry:8,g:5,minus:false,desc:"대구 지역밀착. NCS.",tags:["NCS","지역밀착"],comment:"지역밀착. 영남 가점."},
-{n:"BNK부산은행",c:"지방은행",l:"부산",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,desc:"부산 지역밀착 은행. NCS 블라인드.",tags:["NCS","지역밀착"],comment:"블라인드. 영남 가점."},
-{n:"BNK경남은행",c:"지방은행",l:"창원",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,desc:"경남 창원 지역밀착.",tags:["NCS"],comment:"NCS. 영남."},
-{n:"대구은행",c:"지방은행",l:"대구",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,desc:"대구 지역밀착(iM뱅크와 동일 그룹).",tags:["NCS"],comment:"NCS. 영남."},
-{n:"전북은행",c:"지방은행",l:"전주",s:21,dna:13,fin:4,build:1,entry:5,g:5,minus:false,desc:"전북 전주 지역밀착.",tags:["NCS"],comment:"NCS. 충청 아님."},
-{n:"광주은행",c:"지방은행",l:"광주",s:21,dna:13,fin:4,build:1,entry:5,g:5,minus:false,desc:"광주 지역밀착.",tags:["NCS"],comment:"NCS. 충청 아님."},
-{n:"군무원(7급 행정)",c:"군무원",l:"전국",s:25,dna:10,fin:1,build:1,entry:10,g:5,minus:false,desc:"시험과목 별도. 안정적. 군 경험 가산점.",tags:["시험별도","안정"],comment:"시험 별도. DNA 매치 없으나 안정."},
-// Grade 8 equivalent → tier 5 or M (33 institutions)
-{n:"한국농어촌공사",c:"공기업",l:"나주",s:18,dna:7,fin:1,build:1,entry:9,g:'M',minus:true,desc:"농어촌 인프라. 이공계 위주.",tags:[],comment:"이공계. DNA 없음."},
-{n:"한국마사회",c:"공기업",l:"과천",s:18,dna:8,fin:1,build:1,entry:7,g:'M',minus:true,desc:"경마/축산. DNA 매치 없음.",tags:[],comment:"DNA 없음."},
-{n:"한국산업기술진흥원",c:"공기업",l:"서울",s:16,dna:10,fin:1,build:2,entry:3,g:'M',minus:true,desc:"이공계 R&D 지원.",tags:[],comment:"이공계. 경영학 매치 약함."},
-{n:"한국공항공사",c:"공기업",l:"서울",s:16,dna:8,fin:1,build:1,entry:5,g:'M',minus:true,desc:"국내 공항 운영.",tags:[],comment:"DNA 매치 없음."},
-{n:"정보통신산업진흥원",c:"공기업",l:"나주",s:16,dna:10,fin:1,build:2,entry:5,g:'M',minus:true,desc:"IT 산업 진흥. 이공계/IT 위주.",tags:[],comment:"IT 위주."},
-{n:"한국남부발전",c:"공기업",l:"부산",s:17,dna:7,fin:1,build:1,entry:9,g:'M',minus:true,desc:"발전. 이공계 절대 위주.",tags:[],comment:"이공계."},
-{n:"한국동서발전",c:"공기업",l:"울산",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,desc:"발전 5사. 이공계 위주.",tags:[],comment:"이공계."},
-{n:"한국남동발전",c:"공기업",l:"진주",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,desc:"발전 5사. 이공계 위주.",tags:[],comment:"이공계."},
-{n:"한국투자증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,desc:"대형증권. 학벌 필터 극심.",tags:[],comment:"학벌 필터. Dream급."},
-{n:"NH투자증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,desc:"대형증권. 학벌 필터.",tags:[],comment:"학벌 필터."},
-{n:"KB증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,desc:"KB금융 계열. 학벌 필터.",tags:[],comment:"학벌 필터."},
-{n:"키움증권",c:"증권",l:"서울",s:14,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,desc:"온라인 브로커리지. IT 비중 높음.",tags:[],comment:"IT 비중. 경영직 소규모."},
-{n:"한화자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,desc:"대형운용사. 학벌 필터.",tags:[],comment:"학벌 필터."},
-{n:"KB자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,desc:"대형운용사. 학벌 영향.",tags:[],comment:"학벌 필터."},
-{n:"NH-Amundi자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,desc:"농협+Amundi 합작. 어학 중요.",tags:[],comment:"외국계. 학벌 영향."},
-{n:"하나캐피탈",c:"캐피탈",l:"서울",s:18,dna:14,fin:5,build:1,entry:3,g:'M',minus:true,desc:"하나금융 계열. 여신/리스.",tags:[],comment:"서울. 학벌 영향."},
-{n:"아주캐피탈",c:"캐피탈",l:"서울",s:17,dna:13,fin:4,build:1,entry:3,g:'M',minus:true,desc:"독립 캐피탈. 낮은 연봉.",tags:[],comment:"진입장벽 낮으나 커리어 가치 낮음."},
-{n:"메리츠캐피탈",c:"캐피탈",l:"서울",s:16,dna:14,fin:5,build:1,entry:2,g:'M',minus:true,desc:"메리츠금융 계열. 성과주의.",tags:[],comment:"성과주의. 학벌보다 실적."},
-{n:"경찰공제회",c:"공제회",l:"서울",s:17,dna:14,fin:5,build:1,entry:2,g:'M',minus:true,desc:"경찰 복지기금 운용. 소규모.",tags:[],comment:"소규모."},
-{n:"건설근로자공제회",c:"공제회",l:"서울",s:17,dna:14,fin:4,build:1,entry:2,g:'M',minus:true,desc:"건설근로자 퇴직공제.",tags:[],comment:"소규모. DNA 약함."},
-{n:"건설공제조합",c:"공제회",l:"서울",s:16,dna:14,fin:3,build:1,entry:1,g:'M',minus:true,desc:"건설업 상호보증.",tags:[],comment:"소규모. 건설업 특화."},
-{n:"KB국민은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,desc:"대형은행. 학벌 영향.",tags:[],comment:"학벌 영향. DNA 낮음."},
-{n:"우리은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,desc:"4대 시중은행. 학벌 영향.",tags:[],comment:"학벌 영향."},
-{n:"신한은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,desc:"시중은행 1위. 학벌 영향.",tags:[],comment:"학벌 영향."},
-{n:"하나은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,desc:"하나금융 계열.",tags:[],comment:"학벌 영향."},
-{n:"한국은행",c:"Dream",l:"서울",s:14,dna:20,fin:14,build:1,entry:0,g:'M',minus:true,desc:"Dream 최상위. 석사 사실상 필수.",tags:[],comment:"비현실적."},
-{n:"금감원",c:"Dream",l:"서울",s:13,dna:20,fin:12,build:1,entry:0,g:'M',minus:true,desc:"Dream. 경쟁 극심.",tags:[],comment:"비현실적."},
-{n:"한국거래소",c:"Dream",l:"부산",s:15,dna:20,fin:13,build:1,entry:1,g:'M',minus:true,desc:"Dream. 경쟁 극심. 부산.",tags:[],comment:"비현실적."},
-{n:"한국투자공사(KIC)",c:"Dream",l:"서울",s:14,dna:22,fin:14,build:1,entry:0,g:'M',minus:true,desc:"국부펀드. 극소수. 석사+어학 필수.",tags:[],comment:"Dream 중 Dream."},
-{n:"제주은행",c:"지방은행",l:"제주",s:18,dna:13,fin:4,build:1,entry:3,g:'M',minus:true,desc:"제주 지역밀착. 소규모.",tags:[],comment:"제주. 충청 아님."},
-{n:"키움YES저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"키움 계열. 소형.",tags:[],comment:"소형."},
-{n:"OSB저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"소형 저축은행.",tags:[],comment:"소형."},
-{n:"한국투자저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"한국투자금융 계열.",tags:[],comment:"소규모."},
-{n:"페퍼저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"호주계 외국계. 디지털 중심.",tags:[],comment:"외국계 문화."},
-{n:"한양증권",c:"저축은행",l:"서울",s:16,dna:11,fin:3,build:1,entry:4,g:'M',minus:true,desc:"소형 증권/저축은행.",tags:[],comment:"정규 채용 극소."},
-{n:"토스(비바리퍼블리카)",c:"핀테크",l:"서울",s:16,dna:13,fin:4,build:3,entry:2,g:'M',minus:true,desc:"핀테크 대표. IT 위주.",tags:[],comment:"IT 절대 위주."},
-{n:"한국무역협회",c:"협회",l:"서울",s:16,dna:12,fin:2,build:1,entry:3,g:'M',minus:true,desc:"무역 지원. DNA 매치 약함.",tags:[],comment:"무역 특화. DNA 약함."},
-{n:"금융투자협회",c:"협회",l:"서울",s:17,dna:14,fin:6,build:1,entry:2,g:'M',minus:true,desc:"증권업 자율규제기관.",tags:[],comment:"소규모. 학벌 영향."},
-{n:"한국증권금융",c:"유관기관",l:"서울",s:16,dna:13,fin:5,build:1,entry:2,g:'M',minus:true,desc:"증권 담보대출/예수금.",tags:[],comment:"소규모. 학벌 영향."},
-{n:"한국예탁결제원",c:"유관기관",l:"부산",s:18,dna:13,fin:5,build:1,entry:3,g:'M',minus:true,desc:"증권 예탁/결제 인프라. 부산.",tags:[],comment:"금융 인프라."},
-{n:"한국신용정보원",c:"유관기관",l:"서울",s:16,dna:13,fin:5,build:1,entry:2,g:'M',minus:true,desc:"신용정보 데이터 분석.",tags:[],comment:"데이터 역량."},
-{n:"한화에어로스페이스",c:"방산",l:"창원",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,desc:"방산 핵심. 이공계 절대 위주.",tags:[],comment:"이공계."},
-{n:"국방기술품질원",c:"방산",l:"진주",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,desc:"방산 품질 인증. 이공계 위주.",tags:[],comment:"이공계."},
-{n:"군무원(군수직)",c:"군무원",l:"전국",s:18,dna:8,fin:1,build:1,entry:8,g:'M',minus:true,desc:"군수 물자 관리. 시험과목 주의.",tags:[],comment:"시험 별도."},
-{n:"CJ그룹(경영지원)",c:"대기업",l:"서울",s:16,dna:11,fin:2,build:1,entry:3,g:'M',minus:true,desc:"CJ 대기업. 경영지원.",tags:[],comment:"인적성 시험. DNA 낮음."},
-{n:"한화그룹(경영지원)",c:"대기업",l:"서울",s:16,dna:11,fin:2,build:1,entry:3,g:'M',minus:true,desc:"한화 대기업.",tags:[],comment:"인적성 시험."},
-{n:"삼성증권",c:"증권",l:"서울",s:13,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,desc:"학벌 필터 최강.",tags:[],comment:"SKY 80%+. 비현실적."},
-// Grade 9 equivalent → M tier (32 institutions)
-{n:"한국광물자원공사",c:"공기업",l:"원주",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,desc:"광물자원. 이공계.",tags:[],comment:"DNA 없음."},
-{n:"한국가스기술공사",c:"공기업",l:"대구",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,desc:"가스기술. 이공계.",tags:[],comment:"DNA 없음."},
-{n:"한국광해광업공단",c:"공기업",l:"원주",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,desc:"광해 관리. 이공계.",tags:[],comment:"DNA 없음."},
-{n:"한국환경공단",c:"공기업",l:"인천",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,desc:"환경. 이공계.",tags:[],comment:"DNA 없음."},
-{n:"한화투자증권",c:"증권",l:"서울",s:11,dna:22,fin:10,build:1,entry:0,g:'M',minus:true,desc:"한화계열 증권.",tags:[],comment:"학벌 영향."},
-{n:"메리츠종금증권",c:"증권",l:"서울",s:11,dna:22,fin:10,build:1,entry:0,g:'M',minus:true,desc:"극한 성과주의.",tags:[],comment:"학벌 필터+인턴 경로."},
-{n:"유안타증권",c:"증권",l:"서울",s:10,dna:20,fin:9,build:1,entry:0,g:'M',minus:true,desc:"대만계. 리테일 중심.",tags:[],comment:"차별화 약함."},
-{n:"대신증권",c:"증권",l:"서울",s:10,dna:20,fin:9,build:1,entry:0,g:'M',minus:true,desc:"리테일 영업 중심.",tags:[],comment:"학벌 영향."},
-{n:"IBK투자증권",c:"증권",l:"서울",s:10,dna:22,fin:8,build:1,entry:0,g:'M',minus:true,desc:"IBK 계열 소형증권.",tags:[],comment:"극소수 채용."},
-{n:"교보증권",c:"증권",l:"서울",s:9,dna:20,fin:8,build:1,entry:0,g:'M',minus:true,desc:"교보 계열 소형.",tags:[],comment:"극소수."},
-{n:"하이투자증권",c:"증권",l:"서울",s:9,dna:20,fin:8,build:1,entry:0,g:'M',minus:true,desc:"DGB금융 계열.",tags:[],comment:"소형."},
-{n:"부국증권",c:"증권",l:"서울",s:8,dna:19,fin:7,build:1,entry:0,g:'M',minus:true,desc:"극소형 증권사.",tags:[],comment:"정규 채용 거의 없음."},
-{n:"DB금융투자",c:"증권",l:"서울",s:8,dna:19,fin:7,build:1,entry:0,g:'M',minus:true,desc:"DB그룹 계열.",tags:[],comment:"정규 채용 불규칙."},
-{n:"산은캐피탈",c:"캐피탈",l:"서울",s:14,dna:14,fin:5,build:1,entry:1,g:'M',minus:true,desc:"산업은행 계열. PF 요소.",tags:[],comment:"소규모."},
-{n:"신한캐피탈",c:"캐피탈",l:"서울",s:12,dna:14,fin:5,build:1,entry:0,g:'M',minus:true,desc:"신한금융 계열. 소규모.",tags:[],comment:"극소 채용."},
-{n:"우리금융캐피탈",c:"캐피탈",l:"서울",s:12,dna:14,fin:5,build:1,entry:0,g:'M',minus:true,desc:"우리금융 계열.",tags:[],comment:"소규모."},
-{n:"대한지방행정공제회",c:"공제회",l:"서울",s:13,dna:13,fin:4,build:1,entry:1,g:'M',minus:true,desc:"지방공무원 복지기금. 극소규모.",tags:[],comment:"채용 불규칙."},
-{n:"대한건설기계공제조합",c:"공제회",l:"서울",s:11,dna:13,fin:3,build:1,entry:0,g:'M',minus:true,desc:"건설기계 공제. 극소규모.",tags:[],comment:"정규 채용 거의 없음."},
-{n:"삼성생명",c:"보험",l:"서울",s:13,dna:12,fin:4,build:1,entry:2,g:'M',minus:true,desc:"학벌 필터. 보험영업.",tags:[],comment:"학벌 필터."},
-{n:"삼성화재",c:"보험",l:"서울",s:13,dna:12,fin:4,build:1,entry:2,g:'M',minus:true,desc:"국내 손보 1위. 학벌 필터.",tags:[],comment:"학벌 필터."},
-{n:"교보생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"대형 생보사. 보험 영업 중심.",tags:[],comment:"DNA 낮음."},
-{n:"한화생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"한화금융 계열. 블라인드 일부.",tags:[],comment:"보험 영업."},
-{n:"NH농협생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"농협금융 계열 생보사.",tags:[],comment:"DNA 낮음."},
-{n:"KB손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"KB금융 계열.",tags:[],comment:"DNA 낮음."},
-{n:"현대해상",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"현대 계열 손보.",tags:[],comment:"DNA 낮음."},
-{n:"DB손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"DB그룹 계열.",tags:[],comment:"DNA 낮음."},
-{n:"한화손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"한화금융 계열.",tags:[],comment:"DNA 낮음."},
-{n:"농협손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,desc:"농협금융 계열.",tags:[],comment:"DNA 낮음."},
-{n:"하나생명",c:"보험",l:"서울",s:10,dna:11,fin:3,build:1,entry:0,g:'M',minus:true,desc:"하나금융 계열. 소규모.",tags:[],comment:"채용 극소."},
-{n:"하나손해보험",c:"보험",l:"서울",s:10,dna:11,fin:3,build:1,entry:0,g:'M',minus:true,desc:"하나금융 계열. 소규모.",tags:[],comment:"채용 극소."},
-{n:"신한카드",c:"카드",l:"서울",s:12,dna:10,fin:4,build:1,entry:3,g:'M',minus:true,desc:"신한금융 계열. 카드 마케팅.",tags:[],comment:"DNA 거리."},
-{n:"KB국민카드",c:"카드",l:"서울",s:12,dna:10,fin:4,build:1,entry:3,g:'M',minus:true,desc:"KB금융 계열.",tags:[],comment:"DNA 약함."},
-{n:"현대카드",c:"카드",l:"서울",s:11,dna:10,fin:3,build:1,entry:2,g:'M',minus:true,desc:"현대 계열. 경쟁 극심.",tags:[],comment:"경쟁 극심."},
-{n:"삼성카드",c:"카드",l:"서울",s:10,dna:10,fin:3,build:1,entry:1,g:'M',minus:true,desc:"삼성 그룹. 학벌 필터.",tags:[],comment:"학벌 필터."},
-{n:"토스뱅크",c:"인터넷은행",l:"서울",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,desc:"토스 계열. IT 위주.",tags:[],comment:"IT 위주."},
-{n:"케이뱅크",c:"인터넷은행",l:"서울",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,desc:"가상자산 연동. IT 위주.",tags:[],comment:"IT 위주."},
-{n:"카카오뱅크",c:"인터넷은행",l:"판교",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,desc:"카카오 계열. IT 위주.",tags:[],comment:"IT 위주."},
-{n:"핀다",c:"핀테크",l:"서울",s:11,dna:12,fin:3,build:3,entry:1,g:'M',minus:true,desc:"대출 비교 플랫폼. 소형.",tags:[],comment:"채용 불규칙."},
-{n:"8퍼센트",c:"핀테크",l:"서울",s:10,dna:12,fin:3,build:2,entry:0,g:'M',minus:true,desc:"P2P 대출. 극소형.",tags:[],comment:"채용 거의 없음."},
-{n:"저축은행중앙회",c:"협회",l:"서울",s:13,dna:12,fin:3,build:1,entry:2,g:'M',minus:true,desc:"저축은행 중앙기관.",tags:[],comment:"DNA 약함."},
-{n:"은행연합회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,desc:"은행업 중앙기관.",tags:[],comment:"DNA 약함."},
-{n:"생명보험협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,desc:"생보업 자율규제.",tags:[],comment:"DNA 약함."},
-{n:"손해보험협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,desc:"손보업 자율규제.",tags:[],comment:"DNA 약함."},
-{n:"여신금융협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,desc:"여신 자율규제.",tags:[],comment:"DNA 약함."},
-{n:"한화오션",c:"방산",l:"거제",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,desc:"조선/해양방산. 거제. 이공계.",tags:[],comment:"이공계."},
-{n:"LIG넥스원",c:"방산",l:"성남",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,desc:"방산 유도무기. 이공계.",tags:[],comment:"이공계."},
-{n:"현대로템",c:"방산",l:"의왕",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,desc:"철도차량/방산. 이공계.",tags:[],comment:"이공계."},
-{n:"한화시스템",c:"방산",l:"용인",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,desc:"방산IT. 이공계.",tags:[],comment:"이공계."},
-{n:"풍산",c:"방산",l:"서울",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,desc:"탄약 전문.",tags:[],comment:"이공계."},
-{n:"한국항공우주산업(방산경영)",c:"방산",l:"사천",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,desc:"항공방산. 이공계.",tags:[],comment:"이공계."},
-{n:"한국항공우주(KAI)",c:"방산",l:"사천",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,desc:"항공방산 대표.",tags:[],comment:"이공계."},
-{n:"롯데그룹(경영지원)",c:"대기업",l:"서울",s:14,dna:10,fin:2,build:1,entry:3,g:'M',minus:true,desc:"롯데 대기업. L-TAB 인적성.",tags:[],comment:"DNA 매치 낮음."}
+// Grade 1
+{n:"중소벤처기업진흥공단",c:"정책금융",l:"진천(충북)",s:0,dna:28,fin:18,build:18,entry:24,g:0,minus:false,url:"https://www.kosmes.or.kr",strategy:"NCS 80점+ 확보가 최우선. 자소서에 ①32회 현장답사 ②CUFA 분석 보고서 ③CBDC 창설 삼위일체 어필. 면접에서 '중소기업 현장 경험' 구체적 에피소드로 차별화. AI 활용 분석 프로젝트 추가하면 시대 트렌드까지 잡음. 진천 본사 지역인재 30% 의무 적용으로 충북대 극유리.",desc:"중소벤처기업부 산하 정책금융 기관. 중소기업에 직접 방문하여 경영진단, 재무제표 분석, 정책자금 연결을 수행하는 것이 핵심 업무. 기업 현장에서 경영 상태를 점검하고 개선안을 제시하는 컨설팅형 업무 구조로, CUFA 분석 경험이 기업 가치평가/진단 역량으로 직결됨. 창업/벤처 기업 직접 지원 업무가 핵심이라 빌더코드 발현도 최대치. 분석적 사고력과 AI 활용 역량이 경영진단 품질 향상에 직결되는 구조.",hire:"NCS 블라인드 채용. 토익 가산점만 반영. 연 40명+ 대규모 채용. 서류(자소서)-필기(NCS)-면접 3단계.",hq:"충청북도 진천군 본사. 전국 지역본부/센터 운영.",season:"하반기(9~11월) 대규모 채용이 메인. 상반기 소규모 추가 채용도 있음.",talent:"중소기업 현장을 이해하고 소통할 수 있는 인재. 경영분석 역량, 현장 지향성, 정책 이해도.",chungbuk:"충북대 경영학과 최적 기관. 진천 본사=지역인재 30% 의무. NCS 80점이면 필기 통과 가능. 현장답사 경험+CUFA 분석 역량이 면접에서 극강 차별화 포인트.",comment:"DNA 5코드 ALL 매치의 꿈의 기관. 진천 충북 본사라 지역인재 30% 의무 적용으로 충북대 경영학과 학생에게 최적. NCS 블라인드 대규모 채용이라 학벌 필터 없음. 경영진단 직무가 핵심 DNA(현장+분석+빌더+교육+탐색)와 완벽하게 매치. 현장답사 32회 경험과 CUFA 분석 보고서가 자소서+면접에서 최강 무기가 됨. 금융시너지는 정책금융이라 직접 금융보다는 낮지만 빌더시너지+진입적합도가 압도적으로 높아 종합점수 1위.",tags:["NCS","충북","기업진단","지역인재","창업ADV"]},
+// Grade 2
+{n:"창업진흥원(KISED)",c:"정책금융",l:"대전",s:0,dna:25,fin:15,build:18,entry:23,g:0,minus:false,url:"https://www.kised.or.kr",strategy:"창업 생태계 이해도를 자소서에 녹이는 것이 핵심. TIPS/예비창업패키지 심사 기준 문서 숙지 필수. CUFA 분석 경험 + CBDC 창설 경험으로 '스타트업을 이해하는 분석가' 포지셔닝. NCS 블라인드 + 대전 충청 가점.",desc:"스타트업 TIPS 프로그램 심사, 창업기업 멘토링, 창업 생태계 조성이 핵심 업무. 초기 기업의 비즈니스 모델을 평가하고 지원 결정을 내리는 업무로, 0→1 빌더코드와 직접 연결. CUFA 경험이 스타트업 평가 역량 자소서에 직결. 분석적 사고로 스타트업의 성장 가능성을 평가하는 것이 핵심 업무이며, AI 활용 역량은 심사 효율화에 직결.",hire:"NCS 블라인드 채용. 연 20명+. 서류-NCS-면접.",hq:"대전광역시 본사.",season:"하반기 채용 중심.",talent:"창업 생태계 이해, 비즈니스 모델 분석, 스타트업 마인드.",chungbuk:"대전=충청 가점. NCS 블라인드. 창업+금융 이중 시너지 기관으로 충북대 CUFA 경험이 극강 차별화.",comment:"창업+금융 이중 시너지가 극대치인 기관. 빌더코드 최대 발현 가능하며, TIPS 프로그램 심사/멘토링이 핵심 업무라 0→1 경험이 직접적 무기가 됨. 대전 충청 가점 적용되고 NCS 블라인드 채용이라 학벌 필터 없음. CBDC 창설+CUFA 분석 경험으로 '창업을 이해하는 분석가' 포지셔닝이 완벽하게 가능한 기관.",tags:["NCS","충청","스타트업","빌더","창업ADV","금융ADV"]},
+{n:"소상공인시장진흥공단",c:"정책금융",l:"대전",s:0,dna:24,fin:15,build:16,entry:23,g:0,minus:false,url:"https://www.semas.or.kr",strategy:"소상공인 정책 트렌드 파악이 핵심 차별화. 전통시장 활성화 사례 3건+ 정리. 자소서에 '작은 기업의 현장을 이해하는 분석가' 프레임. 중진공 자소서를 소상공인 키워드로 변형.",desc:"소상공인/전통시장 경영개선 컨설팅이 핵심 업무. 소규모 사업체에 직접 방문하여 경영 진단과 개선안을 제시. 소상공인 창업 지원 업무도 수행하여 빌더코드 시너지가 높음. 중소벤처기업부 산하 기관으로 중진공과 업무 구조 유사. 데이터 기반 분석적 사고로 소상공인 경영을 개선하는 실질적 업무.",hire:"NCS 블라인드 채용. 연 50명+ 대규모. 서류-NCS필기-면접.",hq:"대전광역시 본사. 전국 지역센터 운영.",season:"하반기 대규모 채용 중심. 상반기 수시채용 가능.",talent:"소상공인 현장 이해, 경영컨설팅 역량, 커뮤니케이션 능력.",chungbuk:"대전 본사=충청권 지역인재 가점 적용. NCS 블라인드이라 충북대 경영학과에서 충분히 도전 가능. 중진공의 최적 차선책.",comment:"중진공 다음으로 DNA+빌더시너지가 높은 기관. 대전=충청 가점. 소상공인/전통시장 경영개선 컨설팅이 핵심이라 현장 DNA+분석 역량 모두 활용 가능. 대규모 NCS 채용이라 안정적 진입 루트. 소상공인 창업 지원 업무로 빌더코드 시너지도 높음. 중진공 자소서를 소상공인 키워드로 변형하면 효율적 준비 가능.",tags:["NCS","충청","소상공인","현장","창업ADV"]},
+{n:"신용보증기금",c:"정책금융",l:"대구",s:0,dna:25,fin:22,build:5,entry:20,g:0,minus:false,url:"https://www.kodit.co.kr",strategy:"토익 700 확보가 선결 조건. 기업 신용평가 모형(NICE/KIS) 기본 이해 필수. 자소서에 재무분석 역량 + 분석적 사고력 강조. 면접에서 '기업의 신용을 평가하는 분석가' 포지셔닝.",desc:"기업 신용평가와 보증 심사가 핵심 업무. 중소기업의 재무제표를 분석하여 보증 여부와 한도를 결정하는 금융 심사 업무로, 분석적 사고와 데이터 기반 판단력이 핵심 역량으로 직결됨. 정책금융 3대 기관(산은/신보/기보) 중 하나로 금융 커리어 가치 극대치. 기업의 재무 건전성을 구조적으로 분석하는 업무 특성상 분석적 사고+AI 활용이 차별화 무기.",hire:"NCS 블라인드 채용. 토익 700 필수. 연 100명+ 대규모. 서류-NCS-면접.",hq:"대구광역시 본사. 전국 영업점 운영.",season:"하반기(9~11월) 대규모 채용. 상반기 소규모.",talent:"기업 재무분석 역량, 금융 이해도, 커뮤니케이션. 토익 700+.",chungbuk:"대구 본사라 충청 가점은 없으나 NCS 블라인드+대규모 채용으로 충북대에서도 도전 가능. 토익 700 확보 필수. 금융 커리어 최고봉 중 하나.",comment:"금융시너지 최상위 기관. 기업 신용평가/보증심사가 핵심이라 분석적 사고력과 재무분석 역량이 직접 활용됨. 토익 700 필수 조건이 진입장벽이나, 대규모 NCS 채용이라 학벌 필터 없음. 정책금융 3대 기관으로 금융 커리어 가치 극대치. CUFA 분석 보고서가 기업 분석 역량의 증거로 직결.",tags:["NCS","기업심사","토익필수","고연봉","금융ADV"]},
+{n:"기술보증기금",c:"정책금융",l:"부산",s:0,dna:24,fin:20,build:6,entry:20,g:0,minus:false,url:"https://www.kibo.or.kr",strategy:"기술가치평가 방법론 숙지가 차별화 포인트. 기술기업 평가 = 기술성+사업성 이중 평가 구조 이해. 신보와 병행 준비하되 '기술벤처를 이해하는 분석가' 프레임 추가.",desc:"기술기업 전문 보증기관. 기술성+사업성 동시 평가를 수행하며, 기술벤처 기업의 재무 분석과 기술 가치 평가가 핵심. 신보와 유사하나 기술기업 특화로 벤처 생태계 이해도 향상. 분석적 사고로 기술의 사업화 가능성을 평가하는 구조적 업무.",hire:"NCS 블라인드 채용. 토익 700 필수. 연 80명+ 대규모.",hq:"부산광역시 본사.",season:"하반기 대규모 채용.",talent:"기술기업 분석 역량, 금융 심사 능력, 벤처 이해.",chungbuk:"부산 본사라 지역 가점 없으나 대규모 NCS로 충북대 도전 가능. 기술벤처 금융 지원 커리어.",comment:"신보와 유사한 보증 심사 구조이나 기술기업 특화. 기술성+사업성 이중 평가라는 독특한 구조로 분석적 사고력이 더 다각적으로 활용됨. 벤처 생태계 이해도가 자연스럽게 향상되어 창업/빌더 시너지도 일부 있음. 토익 700 필수, 대규모 NCS로 학벌 필터 없는 금융 커리어.",tags:["NCS","기술심사","토익필수","금융ADV"]},
+{n:"한국자산관리공사(캠코)",c:"정책금융",l:"부산",s:0,dna:22,fin:21,build:4,entry:20,g:0,minus:false,url:"https://www.kamco.or.kr",strategy:"NPL(부실채권) 시장 구조와 온비드 시스템 이해가 차별화 포인트. 부실채권 가치평가 개념 학습 필수. 자소서에 '자산의 가치를 분석하는 역량' 강조.",desc:"부실채권 매입/관리, 국유재산 관리가 핵심 업무. 부실기업 진단과 채권 가치평가 과정에서 금융 DNA가 직접 활용됨. 정책금융 핵심 기관으로 금융 커리어 가치 극대치. NPL(부실채권) 시장은 경기 사이클과 밀접하게 연동되어 거시경제적 분석 역량도 요구됨. 온비드 시스템을 통한 자산 매각 업무도 수행.",hire:"NCS 블라인드. 토익 700 필수. 연 100명+ 대규모.",hq:"부산광역시 본사.",season:"하반기 대규모.",talent:"부실채권/자산관리 이해, 재무분석, 금융 역량.",chungbuk:"부산이라 지역 가점 없으나 대규모 NCS로 도전 가능. 금융 커리어 핵심. 고연봉 정책금융 기관.",comment:"금융시너지 최상위급 기관. 부실채권 가치평가에서 분석적 사고력이 직접 활용됨. 국유재산 관리까지 포함하여 업무 범위가 넓고 커리어 확장성 높음. 고연봉 정책금융 기관으로 금융권 커리어의 핵심 축. 토익 700 확보가 선결 조건.",tags:["NCS","부실채권","토익필수","고연봉","금융ADV"]},
+{n:"IBK기업은행(지역인재)",c:"정책금융",l:"서울/전국",s:0,dna:18,fin:23,build:3,entry:22,g:0,minus:false,url:"https://www.ibk.co.kr",strategy:"지역인재 전형 활용이 핵심. 은행 영업 직무 이해 필수. 중소기업 대출 심사 프로세스 학습. DNA 매치는 약하지만 금융시너지+지역인재 가점으로 보완. 보상 극대치(평균 8000만)가 최대 메리트.",desc:"중소기업 대출 심사가 핵심 업무. 기업 재무분석을 통한 대출 여부 판단으로 금융 DNA 직접 활용. 금융공기업 최고 보상 기관(평균 8,000만). 지역인재 전형 별도 운영. 은행 영업 DNA는 약간 미스매치이나 기업 심사 부서 배치 시 분석 역량 극대치 활용.",hire:"NCS 비중 높음. 지역인재 전형 별도. 연 200명+ 최대급.",hq:"서울 본사. 전국 영업점.",season:"상/하반기 모두 대규모.",talent:"기업 재무분석, 은행 영업, 고객 관리.",chungbuk:"지역인재 전형으로 충북대 지원 가능. 금융공기업 최고 보상. 은행 영업 DNA 매치는 낮으나 금융시너지 극대치. 기업심사 부서 배치 시 분석 역량 완전 활용.",comment:"금융시너지 최상위이며 보상 극대치(평균 8,000만). 지역인재 전형 별도 운영으로 충북대 진입 가능. DNA 매치가 낮은 것이 약점(은행 영업 중심)이나, 기업심사 부서 배치 시 분석 역량 활용 가능. 금융공기업 중 보상 1위라는 압도적 메리트.",tags:["NCS","지역인재","초봉1위","은행영업","금융ADV"]},
+// Grade 3
+{n:"충북신용보증재단",c:"정책금융",l:"청주",s:64,dna:23,fin:18,build:4,entry:19,g:3,minus:false,url:"https://www.cbcgf.or.kr",strategy:"소규모 채용이므로 채용 공고 모니터링이 생명. 청주 소재 = 충북대 극유리. 면접에서 '지역 중소기업을 이해하는 금융 인재' 어필. 보증심사 기본 프로세스 이해 필수.",desc:"충북 지역 중소기업/소상공인 보증 심사. 신보의 축소판이지만 더 현장 밀착적. 금융 심사 역량을 직접 활용하며, 청주 소재로 충북대 극유리. 지역 경제와 밀접하게 연동된 보증 업무로 현장 이해도가 중요.",hire:"지역인재 중심. 소규모(연 5명 이하).",hq:"청주시.",season:"수시/불규칙.",talent:"보증심사 역량, 지역경제 이해.",chungbuk:"청주 소재=충북대 극유리. 소규모이지만 금융+지역인재 이중 메리트. 가장 가까운 금융 기관. 채용 공고 놓치지 않는 것이 핵심.",comment:"충북 지역인재+금융심사 역량 활용이 가능한 청주 소재 기관. 소규모 채용이 약점이나 지역 밀착적이라 충북대 출신에게 유리. 보증심사 업무로 분석적 사고력 활용 가능. 공고 모니터링이 합격의 열쇠.",tags:["충북","지역인재","보증심사","소규모","금융ADV"]},
+{n:"대전신용보증재단",c:"정책금융",l:"대전",s:60,dna:23,fin:16,build:4,entry:17,g:3,minus:false,url:"https://www.djcgf.or.kr",strategy:"충북보증과 동일 전략. 대전 충청 가점 활용. 소규모이므로 공고 즉시 지원.",desc:"대전 지역 중소기업 보증 심사. 충북보증재단과 동일 구조. 대전 소재=충청 가점. 지역 소상공인/중소기업의 보증을 심사하고 지원하는 업무로 분석적 사고+현장 이해가 모두 필요.",hire:"소규모 채용.",hq:"대전광역시.",season:"수시.",talent:"보증심사 역량, 지역경제 이해.",chungbuk:"대전=충청 가점. 소규모이지만 금융 심사 커리어 진입 가능. 충북보증과 병행 준비 효율적.",comment:"충청 보증재단으로 대전 소재. 금융심사+충청 가점의 조합. 충북보증재단과 동일 구조이므로 병행 준비하면 효율적. 소규모 수시채용이라 공고 즉시 지원 필수.",tags:["충청","보증심사","소규모","금융ADV"]},
+{n:"충남신용보증재단",c:"정책금융",l:"홍성",s:59,dna:23,fin:16,build:4,entry:16,g:3,minus:false,url:"https://www.cncgf.or.kr",strategy:"홍성 소재 충청 가점. 소규모 수시채용 모니터링 필수.",desc:"충남 홍성 소재 보증재단. 충청권 지역인재 가점 적용. 충남 지역 중소기업 보증심사 업무로 타 보증재단과 동일 구조.",hire:"소규모 채용.",hq:"충남 홍성.",season:"수시.",talent:"보증심사 역량.",chungbuk:"홍성=충청 가점. 소규모이나 충청권 보증재단 3곳을 동시 모니터링하면 기회 증가.",comment:"충청 보증재단 3호. 홍성 소재로 충청 가점 적용. 충북보증/대전보증과 함께 3곳 동시 모니터링 전략이 유효. 소규모 수시채용.",tags:["충청","보증심사","소규모","금융ADV"]},
+{n:"중소기업기술정보진흥원",c:"공기업",l:"대전",s:52,dna:18,fin:6,build:12,entry:16,g:3,minus:false,url:"https://www.tipa.or.kr",strategy:"R&D 지원사업 구조 이해가 차별화. 대전 충청 가점. 창업/빌더 시너지로 어필.",desc:"중소기업 R&D 지원, 벤처/창업기업 기술사업화 지원이 핵심 업무. 대전 소재=충청 가점. 기술기업의 R&D 지원금 심사와 관리를 통해 중소벤처 생태계에 기여하는 업무 구조.",hire:"NCS. 연 15명+.",hq:"대전.",season:"하반기.",talent:"R&D 지원 이해, 기업 분석.",chungbuk:"대전=충청 가점. 창업 생태계 연결고리. NCS 블라인드. 기술기업 지원 경험이 중진공/창업진흥원과 시너지.",comment:"충청권 창업/빌더 시너지 기관. 대전 소재로 충청 가점. R&D 지원사업 구조 이해가 차별화 포인트. 기술기업 지원 업무를 통해 창업/벤처 생태계 이해도가 자연스럽게 향상됨.",tags:["NCS","충청","R&D지원","창업ADV"]},
+{n:"한국벤처투자(KVIC)",c:"VC",l:"서울",s:0,dna:23,fin:14,build:14,entry:1,g:0,minus:false,url:"https://www.kvic.or.kr",strategy:"모태펀드 운용 구조 이해 필수. 금융+창업 이중 ADV 극대치. 학벌 영향 있으나 도전 가치 높음. 벤처투자 리포트 정독으로 차별화.",desc:"모태펀드 운용이 핵심. 벤처투자 생태계의 최상위 기관으로 금융+창업 이중 시너지 극대치. 출자→GP 선정→모니터링 전 과정에서 분석적 사고력이 필수. 학벌 영향이 있으나 벤처투자에 대한 깊은 이해를 보여주면 차별화 가능.",hire:"학벌 영향. 소규모.",hq:"서울.",season:"불규칙.",talent:"벤처투자, 펀드 운용.",chungbuk:"학벌 영향 있으나 도전 가치 높음. 금융+창업 이중 DNA가 가장 잘 발현되는 기관.",comment:"금융+창업 이중 ADV가 가장 극대화되는 기관. 모태펀드 운용으로 벤처투자 생태계 최상위에 위치. 학벌 영향이 진입 장벽이나, 벤처투자에 대한 깊은 이해와 분석적 사고력을 입증하면 도전 가치 충분. 서울 소재라 지역 가점은 없음.",tags:["모태펀드","학벌영향","금융ADV","창업ADV"]},
+// Grade 4
+{n:"서울보증보험",c:"정책금융",l:"서울",s:48,dna:22,fin:19,build:2,entry:5,g:4,minus:false,url:"https://www.sgic.co.kr",desc:"보증 심사가 핵심. IPO 추진 중으로 금융 커리어 가치 상승. NCS 기반이나 서울 소재. 보증보험이라는 독특한 포지션으로 금융시너지 높음.",hire:"NCS 기반. 경쟁률 높음.",hq:"서울.",season:"하반기 중심.",talent:"보증심사, 금융 이해.",chungbuk:"서울 소재라 지역 가점 없음. NCS 블라인드이나 경쟁률 높은 편.",comment:"금융시너지 높으나 서울이라 진입 점수 낮음. IPO 추진 중이라 금융 커리어 가치 상승 중. 보증심사 업무로 분석 역량 활용 가능하나 서울 소재+경쟁률이 약점.",tags:["NCS","보증심사","서울","금융ADV"]},
+{n:"서민금융진흥원",c:"정책금융",l:"서울",s:44,dna:20,fin:15,build:2,entry:7,g:4,minus:false,url:"https://www.kinfa.or.kr",desc:"서민금융 지원 업무. 금융 정책 집행 경험 가능. 서민 대출 심사와 금융교육 업무로 분석+교육 DNA 일부 활용.",hire:"NCS. 서울.",hq:"서울.",season:"하반기.",talent:"서민금융 이해, 정책 집행.",chungbuk:"서울이라 지역 가점 없으나 NCS 블라인드. 금융 정책 집행 경험을 쌓을 수 있는 기관.",comment:"금융 정책 집행 경험. DNA 매치 중간. 서민금융 지원이라는 사회적 가치와 금융 역량을 동시에 활용할 수 있으나 서울 소재.",tags:["NCS","서민금융","서울","금융ADV"]},
+{n:"한국주택금융공사",c:"정책금융",l:"부산",s:46,dna:17,fin:18,build:2,entry:9,g:4,minus:false,url:"https://www.hf.go.kr",desc:"MBS(주택저당증권), 보금자리론 등 금융상품 설계/구조화. 금융 DNA 시너지 높음. 구조화 금융이라는 고도화된 금융 업무로 분석적 사고력 극대치 활용 가능.",hire:"NCS. 경쟁률 높음.",hq:"부산.",season:"하반기.",talent:"금융상품 이해, 구조화 금융.",chungbuk:"부산이라 지역 가점 없으나 금융 커리어 가치 높음. 구조화 금융 업무는 분석적 사고력의 정수.",comment:"금융상품 설계=금융시너지 높음. 경쟁률 높으나 금융 커리어 가치 극상위. 구조화 금융 업무로 분석 역량 극대치 활용.",tags:["NCS","주택금융","고연봉","금융ADV"]},
+{n:"한국해양진흥공사",c:"정책금융",l:"부산",s:48,dna:19,fin:17,build:3,entry:9,g:4,minus:false,url:"https://www.kobc.or.kr",desc:"선박금융/해양펀드/프로젝트파이낸싱. 신생 공사라 경쟁률 상대적으로 낮음. PF(프로젝트 파이낸싱) 업무로 분석적 사고력과 금융 역량 동시 활용.",hire:"NCS. 부산.",hq:"부산.",season:"하반기.",talent:"해양금융 이해, PF.",chungbuk:"신생공사라 상대적으로 진입 용이. 부산이라 지역 가점은 없으나 경쟁률이 낮은 것이 메리트.",comment:"해양PF=금융시너지 높은 신생공사. 경쟁률이 상대적으로 낮아 진입 용이. 해양금융이라는 니치 시장에서 분석 역량 활용 가능.",tags:["NCS","해양금융","신생","금융ADV"]},
+{n:"한국산업단지공단",c:"공기업",l:"대구",s:49,dna:22,fin:5,build:7,entry:15,g:4,minus:false,url:"https://www.kicox.or.kr",desc:"산단 관리+입주기업 지원. 기업 현장 방문이 일상 업무. 경영학 전공은 기업지원팀에서 경영컨설팅. 현장 DNA와 기업 분석 DNA가 동시에 활용되는 구조.",hire:"NCS. 연 20명+.",hq:"대구.",season:"하반기.",talent:"기업지원, 현장 경영.",chungbuk:"대구라 충청 가점 없음. 현장 DNA 높으나 진입 경쟁 있음.",comment:"현장 DNA 높은 공기업. 산단 입주기업 지원이 핵심이라 현장 방문+경영 분석이 일상 업무. 대구 본사가 약점.",tags:["NCS","산단","기업지원","현장"]},
+{n:"한국가스안전공사",c:"공기업",l:"음성(충북)",s:0,dna:14,fin:2,build:2,entry:24,g:0,minus:false,url:"https://www.kgs.or.kr",desc:"가스 안전검사/진단이 핵심이나 이는 기술직 업무. 경영관리직은 본사 기획/행정. DNA 매치 낮으나 음성(충북) 본사=지역인재 극유리. 충북대에서 합격 확률이 가장 높은 고연봉 기관 중 하나.",hire:"NCS 대규모. 지역인재 30%.",hq:"충북 음성.",season:"하반기.",talent:"행정/기획 역량.",chungbuk:"충북대 경영학과에서 가장 합격 확률 높은 고연봉 안정직 중 하나. DNA 안 맞지만 지역인재+NCS로 진입 극유리. 안전망으로 반드시 지원해야 하는 기관.",comment:"DNA 매치 낮으나 충북 음성 본사=지역인재 30% 의무+고연봉 안정직. NCS 대규모 채용이라 합격 확률 높음. 경영관리직은 기획/행정 업무이므로 DNA 미스매치이나 안전망으로서 극대치 가치.",tags:["NCS","충북","지역인재","안전공사","행정직"]},
+{n:"한국보건산업진흥원",c:"공기업",l:"청주오송(충북)",s:47,dna:16,fin:2,build:4,entry:20,g:4,minus:false,url:"https://www.khidi.or.kr",desc:"바이오헬스 기업 R&D 지원. 경영직은 사업관리/기획=행정 비중 높음. 오송 바이오밸리에 위치하여 바이오 산업 생태계와 연결.",hire:"NCS. 지역인재.",hq:"충북 청주 오송.",season:"하반기.",talent:"바이오산업 이해, 사업관리.",chungbuk:"청주 오송=충북대 극유리. 지역인재 가점 압도적. 바이오 산업에 관심이 있다면 최적 선택.",comment:"충북 지역인재 공기업. 바이오헬스 R&D 지원이라 경영학 직접 매치는 약하나 사업관리/기획 업무로 진입 가능. 청주 오송 소재로 충북대 극유리.",tags:["NCS","충북","지역인재","바이오"]},
+{n:"한국식품안전관리인증원",c:"공기업",l:"청주(충북)",s:46,dna:17,fin:1,build:3,entry:20,g:4,minus:false,url:"https://www.haccp.or.kr",desc:"HACCP 현장 심사=기업 방문. 식품안전 전문지식 필요. 현장 방문 DNA 일부 활용 가능하나 식품 특화 전문성 필요.",hire:"NCS. 소규모이지만 지역인재.",hq:"충북 청주.",season:"수시.",talent:"식품안전, HACCP 이해.",chungbuk:"청주=충북대 극유리. 소규모이지만 지역인재 메리트. HACCP 현장 심사는 현장 DNA와 일부 매치.",comment:"충북 지역인재+현장 심사 요소. 식품안전 특화라 전공 매치 약하나 청주 소재+지역인재 가점이 강력. 소규모 수시채용 모니터링 필수.",tags:["NCS","충북","지역인재","식품안전"]},
+{n:"충북경제진흥원",c:"지역기관",l:"청주",s:47,dna:18,fin:2,build:6,entry:18,g:4,minus:false,url:"https://www.cberi.or.kr",desc:"충북 지역 기업 지원. 현장 요소 있으나 지역경제 정책 집행이 중심. 중소기업 경영 컨설팅과 창업 지원 업무 포함.",hire:"소규모. 지역인재.",hq:"청주.",season:"수시.",talent:"지역경제, 기업지원.",chungbuk:"청주=충북대 극유리. 소규모이지만 지역 밀착. 중소기업 경영 컨설팅 업무로 DNA 일부 활용.",comment:"충북 지역 밀착 기업지원 기관. 청주 소재+지역인재로 충북대 유리. 소규모이나 경영 컨설팅+창업 지원 업무에서 DNA 활용 가능.",tags:["충북","지역인재","기업지원"]},
+{n:"한국산업은행",c:"Dream",l:"서울",s:36,dna:23,fin:23,build:3,entry:0,g:4,minus:false,url:"https://www.kdb.co.kr",desc:"정책금융의 정점. 대규모 PF, M&A 자문, 기업구조조정. 금융 DNA와 분석적 사고력이 극대치로 활용되는 기관이나 학벌 필터 극심.",hire:"자체 시험. 학벌 필터 극심.",hq:"서울.",season:"하반기.",talent:"금융전문가, IB 역량.",chungbuk:"학벌 필터 극심. 충북대에서는 비현실적이나 금융 Dream 최상위. 장기적 도전 목표로만 고려.",comment:"금융 Dream. DNA+금융시너지 극대치이나 학벌 필터로 충북대에서 현실적으로 어려움. PF/M&A/기업구조조정이라는 금융 최고봉 업무.",tags:["Dream","학벌필터","고연봉","금융ADV"]},
+{n:"한국수출입은행",c:"Dream",l:"서울",s:35,dna:23,fin:22,build:2,entry:0,g:4,minus:false,url:"https://www.koreaexim.go.kr",desc:"수출입 금융, 해외 프로젝트 금융. 글로벌 금융 역량 극대치. 학벌 필터와 어학 요건이 높은 진입장벽.",hire:"자체 시험. 학벌 필터.",hq:"서울.",season:"하반기.",talent:"해외금융, 어학.",chungbuk:"학벌 필터. 비현실적이나 글로벌 금융 Dream으로 인식.",comment:"금융 Dream. 해외금융 특화. 학벌 필터와 어학 요건이 진입장벽이나 금융 커리어 극상위 기관.",tags:["Dream","학벌필터","해외금융","금융ADV"]},
+{n:"한국발명진흥회",c:"공기업",l:"대전",s:37,dna:17,fin:3,build:4,entry:13,g:4,minus:false,url:"https://www.kipa.org",desc:"IP 컨설팅. 기업 방문 요소 있음. 대전=충청 가점. 지적재산권 관련 기업 컨설팅으로 분석 역량 일부 활용.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"IP/특허 이해.",chungbuk:"대전=충청 가점. NCS. IP 컨설팅이 현장 DNA와 일부 매치.",comment:"IP 컨설팅+충청 가점. 대전 소재 NCS 기관으로 충청 가점 활용 가능. DNA 매치 보통.",tags:["NCS","충청","IP컨설팅"]},
+{n:"충남경제진흥원",c:"지역기관",l:"홍성",s:39,dna:17,fin:2,build:5,entry:15,g:4,minus:false,url:"https://www.cepa.or.kr",desc:"충남 지역 기업 지원. 홍성=충청 가점. 지역 중소기업 경영 지원과 창업 지원 업무.",hire:"소규모.",hq:"홍성.",season:"수시.",talent:"기업지원.",chungbuk:"홍성=충청 가점. 소규모이나 충청권 기업지원 기관.",comment:"충청 지역기관. 홍성 소재로 충청 가점. 충북경제진흥원과 유사 구조로 병행 준비 가능.",tags:["충청","기업지원"]},
+{n:"충북테크노파크",c:"공기업",l:"청주",s:41,dna:14,fin:2,build:5,entry:20,g:4,minus:false,url:"https://www.cbtp.or.kr",desc:"기술기업 지원. 이공계 친화적이나 경영지원 직무 존재. 청주=충북대 극유리. 기술사업화 지원 업무에서 경영 분석 역량 일부 활용.",hire:"NCS. 지역인재.",hq:"청주.",season:"하반기.",talent:"기술지원, 경영지원.",chungbuk:"청주=충북대 극유리. 이공계 중심이나 경영직도 가능. 지역인재 가점 극대치.",comment:"충북 지역인재 공기업. 기술기업 지원이 핵심이라 이공계 친화적이나 경영지원 직무 존재. 청주 소재+지역인재 30%로 충북대 극유리.",tags:["NCS","충북","지역인재","기술지원"]},
+{n:"대전테크노파크",c:"지역기관",l:"대전",s:35,dna:14,fin:2,build:5,entry:14,g:4,minus:false,url:"https://www.djtp.or.kr",desc:"대전 지역 중기 기술지원. 충청권. 기술사업화와 기업 경영 지원 업무 병행.",hire:"소규모.",hq:"대전.",season:"수시.",talent:"기술지원.",chungbuk:"대전=충청 가점. 소규모 수시채용.",comment:"충청 지역기관. 대전 소재+충청 가점. 기술지원 중심이나 경영직 포함.",tags:["충청","기술지원"]},
+// Grade 5
+{n:"농업정책보험금융원",c:"정책금융",l:"서울",s:34,dna:18,fin:7,build:1,entry:8,g:5,minus:false,url:"https://www.apfs.kr",desc:"농업 보험/금융 업무. 기업 분석 DNA와 거리. 농업 특화 정책금융이라 경영학 직접 매치 약함.",hire:"NCS. 서울.",hq:"서울.",season:"하반기.",talent:"농업금융.",chungbuk:"서울이라 지역 가점 없음. DNA 매치 낮음. 농업금융이라는 특수 분야.",comment:"농업 특화 정책금융. DNA 매치 낮고 서울 소재. 농업금융에 관심 없다면 비권장.",tags:["NCS","농업금융","서울"]},
+{n:"서울신용보증재단",c:"정책금융",l:"서울",s:30,dna:22,fin:14,build:2,entry:2,g:5,minus:false,url:"https://www.seoulsbdc.or.kr",desc:"서울 소재 신보재단. 보증심사 DNA 매치하나 서울=지역 가점 0. 소규모 채용으로 경쟁률 높음.",hire:"소규모.",hq:"서울.",season:"수시.",talent:"보증심사.",chungbuk:"서울이라 지역 가점 없음. 소규모. 경쟁률 높음. 충청 보증재단에 집중하는 것이 효율적.",comment:"보증심사 DNA는 있으나 서울+소규모. 충청 보증재단 3곳에 집중하는 것이 훨씬 효율적.",tags:["보증심사","서울","소규모"]},
+{n:"한국생산성본부(KPC)",c:"유관기관",l:"서울",s:33,dna:25,fin:4,build:5,entry:2,g:5,minus:false,url:"https://www.kpc.or.kr",desc:"기업 현장 경영 컨설팅이 핵심. DNA 최고 매치이나 서울+극소규모. 경영컨설팅 업무가 현장+분석+빌더+교육 모든 DNA와 매치.",hire:"극소규모. 연 1~2회.",hq:"서울.",season:"불규칙.",talent:"경영컨설팅.",chungbuk:"DNA 만점급이나 서울+극소규모로 합격 확률 극저. Dream에 가까운 기관.",comment:"DNA 최고 매치 기관. 경영컨설팅 업무가 모든 DNA 코드와 완벽히 매치하나, 서울+극소규모(연 1~2명)라 현실적으로 진입 극난.",tags:["경영컨설팅","서울","극소규모","DNA최고"]},
+{n:"한국에너지공단",c:"공기업",l:"울산",s:32,dna:13,fin:1,build:1,entry:17,g:5,minus:false,url:"https://www.energy.or.kr",desc:"에너지 효율 진단은 기술직. 경영학은 행정/기획. DNA 매치 낮음. 대규모 NCS 채용이 메리트이나 울산 소재.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산이라 충청 가점 없음. 안정적 공기업이나 DNA 안 맞음. 안전망으로만 고려.",comment:"안정적 공기업이나 DNA 매치 없음. 에너지 효율 진단은 기술직이고 경영학은 행정/기획 배치. 울산 소재.",tags:["NCS","에너지","행정직","울산"]},
+{n:"국민건강보험공단",c:"공기업",l:"원주",s:33,dna:10,fin:1,build:1,entry:21,g:5,minus:false,url:"https://www.nhis.or.kr",desc:"DNA 매치 최하위급이나 진입가능성+보상 극대치. 행정/보험급여 업무. 연 500명+ 초대규모 채용으로 최대 안전망.",hire:"NCS 초대규모.",hq:"원주.",season:"하반기.",talent:"행정.",chungbuk:"원주라 충청 가점 없으나 초대규모 NCS. 최대 안전망. DNA 안 맞지만 합격 확률 높음.",comment:"DNA 안 맞으나 최대 안전망. 연 500명+ 초대규모 NCS 채용으로 합격 확률 높음. 행정직이라 DNA 미스매치이나 안정적 보상.",tags:["NCS","초대규모","안전망","행정"]},
+{n:"한국수자원공사",c:"공기업",l:"대전",s:34,dna:10,fin:1,build:1,entry:17,g:5,minus:false,url:"https://www.kwater.or.kr",desc:"수자원 관리. 이공계 위주. DNA 매치 낮음. 대전=충청 가점. 고연봉 안정적 공기업이나 경영학 직접 매치 약함.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점. 고연봉 안전망. 이공계 위주이나 경영 행정직도 소수 채용.",comment:"충청권 고연봉 안전망. 대전 소재+충청 가점. DNA 매치 낮으나 안정적 보상+지역 가점.",tags:["NCS","충청","고연봉","안전망"]},
+{n:"한국토지주택공사(LH)",c:"공기업",l:"진천(충북)",s:0,dna:11,fin:1,build:1,entry:24,g:0,minus:false,url:"https://www.lh.or.kr",desc:"토지/주택 개발. DNA 매치 낮으나 진천(충북)=지역인재 극유리. 대규모 NCS. 충북대에서 합격 확률 높은 고연봉 안전망.",hire:"NCS 대규모. 지역인재.",hq:"충북 진천.",season:"하반기.",talent:"행정.",chungbuk:"충북 진천=지역인재 극유리. 고연봉 안전망. DNA 안 맞지만 지역인재+NCS로 극유리.",comment:"충북 지역인재 고연봉 안전망. 진천 본사=지역인재 30% 의무. DNA 매치 낮으나 대규모 NCS+지역인재로 합격 확률 높음. 가스안전공사와 함께 충북 안전망의 핵심.",tags:["NCS","충북","지역인재","고연봉","안전망"]},
+{n:"국민연금공단",c:"공기업",l:"전주",s:31,dna:11,fin:2,build:1,entry:17,g:5,minus:false,url:"https://www.nps.or.kr",desc:"연금 관리/운용. 기금운용 부서는 투자 DNA 가능하나 신입은 지사 배치. 대규모 NCS 안전망.",hire:"NCS 대규모.",hq:"전주.",season:"하반기.",talent:"행정.",chungbuk:"전주라 충청 가점 없음. 대규모 NCS 안전망으로만 고려.",comment:"대규모 NCS 안전망. 기금운용 부서 배치 시 투자 DNA 활용 가능하나 신입은 지사 배치가 일반적. 전주 소재.",tags:["NCS","대규모","연금"]},
+{n:"한국무역보험공사",c:"정책금융",l:"서울",s:34,dna:18,fin:16,build:1,entry:4,g:5,minus:false,url:"https://www.ksure.or.kr",desc:"국가리스크 평가, 수출보험. 금융 리스크 분석=DNA 시너지. 국가별 리스크를 분석적으로 평가하는 업무로 분석 역량 활용 가능하나 어학 필수.",hire:"서울. 어학 중요.",hq:"서울.",season:"하반기.",talent:"리스크 분석, 어학.",chungbuk:"서울이라 지역 가점 없음. 어학 요건이 추가 장벽.",comment:"금융시너지 있으나 서울+어학 필수. 국가리스크 평가라는 분석적 업무이나 서울 소재+어학 요건이 진입장벽.",tags:["무역보험","서울","어학중요","금융ADV"]},
+{n:"예금보험공사",c:"정책금융",l:"서울",s:28,dna:17,fin:18,build:1,entry:2,g:5,minus:false,url:"https://www.kdic.or.kr",desc:"예금자 보호, 부실금융기관 정리. 금융 시스템 최후의 보루. 금융 커리어 극상위이나 서울+고경쟁으로 진입 극난.",hire:"서울. 고경쟁.",hq:"서울.",season:"하반기.",talent:"금융 시스템 이해.",chungbuk:"서울+고경쟁. 진입 극난. 금융 Dream에 가까움.",comment:"금융 커리어 최고봉이나 진입 극난. 예금자 보호라는 금융 시스템의 최후 방어선 역할. 서울+고경쟁으로 충북대에서 현실적으로 어려움.",tags:["서울","고경쟁","고연봉","금융ADV"]},
+{n:"주택도시보증공사(HUG)",c:"정책금융",l:"부산",s:31,dna:16,fin:8,build:1,entry:9,g:5,minus:false,url:"https://www.khug.or.kr",desc:"주택보증 심사. 부동산 관련. 경쟁률 150:1+. 보증심사 업무이나 부동산 특화라 DNA 매치 약함.",hire:"NCS. 부산.",hq:"부산.",season:"하반기.",talent:"부동산, 보증심사.",chungbuk:"경쟁률 극심. DNA 매치 약함. 부동산 관심 시에만 고려.",comment:"DNA 낮고 경쟁률 극심. 주택보증 특화라 부동산 전문성 필요. 경쟁률 150:1 이상으로 진입 매우 어려움.",tags:["NCS","주택보증","고경쟁"]},
+{n:"신영증권",c:"증권",l:"서울",s:33,dna:26,fin:20,build:2,entry:0,g:5,minus:false,url:"https://www.shinyoung.com",desc:"가치투자 명가. CUFA 분석 경험과 DNA 최고 매치. 금융ADV 극대치. 가치투자 철학이 분석적 사고와 직결되는 유일한 증권사.",hire:"소규모. 가치투자 철학.",hq:"서울.",season:"불규칙.",talent:"가치투자, DCF.",chungbuk:"서울+소규모. 학벌 영향. Dream에 가까움. 가치투자 철학에 깊이 공감한다면 장기 도전 목표.",comment:"금융DNA 최고 매치이나 진입 극난. 가치투자 명가로서 분석적 사고력+DCF 역량이 핵심인 곳. 서울+소규모+학벌 영향으로 현실적으로 어려움.",tags:["가치투자","서울","소규모","금융ADV"]},
+{n:"BNK투자증권",c:"증권",l:"부산",s:34,dna:23,fin:16,build:2,entry:5,g:5,minus:false,url:"https://www.bnkfn.co.kr",desc:"부산 소재 중소증권. 블라인드 채용. 인턴→정규직 90%+. 충북대에서 실질적으로 도전 가능한 증권사.",hire:"블라인드. 인턴전환.",hq:"부산.",season:"수시.",talent:"투자 분석.",chungbuk:"블라인드 채용이라 충북대 도전 가능한 증권사. 인턴→정규직 전환율 높음.",comment:"실질적으로 지원 가능한 증권사. 블라인드 채용+인턴→정규직 90% 전환. 부산 소재 중소증권이라 경쟁률도 상대적으로 낮음.",tags:["블라인드","인턴전환","부산","금융ADV"]},
+{n:"한국부동산원",c:"공기업",l:"대구",s:30,dna:16,fin:4,build:1,entry:9,g:5,minus:false,url:"https://www.reb.or.kr",desc:"부동산 조사/감정. 부동산 관심과 일부 매치. 부동산 시장 분석이라는 분석적 업무 요소 있으나 직접 DNA 매치 약함.",hire:"NCS. 대구.",hq:"대구.",season:"하반기.",talent:"부동산 분석.",chungbuk:"대구라 지역 가점 없음. 부동산 관심 시 고려.",comment:"부동산 관심 시 고려. 부동산 시장 조사/감정 업무로 분석 역량 일부 활용하나 직접 DNA 매치 약함. 대구 소재.",tags:["NCS","부동산"]},
+{n:"한국사회가치연대기금",c:"정책금융",l:"서울",s:27,dna:20,fin:8,build:5,entry:2,g:5,minus:false,url:"https://www.svsfund.or.kr",desc:"임팩트 투자/사회적경제 지원. 소규모. 서울. 사회적 가치와 금융을 결합한 독특한 포지션.",hire:"소규모.",hq:"서울.",season:"불규칙.",talent:"사회적 가치, 임팩트투자.",chungbuk:"서울+소규모. 임팩트 투자에 관심 있다면 장기 관심 대상.",comment:"사회적 가치 중심. DNA 일부 매치. 임팩트 투자라는 독특한 영역이나 서울+소규모로 진입 어려움.",tags:["임팩트투자","서울","소규모"]},
+{n:"한국산업기술시험원(KTL)",c:"공기업",l:"진주",s:30,dna:13,fin:1,build:1,entry:15,g:5,minus:false,url:"https://www.ktl.re.kr",desc:"제품 시험인증. 기술직 중심. 경영학은 행정직. 대규모 채용이나 이공계 위주.",hire:"NCS. 연 50명+.",hq:"진주.",season:"하반기.",talent:"행정.",chungbuk:"진주라 충청 가점 없음. 이공계 위주. 경영 행정직 소수.",comment:"이공계 위주. DNA 매치 낮음. 진주 소재. 경영학 행정직 소수 채용.",tags:["NCS","시험인증","행정직"]},
+{n:"한국전기안전공사",c:"공기업",l:"완주(전북)",s:30,dna:13,fin:1,build:1,entry:15,g:5,minus:false,url:"https://www.koelsa.or.kr",desc:"전기안전 검사. 기술직 업무. 경영관리직은 행정. 대규모 NCS이나 이공계 절대 위주.",hire:"NCS 대규모.",hq:"완주(전북).",season:"하반기.",talent:"행정.",chungbuk:"전북이라 충청 가점 없음. 이공계 위주 안전공사.",comment:"이공계 위주 안전공사. 경영학은 행정직 소수. 전북 완주 소재.",tags:["NCS","안전공사","행정직"]},
+{n:"한국표준협회(KSA)",c:"유관기관",l:"서울",s:27,dna:20,fin:3,build:3,entry:3,g:5,minus:false,url:"https://www.ksa.or.kr",desc:"KS/ISO 인증 현장 심사, 품질경영 컨설팅. DNA 매치 높으나 서울+소규모. 기업 현장 심사=현장 DNA.",hire:"서울. 소규모.",hq:"서울.",season:"불규칙.",talent:"품질인증.",chungbuk:"서울+소규모. KPC와 유사하게 DNA 매치 높으나 진입 극난.",comment:"KPC와 유사 DNA이나 서울+소규모. 품질경영 컨설팅으로 현장+분석 DNA 매치하나 진입 어려움.",tags:["품질인증","서울","소규모"]},
+{n:"한국성장금융",c:"정책금융",l:"서울",s:24,dna:20,fin:10,build:4,entry:1,g:5,minus:false,url:"https://www.kgrowth.or.kr",desc:"성장지원펀드 운용. 투자 DNA 매치. 극소규모. 정책금융+투자 결합 기관.",hire:"극소규모. 불규칙.",hq:"서울.",season:"불규칙.",talent:"펀드 운용.",chungbuk:"서울+극소규모. 진입 극난. 투자 DNA 매치이나 현실적으로 어려움.",comment:"투자 DNA 매치이나 극소규모. 성장지원펀드 운용으로 금융+투자 DNA 활용 가능하나 서울+극소규모.",tags:["펀드","서울","극소규모"]},
+{n:"근로복지공단",c:"공기업",l:"울산",s:28,dna:10,fin:1,build:1,entry:16,g:5,minus:false,url:"https://www.comwel.or.kr",desc:"산재보험/근로복지. DNA 매치 낮음. 울산. 대규모 NCS 안전망.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산이라 충청 가점 없음. 대규모 NCS 안전망으로만 고려.",comment:"대규모 NCS 안전망. DNA 낮음. 산재보험/근로복지 행정 업무. 울산 소재.",tags:["NCS","대규모","안전망"]},
+{n:"한국철도공사(코레일)",c:"공기업",l:"대전",s:30,dna:8,fin:1,build:1,entry:17,g:5,minus:false,url:"https://www.korail.com",desc:"철도 운영. DNA 매치 없음. 대전=충청 가점. 초대규모 NCS. 충청권 최대 안전망 중 하나.",hire:"NCS 초대규모.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점. 초대규모 안전망. DNA 없으나 규모+지역 가점이 강력.",comment:"충청 안전망. DNA 없으나 규모+지역 가점. 대전 소재+초대규모 NCS로 합격 확률 높은 안전망.",tags:["NCS","충청","초대규모","안전망"]},
+{n:"한국가스공사",c:"공기업",l:"대구",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,url:"https://www.kogas.or.kr",desc:"가스 공급. 이공계 위주. DNA 매치 없음. 고연봉이나 경영학 직접 매치 약함.",hire:"NCS.",hq:"대구.",season:"하반기.",talent:"행정.",chungbuk:"대구. 이공계 위주. 경영 행정직 소수.",comment:"이공계 위주. DNA 없음. 고연봉이나 경영학 매치 약함. 대구 소재.",tags:["NCS","이공계","고연봉"]},
+{n:"한국전력공사",c:"공기업",l:"나주",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,url:"https://www.kepco.co.kr",desc:"전력 공급. DNA 매치 없음. 초대규모 NCS. 나주 소재. 고연봉 공기업이나 이공계 위주.",hire:"NCS 초대규모.",hq:"나주.",season:"하반기.",talent:"행정.",chungbuk:"나주. 충청 가점 없음. 초대규모이나 이공계 위주.",comment:"DNA 없으나 초대규모 NCS. 나주 소재+이공계 위주가 약점. 행정직 소수 채용.",tags:["NCS","초대규모"]},
+{n:"한국도로공사",c:"공기업",l:"김천",s:26,dna:8,fin:1,build:1,entry:14,g:5,minus:false,url:"https://www.ex.co.kr",desc:"도로 관리. DNA 매치 없음. 안정적 공기업이나 경영학 직접 매치 약함.",hire:"NCS.",hq:"김천.",season:"하반기.",talent:"행정.",chungbuk:"김천. 비수도권 소폭 가점. 안전망으로만 고려.",comment:"NCS 안전망. DNA 없음. 김천 소재. 도로 관리라 경영학 매치 약함.",tags:["NCS","안전망"]},
+{n:"한국관광공사",c:"공기업",l:"원주",s:25,dna:13,fin:1,build:2,entry:9,g:5,minus:false,url:"https://www.visitkorea.or.kr",desc:"관광 산업 진흥. 현장 요소 있으나 기업 분석 DNA 무관. 관광 마케팅/기획 업무.",hire:"NCS.",hq:"원주.",season:"하반기.",talent:"관광.",chungbuk:"원주. 경쟁률 있음. 관광에 관심 없다면 비추.",comment:"관광 특화. DNA 약함. 원주 소재. 관광 산업에 관심 있어야 의미 있는 선택.",tags:["NCS","관광"]},
+{n:"한국산업인력공단",c:"공기업",l:"울산",s:25,dna:11,fin:1,build:1,entry:12,g:5,minus:false,url:"https://www.hrdkorea.or.kr",desc:"자격증/기능올림픽/외국인력. DNA 매치 낮음. 울산. 대규모 채용이나 행정 업무.",hire:"NCS 대규모.",hq:"울산.",season:"하반기.",talent:"행정.",chungbuk:"울산. 대규모. 안전망으로만 고려.",comment:"대규모 NCS. DNA 낮음. 울산 소재. 자격증/외국인력 관리 행정 업무.",tags:["NCS","대규모"]},
+{n:"한국조폐공사",c:"공기업",l:"대전",s:28,dna:10,fin:1,build:1,entry:15,g:5,minus:false,url:"https://www.komsco.com",desc:"화폐 제조. DNA 매치 없음. 대전=충청 가점. 특수 제조업이라 경영학 매치 약하나 충청 가점.",hire:"NCS.",hq:"대전.",season:"하반기.",talent:"행정.",chungbuk:"대전=충청 가점. 안전망으로 고려.",comment:"충청 NCS 안전망. DNA 없으나 대전 소재+충청 가점. 화폐 제조라는 특수성.",tags:["NCS","충청","안전망"]},
+{n:"한국농수산식품유통공사(aT)",c:"공기업",l:"나주",s:24,dna:11,fin:1,build:1,entry:11,g:5,minus:false,url:"https://www.at.or.kr",desc:"농식품 유통/수출. DNA 거리. 대규모 NCS이나 농식품 특화.",hire:"NCS 대규모.",hq:"나주.",season:"하반기.",talent:"농식품 유통.",chungbuk:"나주. 충청 가점 없음. 농식품에 관심 없다면 비효율적.",comment:"대규모 NCS. DNA 매치 약함. 나주 소재+농식품 특화. 안전망 중 우선순위 낮음.",tags:["NCS","대규모","농식품"]},
+{n:"타임폴리오자산운용",c:"자산운용",l:"서울",s:25,dna:25,fin:18,build:3,entry:0,g:5,minus:false,url:"https://www.timefolio.co.kr",desc:"투자대회 수상→매니저 경로. 학벌 무관. DNA+금융ADV 극대치. 극소수+비정형 채용이라 전통적 취준과 다른 경로.",hire:"투자대회 경로. 극소수.",hq:"서울.",season:"불규칙.",talent:"투자 역량.",chungbuk:"학벌 무관이나 투자대회 수상 필요. 비정형 경로. 3F 투자대회 수상 시 가능성 열림.",comment:"순수 투자 역량으로 진입 가능한 유일한 곳. 투자대회 수상→매니저 경로. 학벌 무관이나 투자 실적 필수. 비정형 채용.",tags:["가치투자","투자대회","금융ADV"]},
+{n:"브이아이자산운용",c:"자산운용",l:"서울",s:23,dna:25,fin:18,build:2,entry:0,g:5,minus:false,url:"https://www.viasset.co.kr",desc:"가치투자 전문. DNA+금융ADV 극대치. 극소수 채용. 가치투자 철학의 정수.",hire:"극소규모.",hq:"서울.",season:"불규칙.",talent:"가치투자.",chungbuk:"극소규모. 비현실적. 가치투자 철학 학습 차원에서만 관심.",comment:"가치투자 DNA 최고. 진입 극난. 극소규모 채용으로 비현실적이나 가치투자 철학의 정수.",tags:["가치투자","극소규모","금융ADV"]},
+{n:"DGB캐피탈",c:"캐피탈",l:"대구",s:30,dna:16,fin:8,build:1,entry:9,g:5,minus:false,url:"https://www.dgbfg.co.kr",desc:"대구 블라인드. 진입 용이. 여신 심사. 지방 캐피탈이라 경쟁률 낮음.",hire:"블라인드.",hq:"대구.",season:"수시.",talent:"여신 심사.",chungbuk:"블라인드이나 대구. 면접 경험 축적용으로 고려.",comment:"블라인드 진입 가능. 대구 소재 지방 캐피탈. 여신 심사 업무로 금융 경험 축적 가능. 면접 연습용으로도 활용.",tags:["블라인드","대구"]},
+{n:"다올인베스트먼트",c:"VC",l:"서울",s:23,dna:23,fin:12,build:12,entry:0,g:5,minus:false,url:"https://www.daolinvest.co.kr",desc:"중소형 VC. 금융+창업 이중 ADV. 스타트업 투자심사=DNA 직결. 벤처투자 업무로 분석적 사고+빌더 DNA 동시 활용.",hire:"소규모. 서울.",hq:"서울.",season:"불규칙.",talent:"VC 투자심사.",chungbuk:"서울+소규모. 진입 극난이나 금융+창업 이중 DNA 학습 가치.",comment:"금융+창업 이중 ADV. 진입 극난. 스타트업 투자심사 업무로 분석+빌더 DNA 극대치 활용 가능하나 서울+소규모.",tags:["VC","소규모","금융ADV","창업ADV"]},
+{n:"LB인베스트먼트",c:"VC",l:"서울",s:23,dna:23,fin:12,build:12,entry:0,g:5,minus:false,url:"https://www.lbinvest.com",desc:"중소형 VC. 스타트업 투자 심사. 벤처투자 생태계 핵심 플레이어.",hire:"극소수(연 1~2명).",hq:"서울.",season:"불규칙.",talent:"VC.",chungbuk:"서울+극소규모. 진입 극난.",comment:"창업 학습 가치 극대치. 진입 극난. 벤처투자 업무로 금융+창업 DNA 최대 활용 가능하나 극소규모.",tags:["VC","소규모","금융ADV","창업ADV"]},
+{n:"한국교직원공제회",c:"공제회",l:"서울",s:25,dna:19,fin:8,build:1,entry:3,g:5,minus:false,url:"https://www.ktcu.or.kr",desc:"자산운용 수십조. 자산운용 부서 배치 시 투자 DNA 활용 가능. 대형 기관투자자.",hire:"NCS. 서울. 소규모.",hq:"서울.",season:"하반기.",talent:"자산운용.",chungbuk:"서울+소규모. 자산운용 부서 배치는 불확실.",comment:"자산운용 DNA 일부. 서울. 수십조 자산운용이나 신입 배치 부서 불확실. 서울+소규모.",tags:["자산운용","NCS","서울"]},
+{n:"NH농협은행",c:"시중은행",l:"서울",s:24,dna:12,fin:6,build:1,entry:9,g:5,minus:false,url:"https://banking.nonghyup.com",desc:"완전 블라인드. NCS. 대규모. 은행 영업직=DNA 매치 낮음. 블라인드이라 학벌 무관.",hire:"NCS 블라인드 대규모.",hq:"서울.",season:"상/하반기.",talent:"은행 영업.",chungbuk:"블라인드이나 서울. 은행 영업 DNA 매치 낮음. 대규모 안전망.",comment:"블라인드 대규모. DNA 낮음. 은행 영업직이라 핵심 DNA 미스매치이나 블라인드+대규모로 진입은 가능.",tags:["NCS","블라인드","은행영업"]},
+{n:"한국수력원자력",c:"공기업",l:"경주",s:22,dna:7,fin:1,build:1,entry:13,g:5,minus:false,url:"https://www.khnp.co.kr",desc:"원자력 발전. 이공계 절대 위주. 경영학은 극소수 행정직.",tags:["NCS","이공계"],comment:"이공계 위주. DNA 매치 없음. 경주 소재. 고연봉이나 경영학 직접 매치 없음."},
+{n:"한국콘텐츠진흥원",c:"공기업",l:"나주",s:22,dna:12,fin:1,build:2,entry:7,g:5,minus:false,url:"https://www.kocca.kr",desc:"콘텐츠 산업 진흥. IT/콘텐츠 중심. 경영학보다 미디어/IT 전공 친화적.",tags:["NCS","콘텐츠"],comment:"콘텐츠 특화. 경영학 매치 약함. 나주 소재. 콘텐츠 산업에 관심 없다면 비추."},
+{n:"KOTRA",c:"공기업",l:"서울/해외",s:23,dna:14,fin:2,build:2,entry:5,g:5,minus:false,url:"https://www.kotra.or.kr",desc:"해외무역 진흥. 어학 극도로 중요. 글로벌 마케팅/무역 지원 업무.",tags:["어학중요","해외무역"],comment:"어학 필수. 학벌 영향. 해외무역 진흥 업무로 글로벌 경험 가능하나 어학+학벌 장벽 높음."},
+{n:"인천국제공항공사",c:"공기업",l:"인천",s:20,dna:8,fin:1,build:1,entry:7,g:5,minus:false,url:"https://www.airport.kr",desc:"공항 운영. DNA 매치 없음. 경쟁률 200:1+. 고연봉이나 합격 극난.",tags:["고경쟁","고연봉"],comment:"고연봉이나 합격 극난. 경쟁률 200:1+ 으로 현실적으로 어려움. DNA 매치 없음."},
+{n:"강원랜드",c:"공기업",l:"정선",s:22,dna:7,fin:1,build:1,entry:13,g:5,minus:false,url:"https://www.kangwonland.co.kr",desc:"카지노/리조트. DNA 매치 없음. NCS 기반이나 특수 업종.",tags:["NCS","고연봉"],comment:"NCS. 고연봉이나 DNA 없음. 카지노/리조트라는 특수 업종. 정선 소재."},
+{n:"한국서부발전",c:"공기업",l:"태안(충남)",s:24,dna:7,fin:1,build:1,entry:14,g:5,minus:false,url:"https://www.iwest.co.kr",desc:"태안=충청 가점. 이공계 위주. 발전 5사 중 하나.",tags:["충청","이공계"],comment:"충청 가점이나 이공계 위주. 태안 소재. 경영 행정직 극소수."},
+{n:"한국중부발전",c:"공기업",l:"보령(충남)",s:24,dna:7,fin:1,build:1,entry:14,g:5,minus:false,url:"https://www.komipo.co.kr",desc:"보령=충청 가점. 이공계 위주. 발전 5사 중 하나.",tags:["충청","이공계"],comment:"충청 가점이나 이공계 위주. 보령 소재. 경영 행정직 극소수."},
+{n:"한국환경산업기술원",c:"공기업",l:"서울",s:21,dna:12,fin:1,build:2,entry:3,g:5,minus:false,url:"https://www.keiti.re.kr",desc:"환경기술 인증. ESG 트렌드. 서울. 소규모. ESG 관심 시 의미 있으나 진입 어려움.",tags:["ESG","서울","소규모"],comment:"ESG 트렌드. 소규모. 서울 소재+소규모로 진입 어려움. ESG 관심 시에만 고려."},
+{n:"한국지역난방공사",c:"공기업",l:"성남",s:21,dna:8,fin:1,build:1,entry:8,g:5,minus:false,url:"https://www.kdhc.co.kr",desc:"지역난방. 이공계 위주. 고연봉. 수도권이나 이공계 중심.",tags:["이공계","고연봉"],comment:"DNA 없으나 고연봉. 이공계 위주. 성남 소재."},
+{n:"메리츠증권",c:"증권",l:"서울",s:22,dna:24,fin:16,build:1,entry:0,g:5,minus:false,url:"https://www.meritz.com",desc:"성과주의. 높은 보상. 서울+학벌 영향+인턴 필수. 극한 성과주의 문화.",tags:["성과주의","서울"],comment:"DNA 높으나 진입 극난. 성과주의 극단이라 학벌보다 실적이나 인턴 경로 필수. 서울."},
+{n:"신영자산운용",c:"자산운용",l:"서울",s:20,dna:25,fin:18,build:1,entry:0,g:5,minus:false,url:"https://www.sym.co.kr",desc:"가치투자 DNA 최고. Dream에 가까움. 신영증권의 자산운용 자회사.",tags:["가치투자","Dream","극소규모"],comment:"Dream급. 가치투자 철학 극대치이나 극소규모+학벌 영향."},
+{n:"현대캐피탈",c:"캐피탈",l:"서울",s:22,dna:16,fin:6,build:1,entry:3,g:5,minus:false,url:"https://www.hyundaicapital.com",desc:"블라인드. 경쟁 30~50:1. 현대자동차 계열 여신 전문.",tags:["블라인드"],comment:"블라인드. 서울. 현대차 계열이라 안정적이나 경쟁률 높음."},
+{n:"KB캐피탈",c:"캐피탈",l:"서울",s:21,dna:14,fin:6,build:1,entry:3,g:5,minus:false,url:"https://www.kbcapital.co.kr",desc:"KB금융 계열. 블라인드. 여신 심사. 대형 금융그룹 계열.",tags:["블라인드"],comment:"블라인드. 서울. KB금융 계열 안정성."},
+{n:"JB우리캐피탈",c:"캐피탈",l:"전주",s:24,dna:14,fin:5,build:1,entry:5,g:5,minus:false,url:"https://www.jbwoori.co.kr",desc:"JB금융 계열. 전주 소재. 지역밀착 여신. 전주라 충청 가점 없음.",tags:[],comment:"전주. 충청 아님. JB금융 계열 지방 캐피탈. 지역밀착 여신 업무."},
+{n:"새마을금고중앙회",c:"공제회",l:"서울",s:22,dna:13,fin:4,build:1,entry:5,g:5,minus:false,url:"https://www.kfcc.co.kr",desc:"대형 공제기관. NCS. 전국 지역조합 관리. 안정적이나 DNA 매치 낮음.",tags:["NCS","안전망"],comment:"NCS. DNA 낮으나 안정적. 대형 공제기관으로 안전망. 서울 소재."},
+{n:"군인공제회",c:"공제회",l:"서울",s:21,dna:17,fin:6,build:1,entry:2,g:5,minus:false,url:"https://www.mps.or.kr",desc:"군인 복지. 자산운용 부서 존재. 군 경험 가산점 가능.",tags:["자산운용"],comment:"자산운용 요소. 소규모. 군 경험 있으면 가산점. 서울 소재."},
+{n:"OK저축은행",c:"저축은행",l:"서울",s:22,dna:11,fin:4,build:1,entry:8,g:5,minus:false,url:"https://www.oksavingsbank.com",desc:"진입 용이. 비은행 1위. 여신 심사 경험 축적 가능.",tags:["진입용이"],comment:"진입 용이. 실전 경험용. 여신 심사 업무로 금융 경험 축적. 면접 연습에도 활용."},
+{n:"웰컴저축은행",c:"저축은행",l:"서울",s:22,dna:11,fin:4,build:1,entry:8,g:5,minus:false,url:"https://www.welcomebank.co.kr",desc:"진입 용이. 실전 면접 경험 축적용. 여신 심사 기본기 학습 가능.",tags:["진입용이"],comment:"진입 용이. 면접 경험 축적용. OK저축은행과 함께 실전 경험 쌓기에 활용."},
+{n:"SBI저축은행",c:"저축은행",l:"서울",s:21,dna:11,fin:3,build:1,entry:7,g:5,minus:false,url:"https://www.sbibank.co.kr",desc:"일본 SBI계열. 필기 없음. 진입 최용이. 외국계 문화.",tags:["진입용이"],comment:"진입 최용이. 필기 없이 서류+면접만으로 채용. 실전 면접 경험 축적에 최적."},
+{n:"중소기업은행(일반)",c:"시중은행",l:"서울",s:21,dna:12,fin:5,build:1,entry:5,g:5,minus:false,url:"https://www.ibk.co.kr",desc:"일반 전형. 은행 영업. DNA 매치 낮음. 지역인재 전형(IBK기업은행)과 별도.",tags:["은행영업"],comment:"일반 전형. DNA 낮음. 지역인재 전형과 별도이므로 지역인재 전형으로 지원하는 것이 훨씬 유리."},
+{n:"iM뱅크(DGB)",c:"지방은행",l:"대구",s:24,dna:13,fin:5,build:1,entry:8,g:5,minus:false,url:"https://www.dgb.co.kr",desc:"대구 지역밀착. NCS. DGB금융 계열 디지털 은행.",tags:["NCS","지역밀착"],comment:"지역밀착. 영남 가점. 대구 소재 지방은행. NCS 기반."},
+{n:"BNK부산은행",c:"지방은행",l:"부산",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,url:"https://www.busanbank.co.kr",desc:"부산 지역밀착 은행. NCS 블라인드. 영남 지역 가점.",tags:["NCS","지역밀착"],comment:"블라인드. 영남 가점. 부산 소재. 충청 아님."},
+{n:"BNK경남은행",c:"지방은행",l:"창원",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,url:"https://www.knbank.co.kr",desc:"경남 창원 지역밀착. BNK금융 계열.",tags:["NCS"],comment:"NCS. 영남. 창원 소재. 충청 가점 없음."},
+{n:"대구은행",c:"지방은행",l:"대구",s:22,dna:13,fin:4,build:1,entry:7,g:5,minus:false,desc:"대구 지역밀착(iM뱅크와 동일 그룹). DGB금융 계열.",tags:["NCS"],comment:"NCS. 영남. iM뱅크와 동일 그룹. 대구 소재."},
+{n:"전북은행",c:"지방은행",l:"전주",s:21,dna:13,fin:4,build:1,entry:5,g:5,minus:false,url:"https://www.jbbank.co.kr",desc:"전북 전주 지역밀착. JB금융 계열.",tags:["NCS"],comment:"NCS. 충청 아님. 전주 소재. 호남 지역 가점."},
+{n:"광주은행",c:"지방은행",l:"광주",s:21,dna:13,fin:4,build:1,entry:5,g:5,minus:false,url:"https://www.kjbank.com",desc:"광주 지역밀착. JB금융 계열.",tags:["NCS"],comment:"NCS. 충청 아님. 광주 소재. 호남 가점."},
+{n:"군무원(7급 행정)",c:"군무원",l:"전국",s:25,dna:10,fin:1,build:1,entry:10,g:5,minus:false,desc:"시험과목 별도. 안정적. 군 경험 가산점. 행정 업무.",tags:["시험별도","안정"],comment:"시험 별도. DNA 매치 없으나 안정. 군 경험 가산점 활용 가능. 별도 시험 준비 필요."},
+// Grade M (Minus) institutions
+{n:"한국농어촌공사",c:"공기업",l:"나주",s:18,dna:7,fin:1,build:1,entry:9,g:'M',minus:true,url:"https://www.ekr.or.kr",desc:"농어촌 인프라. 이공계 위주.",tags:[],comment:"이공계 절대 위주. DNA 매치 없음. 나주 소재. 농어촌 인프라 관리라 경영학 직접 매치 없음."},
+{n:"한국마사회",c:"공기업",l:"과천",s:18,dna:8,fin:1,build:1,entry:7,g:'M',minus:true,url:"https://www.kra.co.kr",desc:"경마/축산. DNA 매치 없음.",tags:[],comment:"DNA 매치 없음. 경마/축산이라는 특수 업종. 과천 소재."},
+{n:"한국산업기술진흥원",c:"공기업",l:"서울",s:16,dna:10,fin:1,build:2,entry:3,g:'M',minus:true,url:"https://www.kiat.or.kr",desc:"이공계 R&D 지원. 기술산업 정책 집행.",tags:[],comment:"이공계 R&D 지원. 경영학 매치 약함. 서울 소재이나 이공계 중심이라 경영직 극소."},
+{n:"한국공항공사",c:"공기업",l:"서울",s:16,dna:8,fin:1,build:1,entry:5,g:'M',minus:true,url:"https://www.airport.co.kr",desc:"국내 공항 운영. DNA 매치 없음.",tags:[],comment:"DNA 매치 없음. 국내 공항 운영이라 경영학 직접 매치 약함. 인천공항과 달리 국내선 중심."},
+{n:"정보통신산업진흥원",c:"공기업",l:"나주",s:16,dna:10,fin:1,build:2,entry:5,g:'M',minus:true,url:"https://www.nipa.kr",desc:"IT 산업 진흥. 이공계/IT 위주.",tags:[],comment:"IT 위주. 나주 소재. 소프트웨어/IT 산업 진흥이라 이공계/IT 전공 친화적."},
+{n:"한국남부발전",c:"공기업",l:"부산",s:17,dna:7,fin:1,build:1,entry:9,g:'M',minus:true,url:"https://www.kospo.co.kr",desc:"발전. 이공계 절대 위주. 발전 5사 중 하나.",tags:[],comment:"이공계 절대 위주. 발전소 운영이라 경영 행정직 극소. 부산 소재."},
+{n:"한국동서발전",c:"공기업",l:"울산",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,url:"https://www.ewp.co.kr",desc:"발전 5사. 이공계 위주.",tags:[],comment:"이공계 위주. 발전 5사. 울산 소재. 경영직 극소."},
+{n:"한국남동발전",c:"공기업",l:"진주",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,url:"https://www.koenergy.kr",desc:"발전 5사. 이공계 위주.",tags:[],comment:"이공계 위주. 발전 5사. 진주 소재. 경영직 극소."},
+{n:"한국투자증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.truefriend.com",desc:"대형증권. 학벌 필터 극심.",tags:[],comment:"학벌 필터 극심. Dream급. SKY+연고대 출신 위주. 충북대에서 비현실적."},
+{n:"NH투자증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.nhqv.com",desc:"대형증권. 학벌 필터.",tags:[],comment:"학벌 필터. NH금융 계열 대형증권. 충북대에서 비현실적."},
+{n:"KB증권",c:"증권",l:"서울",s:15,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.kbsec.com",desc:"KB금융 계열. 학벌 필터.",tags:[],comment:"학벌 필터. KB금융 계열 대형증권. 충북대에서 비현실적."},
+{n:"키움증권",c:"증권",l:"서울",s:14,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,url:"https://www.kiwoom.com",desc:"온라인 브로커리지. IT 비중 높음.",tags:[],comment:"IT 비중 높음. 경영직 소규모. 온라인 브로커리지 특성상 IT 인력 위주."},
+{n:"한화자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,url:"https://www.hanwhaam.com",desc:"대형운용사. 학벌 필터.",tags:[],comment:"학벌 필터. 한화금융 계열 대형운용사. 극소규모 채용."},
+{n:"KB자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,url:"https://www.kbam.co.kr",desc:"대형운용사. 학벌 영향.",tags:[],comment:"학벌 필터. KB금융 계열. 극소규모 채용+학벌 영향."},
+{n:"NH-Amundi자산운용",c:"자산운용",l:"서울",s:15,dna:22,fin:12,build:1,entry:0,g:'M',minus:true,url:"https://www.nh-amundi.com",desc:"농협+Amundi 합작. 어학 중요.",tags:[],comment:"외국계 합작. 학벌 영향+어학 요건. 극소규모."},
+{n:"하나캐피탈",c:"캐피탈",l:"서울",s:18,dna:14,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.hanacapital.co.kr",desc:"하나금융 계열. 여신/리스.",tags:[],comment:"서울. 학벌 영향. 하나금융 계열이나 소규모+학벌 영향."},
+{n:"아주캐피탈",c:"캐피탈",l:"서울",s:17,dna:13,fin:4,build:1,entry:3,g:'M',minus:true,url:"https://www.ajucapital.co.kr",desc:"독립 캐피탈. 낮은 연봉.",tags:[],comment:"진입장벽 낮으나 커리어 가치 낮음. 낮은 연봉+성장성 제한."},
+{n:"메리츠캐피탈",c:"캐피탈",l:"서울",s:16,dna:14,fin:5,build:1,entry:2,g:'M',minus:true,url:"https://www.meritzcap.com",desc:"메리츠금융 계열. 성과주의.",tags:[],comment:"성과주의. 학벌보다 실적이나 진입 자체가 극난. 메리츠 그룹 특유의 성과주의 문화."},
+{n:"경찰공제회",c:"공제회",l:"서울",s:17,dna:14,fin:5,build:1,entry:2,g:'M',minus:true,url:"https://www.police-ma.or.kr",desc:"경찰 복지기금 운용. 소규모.",tags:[],comment:"소규모. 경찰 복지기금 운용이라 특수 영역. 극소수 채용."},
+{n:"건설근로자공제회",c:"공제회",l:"서울",s:17,dna:14,fin:4,build:1,entry:2,g:'M',minus:true,url:"https://www.cwma.or.kr",desc:"건설근로자 퇴직공제.",tags:[],comment:"소규모. DNA 약함. 건설업 특화 공제기관. 채용 불규칙."},
+{n:"건설공제조합",c:"공제회",l:"서울",s:16,dna:14,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.cgbo.co.kr",desc:"건설업 상호보증.",tags:[],comment:"소규모. 건설업 특화. 상호보증 업무. 극소수 채용."},
+{n:"KB국민은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.kbstar.com",desc:"대형은행. 학벌 영향.",tags:[],comment:"학벌 영향. 4대 시중은행. DNA 낮음. 은행 영업 중심이라 핵심 DNA 미스매치."},
+{n:"우리은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.wooribank.com",desc:"4대 시중은행. 학벌 영향.",tags:[],comment:"학벌 영향. 4대 시중은행. 은행 영업직이라 DNA 미스매치."},
+{n:"신한은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.shinhan.com",desc:"시중은행 1위. 학벌 영향.",tags:[],comment:"학벌 영향. 시중은행 1위이나 학벌 필터+은행 영업 DNA 미스매치."},
+{n:"하나은행",c:"시중은행",l:"서울",s:16,dna:11,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.kebhana.com",desc:"하나금융 계열.",tags:[],comment:"학벌 영향. 하나금융 계열 시중은행."},
+{n:"한국은행",c:"Dream",l:"서울",s:14,dna:20,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.bok.or.kr",desc:"Dream 최상위. 석사 사실상 필수.",tags:[],comment:"비현실적. Dream 최상위. 석사 필수+극심한 경쟁. 충북대 학부에서 진입 불가능에 가까움."},
+{n:"금감원",c:"Dream",l:"서울",s:13,dna:20,fin:12,build:1,entry:0,g:'M',minus:true,url:"https://www.fss.or.kr",desc:"Dream. 경쟁 극심.",tags:[],comment:"비현실적. 금융감독원. Dream급 경쟁. 학벌+스펙 요건 극심."},
+{n:"한국거래소",c:"Dream",l:"부산",s:15,dna:20,fin:13,build:1,entry:1,g:'M',minus:true,url:"https://www.krx.co.kr",desc:"Dream. 경쟁 극심. 부산.",tags:[],comment:"비현실적. 부산 소재이나 Dream급 경쟁. 증권시장 운영 기관."},
+{n:"한국투자공사(KIC)",c:"Dream",l:"서울",s:14,dna:22,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.kic.kr",desc:"국부펀드. 극소수. 석사+어학 필수.",tags:[],comment:"Dream 중 Dream. 국부펀드 운용. 석사+어학 필수+극소수 채용. 완전 비현실적."},
+{n:"제주은행",c:"지방은행",l:"제주",s:18,dna:13,fin:4,build:1,entry:3,g:'M',minus:true,url:"https://www.e-jejubank.com",desc:"제주 지역밀착. 소규모.",tags:[],comment:"제주. 충청 아님. 제주 지역밀착 소규모 은행."},
+{n:"키움YES저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"키움 계열. 소형.",tags:[],comment:"소형 저축은행. 키움 계열이나 소규모. 커리어 가치 제한적."},
+{n:"OSB저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"소형 저축은행.",tags:[],comment:"소형 저축은행. 채용 불규칙. 커리어 가치 제한적."},
+{n:"한국투자저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"한국투자금융 계열.",tags:[],comment:"소규모. 한국투자금융 계열이나 저축은행 규모 제한적."},
+{n:"페퍼저축은행",c:"저축은행",l:"서울",s:18,dna:11,fin:3,build:1,entry:6,g:'M',minus:true,desc:"호주계 외국계. 디지털 중심.",tags:[],comment:"외국계 문화. 디지털 중심 저축은행이나 소규모."},
+{n:"한양증권",c:"저축은행",l:"서울",s:16,dna:11,fin:3,build:1,entry:4,g:'M',minus:true,desc:"소형 증권/저축은행.",tags:[],comment:"정규 채용 극소. 소형 증권사. 커리어 가치 제한적."},
+{n:"토스(비바리퍼블리카)",c:"핀테크",l:"서울",s:16,dna:13,fin:4,build:3,entry:2,g:'M',minus:true,url:"https://www.toss.im",desc:"핀테크 대표. IT 위주.",tags:[],comment:"IT 절대 위주. 핀테크 대표 기업이나 개발자/디자이너 위주 채용. 경영직 극소."},
+{n:"한국무역협회",c:"협회",l:"서울",s:16,dna:12,fin:2,build:1,entry:3,g:'M',minus:true,url:"https://www.kita.net",desc:"무역 지원. DNA 매치 약함.",tags:[],comment:"무역 특화. DNA 약함. 무역 지원 업무라 경영학 일부 매치하나 어학 요건 높음."},
+{n:"금융투자협회",c:"협회",l:"서울",s:17,dna:14,fin:6,build:1,entry:2,g:'M',minus:true,url:"https://www.kofia.or.kr",desc:"증권업 자율규제기관.",tags:[],comment:"소규모. 학벌 영향. 증권업 자율규제 기관이나 극소규모+학벌 영향."},
+{n:"한국증권금융",c:"유관기관",l:"서울",s:16,dna:13,fin:5,build:1,entry:2,g:'M',minus:true,url:"https://www.ksfc.co.kr",desc:"증권 담보대출/예수금.",tags:[],comment:"소규모. 학벌 영향. 증권 인프라 기관이나 극소규모."},
+{n:"한국예탁결제원",c:"유관기관",l:"부산",s:18,dna:13,fin:5,build:1,entry:3,g:'M',minus:true,url:"https://www.ksd.or.kr",desc:"증권 예탁/결제 인프라. 부산.",tags:[],comment:"금융 인프라. 부산 소재. 증권 예탁/결제라는 핵심 인프라이나 소규모+학벌 영향."},
+{n:"한국신용정보원",c:"유관기관",l:"서울",s:16,dna:13,fin:5,build:1,entry:2,g:'M',minus:true,url:"https://www.kcredit.or.kr",desc:"신용정보 데이터 분석.",tags:[],comment:"데이터 역량. 신용정보 분석 업무로 분석 DNA 일부 매치하나 소규모+서울."},
+{n:"한화에어로스페이스",c:"방산",l:"창원",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,url:"https://www.hanwhaaerospace.co.kr",desc:"방산 핵심. 이공계 절대 위주.",tags:[],comment:"이공계 절대 위주. 방산 핵심 기업이나 경영학 매치 없음."},
+{n:"국방기술품질원",c:"방산",l:"진주",s:16,dna:7,fin:1,build:1,entry:7,g:'M',minus:true,url:"https://www.dtaq.re.kr",desc:"방산 품질 인증. 이공계 위주.",tags:[],comment:"이공계 위주. 방산 품질 인증이라 기술직 중심."},
+{n:"군무원(군수직)",c:"군무원",l:"전국",s:18,dna:8,fin:1,build:1,entry:8,g:'M',minus:true,desc:"군수 물자 관리. 시험과목 주의.",tags:[],comment:"시험 별도. 군수 물자 관리 업무. 별도 시험 준비 필요하고 DNA 매치 낮음."},
+{n:"CJ그룹(경영지원)",c:"대기업",l:"서울",s:16,dna:11,fin:2,build:1,entry:3,g:'M',minus:true,url:"https://www.cj.net",desc:"CJ 대기업. 경영지원.",tags:[],comment:"인적성 시험. DNA 낮음. 대기업 경영지원직이나 인적성+학벌 영향."},
+{n:"한화그룹(경영지원)",c:"대기업",l:"서울",s:16,dna:11,fin:2,build:1,entry:3,g:'M',minus:true,url:"https://www.hanwha.co.kr",desc:"한화 대기업.",tags:[],comment:"인적성 시험. 한화그룹 경영지원직. 인적성+학벌 영향."},
+{n:"삼성증권",c:"증권",l:"서울",s:13,dna:23,fin:14,build:1,entry:0,g:'M',minus:true,url:"https://www.samsungpop.com",desc:"학벌 필터 최강.",tags:[],comment:"SKY 80%+. 비현실적. 학벌 필터 최강 증권사. DNA 매치는 높으나 진입 불가."},
+{n:"한국광물자원공사",c:"공기업",l:"원주",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,url:"https://www.kores.or.kr",desc:"광물자원. 이공계.",tags:[],comment:"DNA 없음. 광물자원 개발이라 이공계 위주. 원주 소재."},
+{n:"한국가스기술공사",c:"공기업",l:"대구",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,url:"https://www.kogas-tech.co.kr",desc:"가스기술. 이공계.",tags:[],comment:"DNA 없음. 가스 기술 전문이라 이공계 절대 위주."},
+{n:"한국광해광업공단",c:"공기업",l:"원주",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,url:"https://www.mireco.or.kr",desc:"광해 관리. 이공계.",tags:[],comment:"DNA 없음. 광해 관리/광업 이공계 위주. 원주 소재."},
+{n:"한국환경공단",c:"공기업",l:"인천",s:12,dna:7,fin:1,build:1,entry:5,g:'M',minus:true,url:"https://www.keco.or.kr",desc:"환경. 이공계.",tags:[],comment:"DNA 없음. 환경 분야 이공계 위주. 인천 소재."},
+{n:"한화투자증권",c:"증권",l:"서울",s:11,dna:22,fin:10,build:1,entry:0,g:'M',minus:true,url:"https://www.hanwhawm.com",desc:"한화계열 증권.",tags:[],comment:"학벌 영향. 한화금융 계열 증권사. 소규모 채용."},
+{n:"메리츠종금증권",c:"증권",l:"서울",s:11,dna:22,fin:10,build:1,entry:0,g:'M',minus:true,url:"https://www.meritz.com",desc:"극한 성과주의.",tags:[],comment:"학벌 필터+인턴 경로. 극한 성과주의 문화. 인턴 경로가 유일한 진입로."},
+{n:"유안타증권",c:"증권",l:"서울",s:10,dna:20,fin:9,build:1,entry:0,g:'M',minus:true,url:"https://www.yuantakorea.com",desc:"대만계. 리테일 중심.",tags:[],comment:"차별화 약함. 대만계 증권사. 리테일 영업 중심."},
+{n:"대신증권",c:"증권",l:"서울",s:10,dna:20,fin:9,build:1,entry:0,g:'M',minus:true,url:"https://www.daishin.com",desc:"리테일 영업 중심.",tags:[],comment:"학벌 영향. 리테일 영업 중심 증권사."},
+{n:"IBK투자증권",c:"증권",l:"서울",s:10,dna:22,fin:8,build:1,entry:0,g:'M',minus:true,url:"https://www.ibks.com",desc:"IBK 계열 소형증권.",tags:[],comment:"극소수 채용. IBK 계열이나 소형증권사. 채용 규모 극소."},
+{n:"교보증권",c:"증권",l:"서울",s:9,dna:20,fin:8,build:1,entry:0,g:'M',minus:true,url:"https://www.iprovest.com",desc:"교보 계열 소형.",tags:[],comment:"극소수. 교보 계열 소형증권사. 정규 채용 불규칙."},
+{n:"하이투자증권",c:"증권",l:"서울",s:9,dna:20,fin:8,build:1,entry:0,g:'M',minus:true,url:"https://www.hi-ib.com",desc:"DGB금융 계열.",tags:[],comment:"소형. DGB금융 계열. 극소규모 채용."},
+{n:"부국증권",c:"증권",l:"서울",s:8,dna:19,fin:7,build:1,entry:0,g:'M',minus:true,desc:"극소형 증권사.",tags:[],comment:"정규 채용 거의 없음. 극소형 증권사. 채용 자체가 희귀."},
+{n:"DB금융투자",c:"증권",l:"서울",s:8,dna:19,fin:7,build:1,entry:0,g:'M',minus:true,url:"https://www.db-fi.com",desc:"DB그룹 계열.",tags:[],comment:"정규 채용 불규칙. DB그룹 계열이나 소형."},
+{n:"산은캐피탈",c:"캐피탈",l:"서울",s:14,dna:14,fin:5,build:1,entry:1,g:'M',minus:true,url:"https://www.kdbcapital.co.kr",desc:"산업은행 계열. PF 요소.",tags:[],comment:"소규모. 산업은행 계열이라 PF 업무 경험 가능하나 극소규모."},
+{n:"신한캐피탈",c:"캐피탈",l:"서울",s:12,dna:14,fin:5,build:1,entry:0,g:'M',minus:true,url:"https://www.shinhancapital.co.kr",desc:"신한금융 계열. 소규모.",tags:[],comment:"극소 채용. 신한금융 계열이나 극소규모."},
+{n:"우리금융캐피탈",c:"캐피탈",l:"서울",s:12,dna:14,fin:5,build:1,entry:0,g:'M',minus:true,url:"https://www.wooricapital.com",desc:"우리금융 계열.",tags:[],comment:"소규모. 우리금융 계열이나 극소규모 채용."},
+{n:"대한지방행정공제회",c:"공제회",l:"서울",s:13,dna:13,fin:4,build:1,entry:1,g:'M',minus:true,desc:"지방공무원 복지기금. 극소규모.",tags:[],comment:"채용 불규칙. 극소규모 공제기관. 지방공무원 복지기금 운용."},
+{n:"대한건설기계공제조합",c:"공제회",l:"서울",s:11,dna:13,fin:3,build:1,entry:0,g:'M',minus:true,desc:"건설기계 공제. 극소규모.",tags:[],comment:"정규 채용 거의 없음. 극소규모 건설기계 특화 공제조합."},
+{n:"삼성생명",c:"보험",l:"서울",s:13,dna:12,fin:4,build:1,entry:2,g:'M',minus:true,url:"https://www.samsunglife.com",desc:"학벌 필터. 보험영업.",tags:[],comment:"학벌 필터. 보험 영업 중심이라 DNA 미스매치. 삼성 그룹 학벌 영향 극심."},
+{n:"삼성화재",c:"보험",l:"서울",s:13,dna:12,fin:4,build:1,entry:2,g:'M',minus:true,url:"https://www.samsungfire.com",desc:"국내 손보 1위. 학벌 필터.",tags:[],comment:"학벌 필터. 손보 1위이나 학벌 영향 극심. 보험 영업/언더라이팅 중심."},
+{n:"교보생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.kyobo.co.kr",desc:"대형 생보사. 보험 영업 중심.",tags:[],comment:"DNA 낮음. 보험 영업 중심이라 핵심 DNA와 거리. 학벌 영향."},
+{n:"한화생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.hanwhalife.com",desc:"한화금융 계열. 블라인드 일부.",tags:[],comment:"보험 영업. 한화금융 계열. 블라인드 일부 적용이나 보험 영업 DNA 미스매치."},
+{n:"NH농협생명",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.nhlife.co.kr",desc:"농협금융 계열 생보사.",tags:[],comment:"DNA 낮음. 농협금융 계열 생보사. 보험 영업 중심."},
+{n:"KB손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.kbinsure.co.kr",desc:"KB금융 계열.",tags:[],comment:"DNA 낮음. KB금융 계열 손보사. 보험 언더라이팅/영업."},
+{n:"현대해상",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.hi.co.kr",desc:"현대 계열 손보.",tags:[],comment:"DNA 낮음. 현대그룹 계열 손보사."},
+{n:"DB손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.idbins.com",desc:"DB그룹 계열.",tags:[],comment:"DNA 낮음. DB그룹 계열 손보사."},
+{n:"한화손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.hwgeneralins.com",desc:"한화금융 계열.",tags:[],comment:"DNA 낮음. 한화금융 계열 손보사."},
+{n:"농협손해보험",c:"보험",l:"서울",s:12,dna:12,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.nhfire.co.kr",desc:"농협금융 계열.",tags:[],comment:"DNA 낮음. 농협금융 계열 손보사."},
+{n:"하나생명",c:"보험",l:"서울",s:10,dna:11,fin:3,build:1,entry:0,g:'M',minus:true,url:"https://www.hanalife.co.kr",desc:"하나금융 계열. 소규모.",tags:[],comment:"채용 극소. 하나금융 계열이나 극소규모 생보사."},
+{n:"하나손해보험",c:"보험",l:"서울",s:10,dna:11,fin:3,build:1,entry:0,g:'M',minus:true,url:"https://www.hanainsure.co.kr",desc:"하나금융 계열. 소규모.",tags:[],comment:"채용 극소. 하나금융 계열 소규모 손보사."},
+{n:"신한카드",c:"카드",l:"서울",s:12,dna:10,fin:4,build:1,entry:3,g:'M',minus:true,url:"https://www.shinhancard.com",desc:"신한금융 계열. 카드 마케팅.",tags:[],comment:"DNA 거리. 카드 마케팅/서비스 중심이라 핵심 DNA와 거리."},
+{n:"KB국민카드",c:"카드",l:"서울",s:12,dna:10,fin:4,build:1,entry:3,g:'M',minus:true,url:"https://www.kbcard.com",desc:"KB금융 계열.",tags:[],comment:"DNA 약함. KB금융 계열 카드사. 마케팅/서비스 중심."},
+{n:"현대카드",c:"카드",l:"서울",s:11,dna:10,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.hyundaicard.com",desc:"현대 계열. 경쟁 극심.",tags:[],comment:"경쟁 극심. 현대차 계열 카드사. 브랜딩으로 유명하나 경쟁률 극심."},
+{n:"삼성카드",c:"카드",l:"서울",s:10,dna:10,fin:3,build:1,entry:1,g:'M',minus:true,url:"https://www.samsungcard.com",desc:"삼성 그룹. 학벌 필터.",tags:[],comment:"학벌 필터. 삼성 그룹 계열. 학벌 영향 극심."},
+{n:"토스뱅크",c:"인터넷은행",l:"서울",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,url:"https://www.tossbank.com",desc:"토스 계열. IT 위주.",tags:[],comment:"IT 위주. 토스 계열 인터넷은행. 개발자/PM 위주 채용."},
+{n:"케이뱅크",c:"인터넷은행",l:"서울",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,url:"https://www.kbanknow.com",desc:"가상자산 연동. IT 위주.",tags:[],comment:"IT 위주. 가상자산 연동 인터넷은행. IT 인력 위주."},
+{n:"카카오뱅크",c:"인터넷은행",l:"판교",s:13,dna:11,fin:4,build:2,entry:2,g:'M',minus:true,url:"https://www.kakaobank.com",desc:"카카오 계열. IT 위주.",tags:[],comment:"IT 위주. 카카오 계열 인터넷은행. 판교 소재. IT/디자인 위주 채용."},
+{n:"핀다",c:"핀테크",l:"서울",s:11,dna:12,fin:3,build:3,entry:1,g:'M',minus:true,url:"https://www.finda.co.kr",desc:"대출 비교 플랫폼. 소형.",tags:[],comment:"채용 불규칙. 대출 비교 플랫폼. 소형 스타트업이라 채용 불규칙."},
+{n:"8퍼센트",c:"핀테크",l:"서울",s:10,dna:12,fin:3,build:2,entry:0,g:'M',minus:true,desc:"P2P 대출. 극소형.",tags:[],comment:"채용 거의 없음. P2P 대출 극소형 스타트업."},
+{n:"저축은행중앙회",c:"협회",l:"서울",s:13,dna:12,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.fsb.or.kr",desc:"저축은행 중앙기관.",tags:[],comment:"DNA 약함. 저축은행업 중앙기관. 소규모 채용."},
+{n:"은행연합회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.kfb.or.kr",desc:"은행업 중앙기관.",tags:[],comment:"DNA 약함. 은행업 중앙기관. 소규모+학벌 영향."},
+{n:"생명보험협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.klia.or.kr",desc:"생보업 자율규제.",tags:[],comment:"DNA 약함. 생보업 자율규제 기관. 소규모."},
+{n:"손해보험협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.knia.or.kr",desc:"손보업 자율규제.",tags:[],comment:"DNA 약함. 손보업 자율규제 기관. 소규모."},
+{n:"여신금융협회",c:"협회",l:"서울",s:12,dna:11,fin:3,build:1,entry:2,g:'M',minus:true,url:"https://www.crefia.or.kr",desc:"여신 자율규제.",tags:[],comment:"DNA 약함. 여신금융업 자율규제 기관. 소규모."},
+{n:"한화오션",c:"방산",l:"거제",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,url:"https://www.hanwhao.com",desc:"조선/해양방산. 거제. 이공계.",tags:[],comment:"이공계. 조선/해양방산. 거제 소재. 경영학 매치 없음."},
+{n:"LIG넥스원",c:"방산",l:"성남",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,url:"https://www.lignex1.com",desc:"방산 유도무기. 이공계.",tags:[],comment:"이공계. 유도무기 방산. 성남 소재. 경영학 매치 없음."},
+{n:"현대로템",c:"방산",l:"의왕",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,url:"https://www.hyundai-rotem.co.kr",desc:"철도차량/방산. 이공계.",tags:[],comment:"이공계. 철도차량/방산. 의왕 소재."},
+{n:"한화시스템",c:"방산",l:"용인",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,url:"https://www.hanwhasystems.com",desc:"방산IT. 이공계.",tags:[],comment:"이공계. 방산IT. 용인 소재. IT+방산 융합."},
+{n:"풍산",c:"방산",l:"서울",s:9,dna:7,fin:1,build:1,entry:3,g:'M',minus:true,url:"https://www.poongsan.co.kr",desc:"탄약 전문.",tags:[],comment:"이공계. 탄약 전문 방산. 경영학 매치 없음."},
+{n:"한국항공우주산업(방산경영)",c:"방산",l:"사천",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,url:"https://www.kaikorea.com",desc:"항공방산. 이공계.",tags:[],comment:"이공계. 항공방산 대표. 사천 소재. 경영직 극소."},
+{n:"한국항공우주(KAI)",c:"방산",l:"사천",s:10,dna:7,fin:1,build:1,entry:4,g:'M',minus:true,url:"https://www.kaikorea.com",desc:"항공방산 대표.",tags:[],comment:"이공계. 항공방산 대표 기업. 사천 소재."},
+{n:"롯데그룹(경영지원)",c:"대기업",l:"서울",s:14,dna:10,fin:2,build:1,entry:3,g:'M',minus:true,url:"https://www.lotte.co.kr",desc:"롯데 대기업. L-TAB 인적성.",tags:[],comment:"DNA 매치 낮음. 롯데 대기업 경영지원직. L-TAB 인적성+학벌 영향."}
 ];
 
 // ═══ AUTO-COMPUTE: s = dna+fin+build+entry, assign grade from score ═══
@@ -644,7 +632,7 @@ const isCC=l=>/대전|세종|청주|충|진천|보령|홍성|태안|오송|음�
 const gradeList=[1,2,3,4,5,'M'];
 const gradeClass={1:'g1',2:'g2',3:'g3',4:'g4',5:'g5','M':'gM'};
 const gradeColors={1:'#e03050',2:'#e08020',3:'#c0a030',4:'#607890',5:'#404050','M':'#1a1a24'};
-const gradeDesc={1:'최우선',2:'핵심공략',3:'전략도전',4:'관심유지',5:'비권장','M':'마이너스'};
+const gradeDesc={1:'🔴 최우선',2:'🟠 핵심공략',3:'🟡 전략도전',4:'🔘 관심유지',5:'⚫ 비권장','M':'⛔ 마이너스'};
 const gradeRange={1:'80~100',2:'65~79',3:'50~64',4:'35~49',5:'20~34','M':'0~19'};
 
 let cf=new Set(['all']),sc=-1,sd=1;
@@ -667,6 +655,20 @@ function matchFilter(d){
 
 function getGradeKey(d){return d.minus?'M':d.g}
 
+// ═══ STRATEGY SUGGESTION SYSTEM ═══
+function getStrategy(d){
+  const gk=getGradeKey(d);
+  const s={
+    1:"🎯 최우선 공략 대상. NCS 80점+ 확보 후 DNA 5코드를 자소서에 최대한 녹여야 함. 현장답사+분석보고서+빌더 경험 삼위일체 어필. 면접에서 '왜 이 기관인가'에 대한 진정성 있는 답변이 합격의 열쇠.",
+    2:"🔥 핵심 공략 대상. 1등급과 병렬 준비하되, 각 기관 고유 키워드를 자소서에 반영. 금융시너지 높은 기관은 재무분석 역량, 빌더시너지 높은 기관은 창업 경험 강조.",
+    3:"⚡ 전략적 도전 대상. 합격 확률이 상대적으로 높으므로 면접 경험치 축적에도 활용. 충청권 소규모 기관은 채용 공고 놓치지 않도록 모니터링 필수.",
+    4:"📋 관심 유지 대상. 마스터 자소서를 변형하는 전략. 충북 소재 기관은 지역인재 가점만으로도 충분히 경쟁력 있음.",
+    5:"⚠️ 비권장. 에너지 투입 대비 효율 낮음. 면접 경험 축적이나 합격 안전망 목적으로만 고려.",
+    'M':"⛔ 마이너스. 지원 비추천. DNA 미스매치이거나 학벌 필터로 인해 합격 가능성 극히 낮음."
+  };
+  return d.strategy||s[gk]||'';
+}
+
 // ═══ RENDER TABLE ═══
 function rt(){
   const s=(document.getElementById('si')?.value||'').toLowerCase();
@@ -683,7 +685,7 @@ function rt(){
       if(k==='_i'){va=D.indexOf(a);vb=D.indexOf(b)}
       else if(k==='g'){
         const go={1:0,2:1,3:2,4:3,5:4,'M':5};
-        va=go[getGradeKey(a)]||5;vb=go[getGradeKey(b)]||5;
+        va=go[getGradeKey(a)]??5;vb=go[getGradeKey(b)]??5;
       } else {va=a[k];vb=b[k]}
       if(typeof va==='string')return va.localeCompare(vb)*sd;
       return(va-vb)*sd;
@@ -704,8 +706,8 @@ function renderTable(f){
     const cc=isCC(d.l)?'<span class="cc">충청</span>':'';
     const idx=D.indexOf(d);
     const gk=getGradeKey(d);
-    const fAdv=(d.tags||[]).includes('금융ADV')?'<span class="adv-fin">금융</span>':'';
-    const sAdv=(d.tags||[]).includes('창업ADV')?'<span class="adv-start">창업</span>':'';
+    const fAdv=(d.tags||[]).includes('금융ADV')?'<span class="adv-fin">💰 금융</span>':'';
+    const sAdv=(d.tags||[]).includes('창업ADV')?'<span class="adv-start">🚀 창업</span>':'';
     return `<tr onclick="toggleDetail(${idx},this)">
       <td class="sc-c" style="color:var(--tx3);font-size:.56rem">${i+1}</td>
       <td class="nm">${d.n}${cc}${fAdv}${sAdv}</td>
@@ -713,10 +715,10 @@ function renderTable(f){
       <td style="font-size:.62rem;color:var(--tx3)">${d.l}</td>
       <td style="text-align:center"><span class="gd ${gradeClass[gk]}">${gk}</span></td>
       <td class="sc-c" style="font-size:.8rem;font-weight:700">${d.s}</td>
-      <td class="sc-c" style="color:var(--steel)">${d.dna}</td>
-      <td class="sc-c" style="color:var(--gold)">${d.fin}</td>
-      <td class="sc-c" style="color:var(--green)">${d.build}</td>
-      <td class="sc-c" style="color:var(--blue)">${d.entry}</td>
+      <td class="sc-c" style="color:var(--tx2)">${d.dna}</td>
+      <td class="sc-c" style="color:var(--tx2)">${d.fin}</td>
+      <td class="sc-c" style="color:var(--tx2)">${d.build}</td>
+      <td class="sc-c" style="color:var(--tx2)">${d.entry}</td>
     </tr>
     <tr class="detail-row" id="det-${idx}">
       <td colspan="10" class="detail-cell">${buildDetailPanel(d)}</td>
@@ -736,10 +738,10 @@ function renderMobileCards(f){
       </div>
       <div class="mc-meta"><span>${d.c}</span><span>${d.l}</span></div>
       <div class="mc-scores">
-        <span style="color:var(--steel)">DNA: ${d.dna}/30</span>
-        <span style="color:var(--gold)">금융: ${d.fin}/25</span>
-        <span style="color:var(--green)">빌더: ${d.build}/20</span>
-        <span style="color:var(--blue)">진입: ${d.entry}/25</span>
+        <span>DNA: ${d.dna}/30</span>
+        <span>금융: ${d.fin}/25</span>
+        <span>빌더: ${d.build}/20</span>
+        <span>진입: ${d.entry}/25</span>
       </div>
       <div class="mc-detail" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--bdr);font-size:.66rem;color:var(--tx2);line-height:1.7">${d.comment||d.desc||''}</div>
     </div>`;
@@ -755,22 +757,25 @@ function buildDetailPanel(d){
       <div class="det-meta">${d.c} | ${d.l} | 총점 ${d.s}/100</div>
     </div>
     <div class="det-scores">
-      <div class="det-score-item"><div class="label">DNA적합도</div><div class="value" style="color:var(--steel)">${d.dna}<span style="font-size:.6rem;color:var(--tx3)">/30</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.dna/30*100).toFixed(0)}%;background:var(--steel)"></div></div></div>
-      <div class="det-score-item"><div class="label">금융시너지</div><div class="value" style="color:var(--gold)">${d.fin}<span style="font-size:.6rem;color:var(--tx3)">/25</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.fin/25*100).toFixed(0)}%;background:var(--gold)"></div></div></div>
-      <div class="det-score-item"><div class="label">빌더시너지</div><div class="value" style="color:var(--green)">${d.build}<span style="font-size:.6rem;color:var(--tx3)">/20</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.build/20*100).toFixed(0)}%;background:var(--green)"></div></div></div>
-      <div class="det-score-item"><div class="label">진입적합도</div><div class="value" style="color:var(--blue)">${d.entry}<span style="font-size:.6rem;color:var(--tx3)">/25</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.entry/25*100).toFixed(0)}%;background:var(--blue)"></div></div></div>
+      <div class="det-score-item"><div class="label">DNA적합도</div><div class="value">${d.dna}<span style="font-size:.6rem;color:var(--tx3)">/30</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.dna/30*100).toFixed(0)}%"></div></div></div>
+      <div class="det-score-item"><div class="label">금융시너지</div><div class="value">${d.fin}<span style="font-size:.6rem;color:var(--tx3)">/25</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.fin/25*100).toFixed(0)}%"></div></div></div>
+      <div class="det-score-item"><div class="label">빌더시너지</div><div class="value">${d.build}<span style="font-size:.6rem;color:var(--tx3)">/20</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.build/20*100).toFixed(0)}%"></div></div></div>
+      <div class="det-score-item"><div class="label">진입적합도</div><div class="value">${d.entry}<span style="font-size:.6rem;color:var(--tx3)">/25</span></div><div class="bar-bg"><div class="bar-fill" style="width:${(d.entry/25*100).toFixed(0)}%"></div></div></div>
     </div>`;
-  if(d.desc){html+=`<div class="det-section"><h5>기관 소개</h5><div>${d.desc}</div></div>`}
+  if(d.desc){html+=`<div class="det-section"><h5>📋 기관 소개</h5><div>${d.desc}</div></div>`}
   if(d.hire||d.hq||d.season||d.talent){
-    html+=`<div class="det-section"><h5>채용 정보</h5><div class="det-grid">`;
+    html+=`<div class="det-section"><h5>💼 채용 정보</h5><div class="det-grid">`;
     if(d.hire)html+=`<div class="det-grid-item"><div class="label">채용 방식</div><div>${d.hire}</div></div>`;
     if(d.hq)html+=`<div class="det-grid-item"><div class="label">본사 위치</div><div>${d.hq}</div></div>`;
     if(d.season)html+=`<div class="det-grid-item"><div class="label">채용 시기</div><div>${d.season}</div></div>`;
     if(d.talent)html+=`<div class="det-grid-item"><div class="label">인재상</div><div>${d.talent}</div></div>`;
     html+=`</div></div>`;
   }
-  if(d.chungbuk){html+=`<div class="det-section"><h5>충북대 합격 가능성</h5><div>${d.chungbuk}</div></div>`}
-  if(d.comment){html+=`<div class="det-section"><h5>종합 코멘트</h5><div>${d.comment}</div></div>`}
+  if(d.chungbuk){html+=`<div class="det-section"><h5>🎯 충북대 합격 가능성</h5><div>${d.chungbuk}</div></div>`}
+  if(d.comment){html+=`<div class="det-section"><h5>💬 종합 코멘트</h5><div>${d.comment}</div></div>`}
+  if(d.url){html+=`<div class="det-section"><h5>🔗 홈페이지</h5><a href="${d.url}" target="_blank" rel="noopener" style="color:var(--tx2);font-size:.68rem;text-decoration:underline">${d.url} ↗</a></div>`}
+  const strat=getStrategy(d);
+  if(strat){html+=`<div class="det-section"><h5>📌 전략 제안</h5><div>${strat}</div></div>`}
   html+=`</div>`;
   return html;
 }
@@ -798,19 +803,17 @@ function initDash(){
     gc[gk]=(gc[gk]||0)+1;
   });
   document.getElementById('total-cnt').textContent=D.length;
-  const finADV=D.filter(d=>(d.tags||[]).some(t=>t.includes('금융ADV'))).length;
-  const startADV=D.filter(d=>(d.tags||[]).some(t=>t.includes('창업ADV'))).length;
   const finTop=D.filter(d=>d.fin>=15).length;
   const buildTop=D.filter(d=>d.build>=10).length;
 
   document.getElementById('dash-stats').innerHTML=`
-    <div class="sc" style="border-left:3px solid var(--red)"><div class="n" style="color:var(--red)">${gc[1]||0}</div><div class="l">1등급 최우선</div></div>
-    <div class="sc" style="border-left:3px solid var(--orange)"><div class="n" style="color:var(--orange)">${gc[2]||0}</div><div class="l">2등급 핵심공략</div></div>
-    <div class="sc" style="border-left:3px solid #c0a030"><div class="n" style="color:#c0a030">${gc[3]||0}</div><div class="l">3등급 전략도전</div></div>
-    <div class="sc" style="border-left:3px solid #607890"><div class="n" style="color:#607890">${(gc[4]||0)+(gc[5]||0)}</div><div class="l">4~5등급</div></div>
-    <div class="sc" style="border-left:3px solid var(--teal)"><div class="n" style="color:var(--teal)">${D.filter(d=>isCC(d.l)).length}</div><div class="l">충청권</div></div>
-    <div class="sc adv-card"><div class="n" style="color:var(--gold)">${finTop}</div><div class="l">금융시너지 15+</div></div>
-    <div class="sc adv-card startup"><div class="n" style="color:var(--green)">${buildTop}</div><div class="l">빌더시너지 10+</div></div>`;
+    <div class="sc" style="border-left:3px solid var(--red)"><div class="n" style="color:var(--red)">${gc[1]||0}</div><div class="l">🔴 1등급 최우선</div></div>
+    <div class="sc" style="border-left:3px solid var(--orange)"><div class="n" style="color:var(--orange)">${gc[2]||0}</div><div class="l">🟠 2등급 핵심공략</div></div>
+    <div class="sc" style="border-left:3px solid #c0a030"><div class="n" style="color:#c0a030">${gc[3]||0}</div><div class="l">🟡 3등급 전략도전</div></div>
+    <div class="sc" style="border-left:3px solid #607890"><div class="n" style="color:#607890">${(gc[4]||0)+(gc[5]||0)}</div><div class="l">🔘 4~5등급</div></div>
+    <div class="sc" style="border-left:3px solid var(--steel)"><div class="n" style="color:var(--steel)">${D.filter(d=>isCC(d.l)).length}</div><div class="l">📍 충청권</div></div>
+    <div class="sc" style="border-left:3px solid var(--bdr2)"><div class="n" style="color:var(--tx2)">${finTop}</div><div class="l">💰 금융시너지 15+</div></div>
+    <div class="sc" style="border-left:3px solid var(--bdr2)"><div class="n" style="color:var(--tx2)">${buildTop}</div><div class="l">🚀 빌더시너지 10+</div></div>`;
 
   document.getElementById('grade-legend').innerHTML=gradeList.map(g=>
     `<div class="gl-item"><span class="gd ${gradeClass[g]}">${g}</span><span>${gradeDesc[g]} ${gradeRange[g]} (${gc[g]||0}개)</span></div>`
@@ -829,17 +832,17 @@ function initDash(){
 function makeListItem(d,color){
   const cc=isCC(d.l)?'[충청] ':'';
   const gk=getGradeKey(d);
-  const fAdv=(d.tags||[]).includes('금융ADV')?'<span class="adv-fin">금융</span>':'';
-  const sAdv=(d.tags||[]).includes('창업ADV')?'<span class="adv-start">창업</span>':'';
+  const fAdv=(d.tags||[]).includes('금융ADV')?'<span class="adv-fin">💰 금융</span>':'';
+  const sAdv=(d.tags||[]).includes('창업ADV')?'<span class="adv-start">🚀 창업</span>':'';
   return `<div style="padding:10px 0;border-bottom:1px solid var(--bdr)">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
       <div><span class="gd ${gradeClass[gk]}" style="margin-right:8px">${gk}등급</span><span style="font-weight:600;font-size:.82rem">${cc}${d.n}</span>${fAdv}${sAdv}
       <span style="font-size:.58rem;color:var(--tx3);margin-left:8px">${d.c} | ${d.l}</span></div>
       <div style="display:flex;align-items:center;gap:12px">
-        <span class="mono" style="font-size:.56rem;color:var(--steel)">DNA:${d.dna}</span>
-        <span class="mono" style="font-size:.56rem;color:var(--gold)">금융:${d.fin}</span>
-        <span class="mono" style="font-size:.56rem;color:var(--green)">빌더:${d.build}</span>
-        <span class="mono" style="font-size:.56rem;color:var(--blue)">진입:${d.entry}</span>
+        <span class="mono" style="font-size:.56rem;color:var(--tx2)">DNA:${d.dna}</span>
+        <span class="mono" style="font-size:.56rem;color:var(--tx2)">금융:${d.fin}</span>
+        <span class="mono" style="font-size:.56rem;color:var(--tx2)">빌더:${d.build}</span>
+        <span class="mono" style="font-size:.56rem;color:var(--tx2)">진입:${d.entry}</span>
         <span class="mono" style="font-weight:800;color:${color};font-size:.85rem">${d.s}</span>
       </div>
     </div>
@@ -847,46 +850,97 @@ function makeListItem(d,color){
   </div>`;
 }
 
-// ═══ ROADMAP ═══
+// ═══ ROADMAP (5x expanded, 100+ items) ═══
 const roadmapData={
   p0:[
     "투자자산운용사 시험일정 확인 + 교재 구매",
     "토익 현재 점수 확인 (700 미만이면 3월 시험 접수)",
-    "NCS 기본서(에듀윌 or 해커스) 주문",
-    "V1 대시보드 기반 지원 대상 리스트 확정 (1~3등급)",
-    "자소서 핵심 소재 3개 정리: CUFA DCF / 현장답사 32회 / CBDC 창설",
-    "중진공 최근 3년 채용공고 분석 (시기, 조건, 자소서 항목)"
+    "NCS 기본서(에듀윌 or 해커스) 주문 + 1일 분량 풀기",
+    "V1 대시보드 기반 지원 대상 리스트 확정 (1~3등급 13개 기관)",
+    "중진공 최근 3년 채용공고 수집 (시기, 조건, 자소서 항목, 배수)",
+    "중진공 현직자 블라인드/잡플래닛 후기 20개 정독",
+    "중진공 경영진단 직무 NCS 직무기술서 PDF 다운로드",
+    "자소서 핵심 소재 5개 정리: CUFA 분석 보고서 / 현장답사 32회 / CBDC 창설 / 3F 투자대회 / AI 활용 프로젝트",
+    "STAR 기법으로 소재 1개 구조화 연습",
+    "창업진흥원(KISED) 채용공고 아카이브 수집",
+    "TIPS 프로그램 심사 기준 문서 정독",
+    "AI 활용 분석 프로젝트 1건 기획 (ChatGPT/Claude로 기업 분석 자동화)",
+    "CUFA 분석 보고서 구조 설계 (목차+분석 프레임워크)",
+    "충북 소재 기관 목록 정리 (중진공/가스안전/보건산업진흥원/식품안전/LH/충북테크노파크)",
+    "진천 중진공 본사 외관 사전 답사"
   ],
   p1:[
     "투자자산운용사 합격",
-    "토익 700+ 성적표 확보",
-    "NCS 모의 60점+ 달성",
-    "마스터 자소서 초안 완성 (중진공 기준)",
-    "CUFA DCF 분석 보고서 1편 완성 (포트폴리오용)",
+    "토익 700+ 성적표 확보 (신보/기보/캠코 필수 조건)",
+    "NCS 모의 60점+ 달성 (주 5회, 회당 2시간)",
+    "NCS 영역별 약점 분석 (수리/추리/자료해석/의사소통/문제해결)",
+    "마스터 자소서 초안 완성 (중진공 기준 5문항)",
+    "소진공 자소서 변형본 작성 (소상공인 키워드 반영)",
+    "신보/기보 자소서 변형본 (금융심사 키워드 강조)",
+    "CUFA 분석 보고서 1편 완성 (포트폴리오용)",
+    "AI 활용 기업분석 자동화 프로젝트 결과물 정리",
+    "[소진공] 소상공인 정책 최신 트렌드 5건 정리",
+    "[신보] 기업 신용평가 모형 이해 (NICE/KIS 등급 체계)",
+    "[기보] 기술기업 평가 방법론 조사 (기술성+사업성 이중 평가)",
+    "[IBK] 지역인재 전형 조건/일정 확인 + 은행 영업 직무 이해",
+    "[캠코] 부실채권 가치평가 개념 학습 + NPL 시장 이해",
+    "[충북보증] 채용 공고 모니터링 시작 (소규모이므로 놓치면 안 됨)",
     "충북 소재 기관 3곳 사전 답사 (중진공/가스안전공사/보건산업진흥원)",
-    "3학년 1학기 수강신청 (NCS 대비 과목: 경영학원론, 재무관리, 회계학)"
+    "대전 소재 기관 답사 (소진공/창업진흥원/기정원)",
+    "3학년 1학기 수강신청 (NCS 대비: 경영학원론, 재무관리, 회계원리)",
+    "CUFA 활동 연장 또는 졸업생 네트워크 확보",
+    "중진공/소진공 현직자 커피챗 시도 (링크드인/블라인드)",
+    "[KVIC] 모태펀드 운용 구조 이해 + 벤처투자 리포트 3편 정독",
+    "[기정원] R&D 지원사업 구조 이해"
   ],
   p2:[
     "NCS 모의 80점+ 안정화 (매일 5시간+)",
-    "실전 지원 3~5개 완료 (4등급 기관으로 경험치 축적)",
-    "자소서 10개 기관분 완성",
-    "면접 기초 준비: 1분 자기소개 + STAR 기법",
-    "포트폴리오 허브 구축: CUFA 보고서 + 답사 기록 통합",
-    "충남대 3F 공동 투자대회 참가"
+    "4등급 기관으로 실전 지원 5건+ (경험치 축적)",
+    "자소서 13개 기관분 완성 (1~3등급 전체)",
+    "면접 기초 준비: 1분 자기소개 + STAR 기법 10개 에피소드",
+    "포트폴리오 허브 구축: CUFA 보고서 + 답사 기록 + AI 프로젝트 통합",
+    "충남대 3F 공동 투자대회 참가",
+    "[중진공] 경영진단 사례 분석 5건 + 중소기업 정책자금 종류 암기",
+    "[창업진흥원] TIPS/예비창업패키지 심사 사례 학습",
+    "[소진공] 전통시장 활성화 사례 3건 정리",
+    "[신보] 모의 신용평가 연습 (재무제표 기반)",
+    "[기보] 기술가치평가 보고서 샘플 3건 분석",
+    "[캠코] 온비드 부실채권 매각 사례 학습",
+    "[IBK] 중소기업 대출 심사 프로세스 이해",
+    "[충북보증/대전보증/충남보증] 지역 보증재단 업무 비교 분석",
+    "[기정원] 중소기업 R&D 지원사업 현황 보고서 정독",
+    "[KVIC] 모태펀드 출자 현황 및 벤처투자 트렌드 정리",
+    "NCS 실전 모의고사 주 2회 응시",
+    "면접 스터디 그룹 구성 (3~5명)",
+    "산업 분석 보고서 1편 작성 (중소벤처 생태계)",
+    "충북대 취업지원센터 1:1 상담 예약"
   ],
   p3:[
-    "1등급(중진공+창업진흥원) 집중 지원",
-    "2등급(소진공/신보/기보/캠코/IBK) 전부 지원",
-    "3등급(충북보증/대전보증/충남보증/기정원) 추가 지원",
-    "4등급 충북 기관(가스안전공사/보건산업진흥원/식품안전관리인증원/LH) 전부 지원",
+    "[1등급] 중진공 하반기 채용 집중 지원 (9~11월)",
+    "[1등급] 창업진흥원 하반기 채용 지원",
+    "[2등급] 소진공 하반기 채용 지원",
+    "[2등급] 신보 하반기 채용 지원 (토익 700 필수 확인)",
+    "[2등급] 기보 하반기 채용 지원 (토익 700 필수 확인)",
+    "[2등급] 캠코 하반기 채용 지원 (토익 700 필수 확인)",
+    "[2등급] IBK 지역인재 전형 지원",
+    "[3등급] 충북보증/대전보증/충남보증 수시채용 즉시 지원",
+    "[3등급] 기정원/KVIC 하반기 채용 지원",
+    "[4등급] 충북 소재 기관 전부 지원 (가스안전/보건산업진흥원/식품안전/LH/충북테크노파크)",
     "NCS 필기시험 최소 3회 응시",
-    "면접 최소 2회 경험",
-    "최종 합격 1건+ 달성"
+    "면접 최소 2회 경험 축적",
+    "자소서 기관별 맞춤 수정 (매 지원 시)",
+    "면접 예상질문 50개 준비 + 모의 면접 5회",
+    "합격 시 입사 준비 / 불합격 시 피드백 분석",
+    "추가 안전망: 국민건강보험/LH/코레일 등 대규모 NCS 기관 지원",
+    "NCS 점수 관리 (80점 미만 시 추가 학습)",
+    "면접 복장/자료 최종 점검",
+    "최종 합격 1건+ 달성 목표",
+    "내년 상반기 지원 계획 수립 (미합격 시)"
   ]
 };
 
 function initRoadmap(){
-  const saved=JSON.parse(localStorage.getItem('roadmap_v1')||'{}');
+  const saved=JSON.parse(localStorage.getItem('roadmap_v2')||'{}');
   Object.keys(roadmapData).forEach(key=>{
     const ul=document.getElementById(key+'-list');
     if(!ul)return;
@@ -901,9 +955,9 @@ function initRoadmap(){
 }
 
 function toggleCheck(id,cb){
-  const saved=JSON.parse(localStorage.getItem('roadmap_v1')||'{}');
+  const saved=JSON.parse(localStorage.getItem('roadmap_v2')||'{}');
   saved[id]=cb.checked;
-  localStorage.setItem('roadmap_v1',JSON.stringify(saved));
+  localStorage.setItem('roadmap_v2',JSON.stringify(saved));
   cb.closest('li').classList.toggle('checked',cb.checked);
 }
 
